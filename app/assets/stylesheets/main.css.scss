@@ -1,0 +1,176 @@
+html, body {
+
+	height: 100%;
+
+}
+
+.dark-red {
+	color: #991A45;
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+
+h1 {
+
+	font-size: 3.5em;
+	font-weight: 200;
+}
+
+h2 {
+	font-size: 3em;
+	font-weight: 100;
+}
+
+h3 {
+	font-size: 2em;
+	font-weight: 200;
+}
+
+p {
+	font-size: 1.4em;
+	color: rgba(0,0,0,0.65);
+	font-weight: 300;
+
+	.sub-text {
+		font-size: 0.7em !important;
+		font-weight: 400;
+	}
+}
+
+
+
+.emphasize-color {
+	color: #00ccff;
+}
+
+.section {
+	padding-top: 150px;
+	padding-bottom: 150px;
+}
+
+.section-top {
+	padding-top: 0;
+}
+
+.dark {
+		color: white;
+	p {
+		color: darken(white, 25%);
+	}
+}
+
+.shadow {
+	text-shadow: 0px 0px 4px rgba(0,0,0,0.8);
+}
+
+#intro {
+	height: 90%;
+	background-image: url(intro.jpg);
+	background-size: cover;
+	.row {
+		margin-top: 300px;
+		color: white;
+		p {
+			color: white;
+		}
+	}
+
+}
+
+.app-icon {
+	height: 100px;
+}
+
+#logo-header {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	height: 100px;
+	max-width: 400px;
+	margin: 0;
+
+	.app-icon {
+		display: inline-block;
+		vertical-align: top;
+		height: 120px;
+		padding: 20px;
+	}
+
+	.app-title-box {
+		display: inline-block;
+		vertical-align: top;
+		color: rgba(255,255,255,0.8);
+		padding-top: 20px;
+		.app-title {
+			font-weight: 100;
+			line-height: 15px;
+		}
+		.app-subtitle {
+			font-size: 1.6em;
+			font-weight: 100;
+			color: rgba(255,255,255,0.8);
+			letter-spacing: 0.3px;
+		}
+	}
+
+}
+	
+
+#meettrevor {
+	padding-top: 110px;
+	background-color: rgb(30,30,30);
+	color: white;
+	text-align: center;
+}
+
+#core-features {
+	.row-mid {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.feature-image {
+		height: 300px;
+	}
+}
+
+#howitworks {
+	background-color: darken(white, 10%);
+}
+
+#features {
+	text-align: center;
+	.row {
+		overflow-x: hidden;
+	}
+	.screenshot {
+		width: 15vw;
+		padding: 10px;
+		@media (max-width: 1200px) { width: 30vw; }
+		@media (max-width: 768px) { width: 90vw; }
+
+	}
+}
+
+@media (min-width: 768px) { }
+
+#cta {
+	background-color: rgb(30,30,30);
+	text-align: center;
+}
+
+#footer {
+	
+	a {
+		display: inline-block;
+		font-size: 1.2em;
+		font-weight: 300;
+		color: #00ccff;
+		padding: 0 30px;
+		margin-bottom: 15px;
+
+	}
+	
+}
