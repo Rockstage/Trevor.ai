@@ -4,6 +4,10 @@ html, body {
 
 }
 
+body {
+	font-family: 'Helvetica Neue', 'Roboto', Arial, sans-serif;
+}
+
 .dark-red {
 	color: #991A45;
 }
@@ -13,7 +17,6 @@ html, body {
 }
 
 h1 {
-
 	font-size: 3.5em;
 	font-weight: 200;
 }
@@ -39,6 +42,18 @@ p {
 	}
 }
 
+ul {
+	padding-bottom: 30px;
+	li {
+		font-size: 1.4em;
+		color: rgba(0,0,0,0.65);
+		font-weight: 300;
+	}
+}
+
+.gray {
+	color: gray;
+}
 
 
 .emphasize-color {
@@ -69,9 +84,14 @@ p {
 	height: 90%;
 	background-image: url(intro.jpg);
 	background-size: cover;
+	background-position: center;
+	max-height: 700px;
 	.row {
-		margin-top: 300px;
-		color: white;
+		margin-top: 120px;
+		color: rgba(0,0,0,0.75);
+		h1 {
+			font-size: 2.5em;
+		}
 		p {
 			color: white;
 		}
@@ -106,11 +126,12 @@ p {
 		.app-title {
 			font-weight: 100;
 			line-height: 15px;
+			color: black;
 		}
 		.app-subtitle {
-			font-size: 1.6em;
-			font-weight: 100;
-			color: rgba(255,255,255,0.8);
+			font-size: 1.3em;
+			font-weight: 200;
+			color: rgba(0,0,0,0.8);
 			letter-spacing: 0.3px;
 		}
 	}
@@ -123,6 +144,18 @@ p {
 	background-color: rgb(30,30,30);
 	color: white;
 	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#valueProposition {
+	h1 {
+		font-size: 3em;
+	}
+	h2 {
+		font-size: 2.2em;
+		font-weight: 200;
+	}
 }
 
 #core-features {
@@ -132,7 +165,10 @@ p {
 	}
 
 	.feature-image {
-		height: 300px;
+		height: 500px;
+	}
+	p {
+		margin-bottom: 30px;
 	}
 }
 
@@ -142,6 +178,11 @@ p {
 
 #features {
 	text-align: center;
+	background-color: rgb(30,30,30);
+	color: white;
+	hr {
+		border-top: 1px solid gray;
+	}
 	.row {
 		overflow-x: hidden;
 	}
@@ -159,6 +200,34 @@ p {
 #cta {
 	background-color: rgb(30,30,30);
 	text-align: center;
+
+}
+
+#outro {
+	height: 90%;
+	background-image: url(outro.jpg);
+	background-size: cover;
+	background-position: center;
+	max-height: 700px;
+	padding: 0;
+	.row {
+		height: 100%;
+		#download {
+			height: 100%;
+			color: black;
+			#mc_embed_signup {
+				height: 100%;
+				background-color: rgba(255,255,255,0.8);
+				form {
+					padding-top: 200px;
+					p {
+						color: black;
+					}
+				}
+			}
+		}
+	}
+
 }
 
 #footer {

@@ -3,36 +3,61 @@
 			<%= image_tag("app-icon.png", class: "app-icon") %>
 		<div class="app-title-box">
 			<h2 class="app-title">T R E V O R</h2>
-			<p class="app-subtitle">your personal assistant</p>
+			<p class="app-subtitle">your personal TimeKeeper</p>
 		</div>
 	</div>
+	
 	<div class="row hidden-xs" >
 		<div class="col-xs-7">
 		</div>
 		<div class="col-xs-5">
 			<!-- <h1 class="shadow">A new way to control chaos</h1> -->
-			<h1 class="shadow">More Productive. <br />Less Effort.</h1>
+			<!-- <h1 class="shadow">More Productive. <br />Less Effort.</h1> -->
+			<h1>Everybody needs a sidekick</h1>
+			
 			<!-- <p class="shadow">Taking our "beloved" TO-DOs to the next level</p> -->
-			<p class="shadow">Taking productivity a few years ahead<br />with the power of intelligent machines</p>
+			<!-- <p class="shadow">Taking productivity a few years ahead<br />with the power of intelligent machines</p> -->
+			<!-- <p class="shadow">Meet Trevor - your personal productivity assistant</p> -->
 			<br />
 		</div>
 	</div>
+	
 </div>
+
 
 <div id="meettrevor" class="container-fluid section background-image dark">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<p style="opacity: 0.3;"><span style="margin-left: 2px;">A.I.</span><br /><span class="glyphicon glyphicon-heart" aria-hidden="true"></span><br/>Time Management<br />= 
-				</p>
-			
 				<%= image_tag("app-icon.png", class: "app-icon visible-xs center-block") %>
 				<h2>Meet Trevor</h2>
-				<h3>your personal <span class="emphasize-color">productivity</span> assistant</h3>
+				<h3 class="emphasize-color">A powerful time management assistant</h3>
+				<h3>Designed to help you make time for the things that matter.</h3>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="valueProposition" class="container-fluid section background-image">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<%= image_tag("calendar.png", class: "feature-image center-block") %>
+			</div>
+			<div class="col-sm-6">
+				<br/>
+				<br/>
+				<h1>Trevor is a personal assistant disguised as a <span class="emphasize-color">calendar</span> app.</h1>
+				<br/>
+				<h2 class="gray">A calendar that listens, learns and adapts to you, helping you organize everything you do.</h2>
 				<br />
-				<br />
-				<br />
-				<p>Trevor is constantly learning new ways to make you more productive, so you don't have to!</p>
+				<% if false %>
+				<p class="">Trevor serves as a <span class="dark-red">calendar</span>, <span class="dark-red">todo list</span> and <span class="dark-red">habit tracker</span> at the same time. You can add your todos directly to your schedule among your other calendar events and recurring tasks. Doing so lets you plan your day in seconds.</p>
+				<p>You can easily <span class="dark-red">sync</span> your calendars, reminders and your favourite todo apps.</p>
+				<p>The more you use Trevor the better he becomes with organizing your todos, as well as <span class="dark-red">automatically</span> scheduling and rescheduling your tasks for you.</p>
+				
+				<p style="padding-top: 100px;">Trevor serves as a <span class="dark-red">calendar</span>, <span class="dark-red">todo list</span> and <span class="dark-red">habit tracker</span> at the same time. You can easily <span class="dark-red">sync</span> your calendars, reminders and your favourite todo apps, and plan your day in seconds. The more you use Trevor the better he becomes with organizing your todos, as well as <span class="dark-red">automatically</span> scheduling and rescheduling your tasks for you.</p>
+				<% end %>
 			</div>
 		</div>
 	</div>
@@ -43,8 +68,14 @@
 		<div class="row">
 			
 			<div class="col-sm-6">
-				<h1>A personalized schedule for you</h1>
-					<p>Trevor takes your <span class="dark-red">giant pile of Tasks and To-Dos</span> from your favourite apps, and creates a <span class="dark-red">smart, prioritized schedule</span> for your day. Just like Magic!</p>
+				<h1>Everything competing for your time, in one place.</h1>
+					<p>Create a system of living, containing everything competing for your time, so you can see a clear picture of your day.</p>
+					<ul>
+						<li>Scheduled events</li>
+						<li>Todos</li>
+						<li>Recurring tasks</li>
+						<li>Physical needs (food, sleep)</li>
+					</ul>
 			</div>
 			<div class="col-sm-6">
 				<%= image_tag("feature1.png", class: "feature-image center-block") %>
@@ -52,29 +83,40 @@
 		</div>
 		<div class="row row-mid">
 			<div class="col-sm-6">
-				<%= image_tag("feature1.png", class: "feature-image center-block") %>
+				<%= image_tag("feature2.png", class: "feature-image center-block") %>
 			</div>
 			<div class="col-sm-6">
-				<h1>On track with your goals</h1>
-				<p>Trevor cares about you and your goals. He will personally notify you about anything you need to know to keep on track. <span class="dark-red">Give your mind a rest and focus on the now</span>.</p>
+				<h1>Schedule your day <br/>in seconds.</h1>
+				<p>Trevor <span class="dark-red">syncs</span> with your calendars, reminders and todos and automatically organizes them in a Smart Inbox.</p>
+				<p>All you need to do is <span class="dark-red">drag & drop</span> them in your schedule (calendar). Done.</p>
+				<p>Starting your day with purpose goes a long way, and it <span class="dark-red">only takes a minute</span> a day.</p>
+				
+
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-6">
-				<h1>Communicate in Natural Language</h1>
-				<!-- 
-				<p>You can communicate back with Trevor using natural language. Tell him things like "I must walk the dog tomorrow morning" or "I want to watch the new Avengers movie next week" and he will make sure to add it to your schedule at the best time possible. You can also ask him stuff like "Show me work-related tasks for november 11th".</p> -->
-				<p>Tell Trevor whatever feels natural! <br />"<span class="dark-red">I've got a business meeting tomorrow at 8pm</span>" or <br />"<span class="dark-red">I want to watch the new Avengers movie next week</span>"<br/> and he will make sure to add it to your schedule at the best time possible. <br />
-				He can even help you find old tasks, you jast have to ask.</p>
-				<p>It really is that simple!</p>
+				<h1>Smart enough<br/>to be your sidekick.</h1>
+				<p>Trevor understands natural language. All you need to do is tell him what you need to get done and he'll make sure to add it to your schedule at the right time.</p>
+				<p>Trevor is smart enough to know whether you like to read books in the morning, and that grocery shopping after work takes you ~35 minutes. The more you do, the more he personalizes to you, making your schedules better and better.</p>
+				<p>Trevor will always keep you up to date with everything you need to get done using personal notifications.</p>
+
+				<% if false %>
+				<p>Something urgent comes up? Simply tell Trevor and he will find the best way to reschedule your day for you.</p>
+				<p>Tell Trevor whatever feels natural.<br />"<span class="dark-red">I've got a business meeting tomorrow at 8pm</span>" or <br />"<span class="dark-red">I want to watch the new Avengers movie next week</span>"<br/> and he will make sure to add it to your schedule at the best time possible. <br />
+				</p>
+				<p>Trevor is more than a voice interface - he is a companion. Trevor will personally notify you about everything you need to know so you can follow your goals and track of your progress.</p>
+				<p>Natural Language, Machine Learning, Notifications, Progress, Character.</p>
+				<% end %>
 			</div>
 			<div class="col-sm-6">
-				<%= image_tag("feature1.png", class: "feature-image center-block") %>
+				<%= image_tag("feature3.png", class: "feature-image center-block") %>
 			</div>
 		</div>
 	</div>
 </div>
 
+<% if false %>
 <div id="howitworks" class="container-fluid section background-image">
 	<div class="container">
 		<div class="row">
@@ -104,91 +146,88 @@
 				Changes in your schedule? No problem, Trevor will simply rebuild it! 
 				</p>
 			</div>
+		</div>
+	</div>
+</div>
+<% end %>
 
-			<!--
-				<ol>
-					<li>
-						<p>Sign up and sync the tasks and todos from your device (iCal, reminders) and your favourite apps (wunderlist, evernote, trello, jira, etc.). All of those tasks are stored in different lists in Trevor. You can also add custom lists for anything you want - personal, work, university, hobbies, startups, etc...</p>
-						<p>Sign up (icons), sync (icons), add custom list (plus icon) </p>
-					</li>
-					<br />
-					<li>
-						<p>
-							Trevor runs all of those tasks through a rather intelligent algorithm, running thousands of possible combinations, and learning from your personal habits, to generate a prioritized, balanced schedule for your day. He assigns todo's time, and instantly makes them actions for you to carry throughout your day. He will make mistakes ocassionally, but you can simply swipe or drag and drop to adjust. You have full control. 
-						</p>
-						<p>Task lists (icons), through cloud algo with text, to "my daily schedule"</p>
-					</li>
-					<br />
-					<li>
-						<p>
-							After your schedule is set and you approved it, he will intelligently keep you on track with your schedule using notifications at the right time, in the right place. Changes in your schedule? No problem, Trevor will simply rebuild it!
-						</p>
-					</li>
-				</ol>
-				<br />
-				<p>
-					Just. Like. Magic. All you have to do is add as many tasks as you want, but this time you will be less busy, less stressed, while achieving more!
-				</p>
-			-->
-			
+<div id="outro" class="container-fluid section section-top background-image dark">
+	<div class="row">
+		<div class="col-sm-7"></div>
+		<div id="download" class="col-sm-5">
+			<!-- Begin MailChimp Signup Form -->
+			<div id="mc_embed_signup">
+			<form action="//linkedin.us12.list-manage.com/subscribe/post?u=5418fe1e541a0e43db9c54656&amp;id=e1e62066d1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+			    <div id="mc_embed_signup_scroll">
+				<h1>Request Invite</h1>
+				<p>We will send you a download link shortly</p>
+			<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+			<div class="mc-field-group">
+				<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+			</label>
+				<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+			</div>
+				<div id="mce-responses" class="clear">
+					<div class="response" id="mce-error-response" style="display:none"></div>
+					<div class="response" id="mce-success-response" style="display:none"></div>
+				</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+			    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5418fe1e541a0e43db9c54656_e1e62066d1" tabindex="-1" value=""></div>
+			    <div class="clear"><input type="submit" value="Get Trevor" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+			    </div>
+			</form>
+			</div>
+			<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+			<!--End mc_embed_signup-->
 		</div>
 	</div>
 </div>
 
-<div id="features" class="container-fluid section background-image">
-		<div class="row">
-			<div class="col-xs-12 text-center">
-				<h1>A modern, fresh look any day of the calendar</h1>
-				<br />
-				<p>Trevor's User Interface was designed with simplicity and productivity in mind. Do in seconds and enjoy the rest of your day.</p>
-				<hr style="margin: 50px 0" />
-			</div>
-
-			<div class="col-sm-4 col-md-4 col-lg-2">
-				<%= image_tag("screenshot1", class: "screenshot") %>
-			</div>
-			<div class="col-sm-4 col-md-4 col-lg-2">
-				<%= image_tag("screenshot1", class: "screenshot") %>
-			</div>
-			<div class="col-sm-4 col-md-4 col-lg-2">
-				<%= image_tag("screenshot1", class: "screenshot") %>
-			</div>
-			<div class="col-sm-4 col-md-4 col-lg-2 hidden-xs">
-				<%= image_tag("screenshot1", class: "screenshot") %>
-			</div>
-			<div class="col-sm-4 col-md-4 col-lg-2 hidden-xs">
-				<%= image_tag("screenshot1", class: "screenshot") %>
-			</div>
-			<div class="col-sm-4 col-md-4 col-lg-2 hidden-xs">
-				<%= image_tag("screenshot1", class: "screenshot") %>
-			</div>
-
+<% if false %>
+<div id="features" class="container-fluid section background-image dark">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<h1>A modern, fresh look any day of the calendar</h1>
+			<br />
+			<p>Trevor's User Interface was designed with simplicity and productivity in mind. Do in seconds and enjoy the rest of your day.</p>
+			<hr style="margin: 50px 0" />
 		</div>
 
+		<div class="col-sm-4 col-md-4 col-lg-2">
+			<%= image_tag("screenshot1", class: "screenshot") %>
+		</div>
+		<div class="col-sm-4 col-md-4 col-lg-2">
+			<%= image_tag("screenshot2", class: "screenshot") %>
+		</div>
+		<div class="col-sm-4 col-md-4 col-lg-2">
+			<%= image_tag("screenshot3", class: "screenshot") %>
+		</div>
+		<div class="col-sm-4 col-md-4 col-lg-2 hidden-xs">
+			<%= image_tag("screenshot4", class: "screenshot") %>
+		</div>
+		<div class="col-sm-4 col-md-4 col-lg-2 hidden-xs">
+			<%= image_tag("screenshot5", class: "screenshot") %>
+		</div>
+		<div class="col-sm-4 col-md-4 col-lg-2 hidden-xs">
+			<%= image_tag("screenshot6", class: "screenshot") %>
+		</div>
+	</div>
 </div>
+<% end %>
 
 <div id="cta" class="container-fluid section background-image dark">
 	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<h1>Download now for iOS, it's free!</h1>
-				<p>Trevor is due to release on all major platforms in the following months.</p>
-				<p>Subscribe to stay tuned!</p>
-				<br />
-				<br />
-				
-				<h2>{Add sections for: mailing list subscription, social links, twitter feed, disquss, blog, testimonials, appstore buttons, the team? }</h2>
-				
-				<div id="footer">
-					<hr style="border: 1px solid rgba(255,255,255,0.15); margin: 50px 0;" />
-					<%= link_to "contact us", "#" %> 
-					<%= link_to "terms of use", "#" %> 
-					<%= link_to "privacy policy", "#" %> 
-					<br />
-					<p>&copy; Trevor Labs ltd. 2015</p>
-				</div>
-
-			</div>
+		<div id="footer">
+			<% if false %>
+			<%= link_to "Facebook", "#" %> 
+			<%= link_to "Twitter", "#" %> 
+			<%= link_to "YouTube", "#" %> 
+			<% end %>
+			<hr style="border: 1px solid rgba(255,255,255,0.15); margin: 50px 0;" />
+			<%= link_to "contact us", "mailto:george@trevorlabs.com" %> 
+			<%= link_to "terms of use", "#" %> 
+			<%= link_to "privacy policy", "#" %> 
+			<br />
+			<p>&copy; Trevor Labs ltd. 2016</p>
 		</div>
 	</div>
 </div>
