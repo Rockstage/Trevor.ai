@@ -81,12 +81,10 @@ ul {
 }
 
 #intro {
-	height: 90%;
+	height: 700px;
 	background-image: image-url("intro.jpg");
 	background-size: cover;
 	background-position: center;
-	min-height: 500px;
-	max-height: 700px;
 	.row {
 		margin-top: 120px;
 		color: rgba(0,0,0,0.75);
