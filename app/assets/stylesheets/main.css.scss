@@ -82,7 +82,7 @@ ul {
 
 #intro {
 	height: 90%;
-	background-image: url(intro.jpg);
+	background-image: image-url("intro.jpg");
 	background-size: cover;
 	background-position: center;
 	max-height: 700px;
@@ -205,7 +205,7 @@ ul {
 
 #outro {
 	height: 90%;
-	background-image: url(outro.jpg);
+	background-image: image-url("outro.jpg");
 	background-size: cover;
 	background-position: center;
 	max-height: 700px;
