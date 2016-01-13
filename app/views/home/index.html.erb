@@ -153,8 +153,8 @@
 
 <div id="outro" class="container-fluid section section-top background-image dark">
 	<div class="row">
-		<div class="col-sm-7"></div>
-		<div id="download" class="col-sm-5">
+		
+		<div id="download" class="col-sm-12">
 			<!-- Begin MailChimp Signup Form -->
 			<div id="mc_embed_signup">
 			<form action="//linkedin.us12.list-manage.com/subscribe/post?u=5418fe1e541a0e43db9c54656&amp;id=e1e62066d1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -217,15 +217,17 @@
 <div id="cta" class="container-fluid section background-image dark">
 	<div class="container">
 		<div id="footer">
-			<% if false %>
-			<%= link_to "Facebook", "#" %> 
-			<%= link_to "Twitter", "#" %> 
-			<%= link_to "YouTube", "#" %> 
-			<% end %>
+			<p>Follow us now and win early backer perks and rewards!</p>
+			<br />
+			<%= link_to "Facebook", "https://www.facebook.com/trevorlabs/", target: "_blank" %> 
+			<%= link_to "Twitter", "https://twitter.com/TrevorLabs", target: "_blank" %> 
+			<%= link_to "Google+", "https://plus.google.com/105610910219825999607", target: "_blank" %>
 			<hr style="border: 1px solid rgba(255,255,255,0.15); margin: 50px 0;" />
 			<%= link_to "contact us", "mailto:george@trevorlabs.com" %> 
+			<% if false %>
 			<%= link_to "terms of use", "#" %> 
 			<%= link_to "privacy policy", "#" %> 
+			<% end %>
 			<br />
 			<p>&copy; Trevor Labs ltd. 2016</p>
 		</div>
