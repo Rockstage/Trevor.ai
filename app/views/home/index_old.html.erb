@@ -1,96 +1,51 @@
-<div id="intro" class="container-fluid section section-top dark">
-	<div class="row">
-
-		<h3>The smartest way to schedule your day</h3>
-	
-	</div>
-	
-</div>
-
-<% if false %>
-
-<% end %>
-
-
-<div id="demo" class="container-fluid">
-
-	<div class="container"></div>
-
-		<div class="row">
-
-			<div class="col-md-4 schedule">
-				
-				<h1>This is your <span class="dark-blue">schedule</span> for today</h1>
-				<p>It syncs with your calendars</p>
-				
-
-			</div>
-			<div class="col-md-4">
-				<div class="mockup">
-					<div class="placeholder">
-						<%= image_tag("iPhoneMockup.png", class: "iPhoneMockup") %>
-						<%= image_tag("arrowRight.png", class: "arrowRight") %>
-						<%= image_tag("arrowLeft.png", class: "arrowLeft") %>
-					</div>
-					<div class="demoVideo">
-						<% if true %>
-						<iframe width="326" height="580" src="https://www.youtube.com/embed/NwFphWk3w7g?autoplay=1&controls=0&showinfo=0&loop=1&playlist=NwFphWk3w7g" frameborder="0" autohide="1"></iframe>
-						<% end %>
-					</div>
-					<h2 class="text-center">Drag. Drop. Done.</h2>
-				</div>
-
-			</div>
-			<div class="col-md-4 todo">
-				
-				
-				<h1>Those are your <span class="dark-blue">todos</span></h1>
-				<p>They sync with your todo lists</p>
-				
-			</div>
-
+<div id="intro" class="container-fluid section section-top background-image hidden-xs dark">
+	<div id="logo-header">
+			<%= image_tag("app-icon.png", class: "app-icon") %>
+		<div class="app-title-box">
+			<h2 class="app-title">T R E V O R</h2>
+			<p class="app-subtitle">your personal TimeKeeper</p>
 		</div>
-
 	</div>
-
+	
+	<div class="row hidden-xs" >
+		<div class="col-xs-7">
+		</div>
+		<div class="col-xs-5">
+			<% if false %>
+			<h1>Take control of your day,<br/>to get control of your life.</h1>
+			<% end %>
+			<h1>The smartest way<br/>to schedule your day</h1>
+			
+		</div>
+	</div>
+	
 </div>
 
 
-<div id="meettrevor" class="container-fluid section background-image dark bluebg">
+<div id="meettrevor" class="container-fluid section background-image dark">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
 				<%= image_tag("app-icon.png", class: "app-icon visible-xs center-block") %>
-				<h1>Meet Trevor</h1>
-				<h2>A calendar with character</h2>
-				<br/>
-				<h3>Actually, Trevor is an intelligent time management assistant,<br/> designed to help you make the most out of your day.</h3>
-				<p></p>
+				<h2>Meet Trevor</h2>
+				<% if false %>
+				<h3 class="emphasize-color">A powerful time management assistant</h3>
+				<h3>Designed to help you make time for the things that matter.</h3>
+				<% end %>
+				<h3 class="emphasize-color">A calendar with character</h3>
 			</div>
 		</div>
 	</div>
 </div>
 
-
-<% if false %>
 <div id="valueProposition" class="container-fluid section background-image">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4">
-				<br/>
-				<br/>
-				<h1>Trevor is a personal assistant disguised as a <span class="emphasize-color">calendar</span> app.</h1>
-				<br/>
-				<h2 class="gray">A calendar that listens, learns and adapts to you, helping you organize everything you do.</h2>
-				<br />
+			<% if false %>
+			<div class="col-sm-6">
+				<%= image_tag("calendar.png", class: "feature-image center-block") %>
 			</div>
-			<div class="col-sm-4">
-				<div id="demo">
-				<%= image_tag("iPhoneMockup.png", class: "feature-image center-block") %>
-				<iframe width="392" height="700" src="https://www.youtube.com/embed/NwFphWk3w7g?autoplay=1&controls=0&showinfo=0&loop=1&playlist=NwFphWk3w7g" frameborder="0" autohide="1"></iframe>
-				</div>
-			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-6">
 				<br/>
 				<br/>
 				<h1>Trevor is a personal assistant disguised as a <span class="emphasize-color">calendar</span> app.</h1>
@@ -105,10 +60,22 @@
 				<p style="padding-top: 100px;">Trevor serves as a <span class="dark-red">calendar</span>, <span class="dark-red">todo list</span> and <span class="dark-red">habit tracker</span> at the same time. You can easily <span class="dark-red">sync</span> your calendars, reminders and your favourite todo apps, and plan your day in seconds. The more you use Trevor the better he becomes with organizing your todos, as well as <span class="dark-red">automatically</span> scheduling and rescheduling your tasks for you.</p>
 				<% end %>
 			</div>
+			<% end %>
+			<div class="col-sm-6">
+				<% if false %>
+				<iframe src="https://popapp.in/w/projects/568adcc294b228257b559f6d/embedded" width="475" height="1007" frameborder="0" allowTransparency="true"></iframe>
+				<% end %>
+				<iframe width="540" height="961" src="https://www.youtube.com/embed/NwFphWk3w7g?autoplay=1&controls=0&showinfo=0&loop=1&playlist=NwFphWk3w7g" frameborder="0" autohide="1"></iframe>
+			</div>
+			<div class="col-sm-6">
+				<h1>Actually, Trevor is an <span class="emphasize-color">intelligent time management assistant</span> designed to help you make the most out of your day.</h1>
+				<br/>
+				<h2>In 3 simple steps, Trevor will empower you to take control of your day, and write your own path.</h2>
+				<h2></h2>
+			</div>
 		</div>
 	</div>
 </div>
-<% end %>
 
 <div id="core-features" class="container-fluid section background-image">
 	<div class="container">
