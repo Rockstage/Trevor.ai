@@ -102,8 +102,6 @@ ul {
 
 
 
-
-
 #intro {
 	height: 700px;
 	background-image: image-url("intro2.png");
@@ -251,16 +249,72 @@ ul {
 }
 
 #core-features {
-	.row-mid {
-		padding-top: 100px;
-		padding-bottom: 100px;
+	padding-top: 0;
+	.background-image {
+		position: relative;
+		background-size: cover;
+		background-position: center;
+		height: 400px;
 	}
+	.connected {
+		background-image: image-url("connected.jpg");
+	}
+	.intuitive {
+		background-image: image-url("intuitive.jpg");
+	}
+	.intelligent {
+		background-image: image-url("intelligent.jpg");
+	}
+	.row > div {
+		position: absolute;
+		bottom: 0;
+		padding: 140px 50px 50px 50px;
+	}
+}
 
-	.feature-image {
-		height: 500px;
-	}
-	p {
-		margin-bottom: 30px;
+#signup {
+	#download {
+		padding: 0;
+		#mc_embed_signup {
+			height: 100%;
+			background-color: rgba(255,255,255,0);
+			form {
+				padding-left: 0;
+				#mce-EMAIL {
+					margin-top: 50px;
+					background-color: rgba(255,255,255,0);
+					border: none;
+					border-bottom: 1px solid white;
+					font-size: 2em;
+					font-weight: 200;
+				}
+				.button {
+					width: 100%;
+					height: 50px;
+					background-color: rgba(255,255,255,0);
+					border: 1px solid white;
+					color: white;
+					text-transform: uppercase;
+					&:hover {
+						background-color: rgba(255,255,255,0.1);
+					}
+				}
+				.mce_inline_error {
+					background: none;
+					color: white;
+				}
+				.mce-responses * {
+					background: none;
+					color: white !important;
+				}
+				.indicates-required {
+					display: none;
+				}
+				.mc-field-group label {
+					display: none;
+				}
+			}
+		}
 	}
 }
 
@@ -296,7 +350,7 @@ ul {
 }
 
 #outro {
-	height: 700px;
+	height: 500px;
 	background-image: image-url("outro.jpg");
 	background-size: cover;
 	background-position: center;
@@ -312,7 +366,7 @@ ul {
 				height: 100%;
 				background-color: rgba(255,255,255,0.8);
 				form {
-					padding-top: 200px;
+					padding-top: 100px;
 					p {
 						color: black;
 					}

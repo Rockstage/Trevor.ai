@@ -1,7 +1,7 @@
 <div id="intro" class="container-fluid section section-top dark">
 	<div class="row">
 
-		<h3>The smartest way to schedule your day</h3>
+		<h3 class="animated fadeInUp">The smartest way to schedule your day</h3>
 	
 	</div>
 	
@@ -14,19 +14,18 @@
 
 <div id="demo" class="container-fluid">
 
-	<div class="container"></div>
 
 		<div class="row">
 
-			<div class="col-md-4 schedule">
+			<div class="col-md-4 hidden-sm hidden-xs schedule animated fadeInLeft">
 				
-				<h1>This is your <span class="dark-blue">schedule</span> for today</h1>
+				<h1>This is your <span class="dark-blue">schedule</span></h1>
 				<p>It syncs with your calendars</p>
 				
 
 			</div>
 			<div class="col-md-4">
-				<div class="mockup">
+				<div class="mockup animated fadeInUp">
 					<div class="placeholder">
 						<%= image_tag("iPhoneMockup.png", class: "iPhoneMockup") %>
 						<%= image_tag("arrowRight.png", class: "arrowRight") %>
@@ -41,7 +40,7 @@
 				</div>
 
 			</div>
-			<div class="col-md-4 todo">
+			<div class="col-md-4 hidden-sm hidden-xs todo animated fadeInRight">
 				
 				
 				<h1>Those are your <span class="dark-blue">todos</span></h1>
@@ -56,7 +55,7 @@
 </div>
 
 
-<div id="meettrevor" class="container-fluid section background-image dark bluebg">
+<div id="meettrevor" class="container-fluid section dark bluebg">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
@@ -72,194 +71,63 @@
 </div>
 
 
-<% if false %>
-<div id="valueProposition" class="container-fluid section background-image">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<br/>
-				<br/>
-				<h1>Trevor is a personal assistant disguised as a <span class="emphasize-color">calendar</span> app.</h1>
-				<br/>
-				<h2 class="gray">A calendar that listens, learns and adapts to you, helping you organize everything you do.</h2>
-				<br />
-			</div>
-			<div class="col-sm-4">
-				<div id="demo">
-				<%= image_tag("iPhoneMockup.png", class: "feature-image center-block") %>
-				<iframe width="392" height="700" src="https://www.youtube.com/embed/NwFphWk3w7g?autoplay=1&controls=0&showinfo=0&loop=1&playlist=NwFphWk3w7g" frameborder="0" autohide="1"></iframe>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<br/>
-				<br/>
-				<h1>Trevor is a personal assistant disguised as a <span class="emphasize-color">calendar</span> app.</h1>
-				<br/>
-				<h2 class="gray">A calendar that listens, learns and adapts to you, helping you organize everything you do.</h2>
-				<br />
-				<% if false %>
-				<p class="">Trevor serves as a <span class="dark-red">calendar</span>, <span class="dark-red">todo list</span> and <span class="dark-red">habit tracker</span> at the same time. You can add your todos directly to your schedule among your other calendar events and recurring tasks. Doing so lets you plan your day in seconds.</p>
-				<p>You can easily <span class="dark-red">sync</span> your calendars, reminders and your favourite todo apps.</p>
-				<p>The more you use Trevor the better he becomes with organizing your todos, as well as <span class="dark-red">automatically</span> scheduling and rescheduling your tasks for you.</p>
-				
-				<p style="padding-top: 100px;">Trevor serves as a <span class="dark-red">calendar</span>, <span class="dark-red">todo list</span> and <span class="dark-red">habit tracker</span> at the same time. You can easily <span class="dark-red">sync</span> your calendars, reminders and your favourite todo apps, and plan your day in seconds. The more you use Trevor the better he becomes with organizing your todos, as well as <span class="dark-red">automatically</span> scheduling and rescheduling your tasks for you.</p>
-				<% end %>
-			</div>
-		</div>
-	</div>
-</div>
-<% end %>
 
-<div id="core-features" class="container-fluid section background-image">
-	<div class="container">
-		<div class="row">
-			
-			<div class="col-sm-6">
-				<h1>Everything competing for your time, in one place.</h1>
-					<p>Create a system of living, containing everything competing for your time, so you can see a clear picture of your day.</p>
-					<ul>
-						<li>Scheduled events</li>
-						<li>Todos</li>
-						<li>Recurring tasks</li>
-						<li>Physical needs (food, sleep)</li>
-					</ul>
-			</div>
-			<div class="col-sm-6">
-				<%= image_tag("feature1.png", class: "feature-image center-block") %>
+<div id="core-features" class="container-fluid">
+		<div class="row background-image connected">
+			<div>
+				<h1 class="dark-blue">Connected</h1>
+				<p>Trevor syncs with lots of amazing apps, such as Todoist, Wunderlist, Trello, Evernote and Pocket, so you can schedule everything you do, in one simple place.</p>
 			</div>
 		</div>
-		<div class="row row-mid">
-			<div class="col-sm-6">
-				<%= image_tag("feature2.png", class: "feature-image center-block") %>
-			</div>
-			<div class="col-sm-6">
-				<h1>Schedule your day <br/>in seconds.</h1>
-				<p>Trevor <span class="dark-red">syncs</span> with your calendars, reminders and todos and automatically organizes them in a Smart Inbox.</p>
-				<p>All you need to do is <span class="dark-red">drag & drop</span> them in your schedule (calendar). Done.</p>
-				<p>Starting your day with purpose goes a long way, and it <span class="dark-red">only takes a minute</span> a day.</p>
-				
-
+		<div class="row background-image intuitive">
+			<div>
+				<h1 class="dark-blue">Intuitive</h1>
+				<p>Trevor's interface is incredibly intuitive, allowing you to plan your day with just a few swipes. The more you use it, the smarter it gets.</p>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-6">
-				<h1>Smart enough<br/>to be your sidekick.</h1>
-				<p>Trevor understands natural language. All you need to do is tell him what you need to get done and he'll make sure to add it to your schedule at the right time.</p>
-				<p>Trevor is smart enough to know whether you like to read books in the morning, and that grocery shopping after work takes you ~35 minutes. The more you do, the more he personalizes to you, making your schedules better and better.</p>
-				<p>Trevor will always keep you up to date with everything you need to get done using personal notifications.</p>
-
-				<% if false %>
-				<p>Something urgent comes up? Simply tell Trevor and he will find the best way to reschedule your day for you.</p>
-				<p>Tell Trevor whatever feels natural.<br />"<span class="dark-red">I've got a business meeting tomorrow at 8pm</span>" or <br />"<span class="dark-red">I want to watch the new Avengers movie next week</span>"<br/> and he will make sure to add it to your schedule at the best time possible. <br />
-				</p>
-				<p>Trevor is more than a voice interface - he is a companion. Trevor will personally notify you about everything you need to know so you can follow your goals and track of your progress.</p>
-				<p>Natural Language, Machine Learning, Notifications, Progress, Character.</p>
-				<% end %>
-			</div>
-			<div class="col-sm-6">
-				<%= image_tag("feature3.png", class: "feature-image center-block") %>
+		<div class="row background-image intelligent">
+			<div>
+				<h1 class="dark-blue">Intelligent</h1>
+				<p>In the end of the day, Trevor is like a personal assistant. He understands natural language. He learns about your lifestyle. He maintains your schedule. All so you can live a better day.</p>
 			</div>
 		</div>
-	</div>
 </div>
 
-<% if false %>
-<div id="howitworks" class="container-fluid section background-image">
+
+<div id="signup" class="container-fluid section dark bluebg">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12">
-				<h1 class="text-center">How it works</h1>
-				<h3 class="text-center">and how to <span class="dark-red">get started</span> in 3 easy steps</h3>
-				<hr style="border: 1px solid rgba(0,0,0,0.15); margin: 50px 0;" />
-			</div>
-			<div class="col-sm-4">
-				<p>1. <span class="dark-red">Sign Up and Sync</span> tasks from your device and your favourite apps<br />
-					<span class="sub-text">(iCal, Reminders, Wunderlist, Evernote, Trello, Jira, etc.)</span><br />
-					<br />
-					You can also <span class="dark-red">add custom lists</span> and add todo's there, without leaving the app.<br />
-					<span class="sub-text">(eg. personal, work, university, startup, project, hobby, etc.)</span>
-				</p>
-			</div>
-			<div class="col-sm-4">
-				<p>2. <span class="dark-red">Trevor runs all of those tasks</span> through a rather intelligent algorithm, running thousands of possible combinations to generate the most efficient, prioritized, and balanced schedule for your day.<br />
-				<br />
-				He does the math, so you don't have to.
-
-				</p>
-			</div>
-			<div class="col-sm-4">
-				<p>3. <span class="dark-red">After your schedule is set and reviewed</span> by you, he will intelligently keep you on track using personalized notifications.<br />
-				<br />
-				Changes in your schedule? No problem, Trevor will simply rebuild it! 
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
-<% end %>
-
-<div id="outro" class="container-fluid section section-top background-image dark">
-	<div class="row">
-		
-		<div id="download" class="col-sm-12">
+			<div id="download" class="col-md-4">
 			<!-- Begin MailChimp Signup Form -->
-			<div id="mc_embed_signup">
-			<form action="//linkedin.us12.list-manage.com/subscribe/post?u=5418fe1e541a0e43db9c54656&amp;id=e1e62066d1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-			    <div id="mc_embed_signup_scroll">
-				<h1>Request Invite</h1>
-				<p>We will send you a download link shortly</p>
-			<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-			<div class="mc-field-group">
-				<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-			</label>
-				<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-			</div>
-				<div id="mce-responses" class="clear">
-					<div class="response" id="mce-error-response" style="display:none"></div>
-					<div class="response" id="mce-success-response" style="display:none"></div>
-				</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-			    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5418fe1e541a0e43db9c54656_e1e62066d1" tabindex="-1" value=""></div>
-			    <div class="clear"><input type="submit" value="Get Trevor" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-			    </div>
-			</form>
-			</div>
-			<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+				<div id="mc_embed_signup">
+				<form action="//linkedin.us12.list-manage.com/subscribe/post?u=5418fe1e541a0e43db9c54656&amp;id=e1e62066d1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				    <div id="mc_embed_signup_scroll">
+					<h1>Request Invite</h1>
+					<p>We will send you a download link shortly</p>
+				<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+				<div class="mc-field-group">
+					<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+				</label>
+					<input type="email" value="" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL">
+				</div>
+					<div id="mce-responses" class="clear">
+						<div class="response" id="mce-error-response" style="display:none"></div>
+						<div class="response" id="mce-success-response" style="display:none"></div>
+					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5418fe1e541a0e43db9c54656_e1e62066d1" tabindex="-1" value=""></div>
+				    <div class="clear"><input type="submit" value="Get Trevor" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+				    </div>
+				</form>
+				</div>
+				<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 			<!--End mc_embed_signup-->
+			</div>
+			<div class="col-md-8"></div>
 		</div>
+
 	</div>
 </div>
 
-<% if false %>
-<div id="features" class="container-fluid section background-image dark">
-	<div class="row">
-		<div class="col-xs-12 text-center">
-			<h1>A modern, fresh look any day of the calendar</h1>
-			<br />
-			<p>Trevor's User Interface was designed with simplicity and productivity in mind. Do in seconds and enjoy the rest of your day.</p>
-			<hr style="margin: 50px 0" />
-		</div>
-
-		<div class="col-sm-4 col-md-4 col-lg-2">
-			<%= image_tag("screenshot1", class: "screenshot") %>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-2">
-			<%= image_tag("screenshot2", class: "screenshot") %>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-2">
-			<%= image_tag("screenshot3", class: "screenshot") %>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-2 hidden-xs">
-			<%= image_tag("screenshot4", class: "screenshot") %>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-2 hidden-xs">
-			<%= image_tag("screenshot5", class: "screenshot") %>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-2 hidden-xs">
-			<%= image_tag("screenshot6", class: "screenshot") %>
-		</div>
-	</div>
-</div>
-<% end %>
 
 <div id="cta" class="container-fluid section background-image dark">
 	<div class="container">
@@ -270,10 +138,13 @@
 			<%= link_to "Twitter", "https://twitter.com/TrevorLabs", target: "_blank" %> 
 			<%= link_to "Google+", "https://plus.google.com/105610910219825999607", target: "_blank" %>
 			<hr style="border: 1px solid rgba(255,255,255,0.15); margin: 50px 0;" />
-			<%= link_to "contact us", "mailto:george@trevorlabs.com" %> 
+			<%= link_to "contact us", "mailto:george@trevorlabs.com" %>  · 
+			<a href="//www.iubenda.com/privacy-policy/7790939" class="iubenda-nostyle no-brand iubenda-embed" title="Privacy Policy">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>  · 
+			<a href="#" data-toggle="modal" data-target="#TermsAndConditions">Terms and Conditions</a>
 			<% if false %>
 			<%= link_to "terms of use", "#" %> 
 			<%= link_to "privacy policy", "#" %> 
+
 			<% end %>
 			<br />
 			<p>&copy; Trevor Labs ltd. 2016</p>
