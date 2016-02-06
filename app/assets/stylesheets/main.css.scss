@@ -167,6 +167,9 @@ ul {
 #demo {
 	.schedule {
 		padding-top: 180px;
+		@media (max-width: 1200px) { 
+			font-size: 0.8em;
+		}
 	}	
 	.mockup {
 		position: relative;
@@ -203,6 +206,10 @@ ul {
 	}
 	.todo {
 		padding-top: 180px;
+		@media (max-width: 1200px) { 
+			padding-left: 100px;
+			font-size: 0.8em;
+		}
 	}
 }
 
