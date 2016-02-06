@@ -7,47 +7,39 @@
 	
 </div>
 
-<% if false %>
-
-<% end %>
-
-
 <div id="demo" class="container-fluid">
 
+	<div class="row">
 
-		<div class="row">
+		<div class="col-md-4 hidden-sm hidden-xs schedule animated fadeInLeft">
+			
+			<h1>This is your <span class="dark-blue">schedule</span></h1>
+			<p>It syncs with your calendars</p>
+			
 
-			<div class="col-md-4 hidden-sm hidden-xs schedule animated fadeInLeft">
-				
-				<h1>This is your <span class="dark-blue">schedule</span></h1>
-				<p>It syncs with your calendars</p>
-				
-
-			</div>
-			<div class="col-md-4">
-				<div class="mockup animated fadeInUp">
-					<div class="placeholder">
-						<%= image_tag("iPhoneMockup.png", class: "iPhoneMockup") %>
-						<%= image_tag("arrowRight.png", class: "arrowRight") %>
-						<%= image_tag("arrowLeft.png", class: "arrowLeft") %>
-					</div>
-					<div class="demoVideo">
-						<% if true %>
-						<iframe width="326" height="580" src="https://www.youtube.com/embed/NwFphWk3w7g?autoplay=1&controls=0&showinfo=0&loop=1&playlist=NwFphWk3w7g" frameborder="0" autohide="1"></iframe>
-						<% end %>
-					</div>
-					<h2 class="text-center">Drag. Drop. Done.</h2>
+		</div>
+		<div class="col-md-4">
+			<div class="mockup animated fadeInUp">
+				<div class="placeholder">
+					<%= image_tag("iPhoneMockup.png", class: "iPhoneMockup") %>
+					<%= image_tag("arrowRight.png", class: "arrowRight") %>
+					<%= image_tag("arrowLeft.png", class: "arrowLeft") %>
 				</div>
-
-			</div>
-			<div class="col-md-4 hidden-sm hidden-xs todo animated fadeInRight">
-				
-				
-				<h1>Those are your <span class="dark-blue">todos</span></h1>
-				<p>They sync with your todo lists</p>
-				
+				<div class="demoVideo">
+					<% if true %>
+					<iframe width="326" height="580" src="https://www.youtube.com/embed/NwFphWk3w7g?autoplay=1&controls=0&showinfo=0&loop=1&playlist=NwFphWk3w7g" frameborder="0" autohide="1"></iframe>
+					<% end %>
+				</div>
+				<h2 class="text-center">Drag. Drop. Done.</h2>
 			</div>
 
+		</div>
+		<div class="col-md-4 hidden-sm hidden-xs todo animated fadeInRight">
+			
+			
+			<h1>Those are your <span class="dark-blue">todos</span></h1>
+			<p>They sync with your todo lists</p>
+			
 		</div>
 
 	</div>
@@ -119,7 +111,7 @@
 				    </div>
 				</form>
 				</div>
-				<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+				
 			<!--End mc_embed_signup-->
 			</div>
 			<div class="col-md-8"></div>
@@ -139,7 +131,8 @@
 			<%= link_to "Google+", "https://plus.google.com/105610910219825999607", target: "_blank" %>
 			<hr style="border: 1px solid rgba(255,255,255,0.15); margin: 50px 0;" />
 			<%= link_to "contact us", "mailto:george@trevorlabs.com" %>  · 
-			<a href="//www.iubenda.com/privacy-policy/7790939" class="iubenda-nostyle no-brand iubenda-embed" title="Privacy Policy">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>  · 
+			<a href="//www.iubenda.com/privacy-policy/7790939" class="iubenda-nostyle no-brand iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+			  · 
 			<a href="#" data-toggle="modal" data-target="#TermsAndConditions">Terms and Conditions</a>
 			<% if false %>
 			<%= link_to "terms of use", "#" %> 
