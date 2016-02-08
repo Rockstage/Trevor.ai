@@ -103,24 +103,21 @@ ul {
 
 
 #intro {
-	height: 700px;
-	background-image: image-url("intro2.png");
-	background-size: cover;
-	background-position: center;
-	background-color: rgb(30,30,30);
+	height: 600px;
 	color: white;
 	text-align: center;
 	padding-top: 50px;
 	padding-bottom: 50px;
 
 	.row {
-		margin-top: 450px;
-		h1 {
-			font-size: 2.5em;
-			
+
+		.logo {
+			width: 300px;
+			margin-top: 120px;
 		}
-		p {
-			color: white;
+
+		h3 {
+			margin-top: 50px;
 		}
 	}
 }
@@ -129,40 +126,6 @@ ul {
 	height: 100px;
 }
 
-#logo-header {
-	position: absolute !important;
-	left: 0;
-	top: 0;
-	height: 100px;
-	max-width: 400px;
-	margin: 0;
-
-	.app-icon {
-		display: inline-block;
-		vertical-align: top;
-		height: 120px;
-		padding: 20px;
-	}
-
-	.app-title-box {
-		display: inline-block;
-		vertical-align: top;
-		color: rgba(255,255,255,0.8);
-		padding-top: 20px;
-		.app-title {
-			font-weight: 100;
-			line-height: 15px;
-			color: black;
-		}
-		.app-subtitle {
-			font-size: 1.3em;
-			font-weight: 200;
-			color: rgba(0,0,0,0.8);
-			letter-spacing: 0.3px;
-		}
-	}
-
-}
 	
 #demo {
 	.schedule {
