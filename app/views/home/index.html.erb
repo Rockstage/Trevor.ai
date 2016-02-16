@@ -13,13 +13,13 @@
 	<div class="row">
 
 		<div class="col-md-4 hidden-sm hidden-xs schedule animated fadeInLeft">
-			
-			<h1>This is your <span class="dark-blue">schedule</span></h1>
-			<p>It syncs with your calendars</p>
-			
+			<div align="right">
+				<h1>This is your <span class="dark-blue">schedule</span></h1>
+				<p>It syncs with your calendars</p>
+			</div>
 
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 hidden-sm hidden-xs">
 			<div class="mockup animated fadeInUp">
 				<div class="placeholder">
 					<%= image_tag("iPhoneMockup.png", class: "iPhoneMockup", alt: "iPhone Mockup") %>
@@ -27,14 +27,27 @@
 					<%= image_tag("arrowLeft.png", class: "arrowLeft", alt: "Arrow pointing left") %>
 				</div>
 				<div class="demoVideo">
+					<iframe width="326" height="580" src="https://www.youtube.com/embed/NwFphWk3w7g?vq=hd720&autoplay=1&controls=0&showinfo=0&loop=1&playlist=NwFphWk3w7g" frameborder="0" autohide="1"></iframe>
+				</div>
+				<h2 class="text-center">Drag. Drop. Done.</h2>
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-xs-12 hidden-md hidden-lg">
+			<div class="mockup animated fadeInUp">
+				<div class="placeholder">
+					<%= image_tag("iPhoneMockup.png", class: "iPhoneMockup ", alt: "iPhone Mockup") %>
+				</div>
+				<div class="demoVideo">
 					<% if true %>
-					<iframe width="326" height="580" src="https://www.youtube.com/embed/NwFphWk3w7g?autoplay=1&controls=0&showinfo=0&loop=1&playlist=NwFphWk3w7g" frameborder="0" autohide="1"></iframe>
+					<iframe width="224" height="399" src="https://www.youtube.com/embed/NwFphWk3w7g?vq=hd720&controls=0&showinfo=0&loop=1&playlist=NwFphWk3w7g" frameborder="0" autohide="1"></iframe>
 					<% end %>
 				</div>
 				<h2 class="text-center">Drag. Drop. Done.</h2>
 			</div>
 
 		</div>
+
 		<div class="col-md-4 hidden-sm hidden-xs todo animated fadeInRight">
 			
 			

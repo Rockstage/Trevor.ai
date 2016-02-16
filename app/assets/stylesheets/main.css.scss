@@ -128,6 +128,7 @@ ul {
 
 	
 #demo {
+	max-width: 100%;
 	.schedule {
 		padding-top: 180px;
 		@media (max-width: 1200px) { 
@@ -140,11 +141,23 @@ ul {
 		height: 800px;
 		width: 415px;
 		margin: 0 auto;
+		@media (max-width: 992px) {
+			width: 100%;
+			top: 50px;
+			max-width: 300px;
+		}
 
 		.placeholder {
 			position: relative;
+			// @media (max-width: 768px) {
+			// width: 500px;
+			// }
+
 			.iPhoneMockup {
 			height: 800px;
+			@media (max-width: 992px) {
+					max-height: 550px;
+				}
 			}
 
 			.arrowRight {
@@ -165,7 +178,14 @@ ul {
 			position: absolute;
 			top: 105px;
 			left: 50px;
+			@media (max-width: 992px) {
+				top: 75px;
+				left: 35px;
+			}
 		}
+
+
+
 	}
 	.todo {
 		padding-top: 180px;
@@ -175,6 +195,7 @@ ul {
 		}
 	}
 }
+
 
 
 #meettrevor {
@@ -220,6 +241,11 @@ ul {
 		position: absolute;
 		bottom: 0;
 		padding: 140px 50px 50px 50px;
+	}
+	p {
+		@media (max-width: 768px) {
+		font-size: 1.2em;
+		}
 	}
 }
 
