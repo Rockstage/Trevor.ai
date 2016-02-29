@@ -296,6 +296,12 @@ ul {
 		font-size: 1.2em;
 		}
 	}
+
+	h1 {
+		@media (max-width: 768px) {
+		font-size: 30px;
+		}
+	}
 }
 
 #features-pricing {
@@ -305,6 +311,9 @@ ul {
 	padding-bottom: 50px;
 	.feature {
 		padding: 50px;
+		@media (max-width: 768px) {
+		padding: 30px;
+	}
 	}
 	h2 {
 		font-size: 20px;
@@ -314,6 +323,7 @@ ul {
 	p {
 		color: rgb(150,150,150);
 	}
+	
 }
 
 #signup {
