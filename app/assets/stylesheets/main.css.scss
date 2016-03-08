@@ -122,6 +122,29 @@ ul {
 	}
 }
 
+#intro-small {
+	height: 300px;
+	color: white;
+	text-align: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	.logo {
+		width: 200px;
+		margin-top: 60px; 
+	}
+	h3 {
+		margin-top: 25px;
+		a {
+			color: rgba(255,255,255,0.6);
+			text-decoration: underline;
+			&:hover {
+				color: rgba(255,255,255,0.8);
+			}
+		}
+	}
+}
+
+
 .app-icon {
 	height: 100px;
 }
@@ -195,6 +218,7 @@ ul {
 		}
 	}
 }
+
 
 
 
@@ -380,27 +404,40 @@ ul {
 	#footer {
 		text-align: center;
 		
-		a {
-			display: inline-block;
-			text-align: center;
-			vertical-align: text-center;
-			font-size: 1em;
-			font-weight: 300;
-			color: white;
-			padding: 10px;
-			background-color: rgba(255,255,255,0);
-			border: 1px solid white;
-			border-radius: 5px;
-			text-transform: uppercase;
-			&:hover {
-				background-color: rgba(255,255,255,0.1);
-				text-decoration: none;
-			}
-		}
+		
+		
 		p {
 			color: white;
 			margin-top: 25px;
 		}
+	}
+}
+
+.button {
+	display: inline-block;
+	text-align: center;
+	vertical-align: text-center;
+	font-size: 1em;
+	font-weight: 300;
+	color: white;
+	padding: 10px;
+	margin: 5px;
+	background-color: rgba(255,255,255,0);
+	border: 1px solid white;
+	border-radius: 5px;
+	text-transform: uppercase;
+	&.button-blue {
+		color: rgb(0,140,180);
+		border: 1px solid rgb(0,140,180);
+		&:hover {
+			background-color: rgba(0,140,180,0.1);
+			color: rgb(0,140,180);
+		}
+	}
+	&:hover {
+		background-color: rgba(255,255,255,0.1);
+		text-decoration: none;
+		color: white;
 	}
 }
 
@@ -462,6 +499,38 @@ ul {
 	}
 
 }
+
+
+#press {
+	h1 {
+		padding-top: 100px;
+	}
+	.assets-preview {
+		img {
+			width: 100%;
+		}
+	}
+	.roles {
+		img {
+			width: 200px;
+			margin: 25px;
+		}
+		a {
+			font-size: 2em;
+			color: rgb(0,140,180);
+			font-weight: 300;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
 
 
 
