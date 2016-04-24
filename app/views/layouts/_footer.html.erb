@@ -12,14 +12,14 @@
 				<div class="mc-field-group">
 					<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
 				</label>
-					<input type="email" value="" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL">
+					<input type="email" value="" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" onclick="mixpanel.track('Email Field Footer Clicked');">
 				</div>
 					<div id="mce-responses" class="clear">
 						<div class="response" id="mce-error-response" style="display:none"></div>
 						<div class="response" id="mce-success-response" style="display:none"></div>
 					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 				    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5418fe1e541a0e43db9c54656_e1e62066d1" tabindex="-1" value=""></div>
-				    <div class="clear"><input type="submit" value="Get Trevor" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+				    <div class="clear"><input type="submit" value="Get Trevor" name="subscribe" id="mc-embedded-subscribe" class="button" onclick="mixpanel.track('Email Field Footer Submitted');"></div>
 				    </div>
 				</form>
 				</div>
@@ -39,6 +39,7 @@
 				<hr style="border: 1px solid rgba(255,255,255,0.3); margin: 100px 0;" />
 				<div id="footer" class="">
 					<%= link_to "Blog", blog_path, class: "button" %> · 
+					<%= link_to "Team", team_path, class: "button" %> · 
 					<%= link_to "Press", press_path, class: "button" %> · 
 					<%= link_to "contact us", "mailto:george@trevorlabs.com", class: "button" %> · 
 					<a href="//www.iubenda.com/privacy-policy/7790939" class="iubenda-nostyle no-brand iubenda-embed button" title="Privacy Policy">Privacy Policy</a> · 

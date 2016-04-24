@@ -7,5 +7,8 @@ class HomeController < ApplicationController
 
   def press
   end
+
+  def team
+  end
   
 end

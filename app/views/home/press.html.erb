@@ -36,7 +36,9 @@
 				<%= image_tag("profileGeorge.jpg") %><%= link_to "George Petrov, Founder", "https://bg.linkedin.com/in/george-petrov-a5b25147", :target => "_blank" %><br />
 				<%= image_tag("profileDaniela.jpg") %><%= link_to "Daniela Ilieva-Koleva, PhD, Lead Advisor", "https://bg.linkedin.com/in/daniela-ilieva-koleva-phd-73625a25", :target => "_blank" %><br />
 				<%= image_tag("profileFI.jpg") %><%= link_to "Founder Institute, Incubator", "http://fi.co", :target => "_blank" %><br />
+				<%= image_tag("profileTodor.jpg") %><%= link_to "Todor Kolev, CTO", "https://bg.linkedin.com/in/todor", :target => "_blank" %><br />
 			</div>
+			<%= link_to "See the whole team", team_path, class: "button button-blue" %>
 		</div>
 	</div>
 </div>
@@ -53,3 +55,5 @@
   ga('send', 'pageview');
 
 </script>
+
+<script type="text/javascript">mixpanel.track("Press Page Visit");</script>

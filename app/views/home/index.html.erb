@@ -27,7 +27,7 @@
 					<%= image_tag("arrowLeft.png", class: "arrowLeft", alt: "Arrow pointing left") %>
 				</div>
 				<div class="demoVideo">
-					<iframe width="326" height="580" src="https://www.youtube.com/embed/NwFphWk3w7g?vq=hd720&autoplay=1&controls=0&showinfo=0&loop=1&playlist=NwFphWk3w7g" frameborder="0" autohide="1"></iframe>
+					<iframe width="326" height="580" src="https://www.youtube.com/embed/qNmhEgBqUY8?vq=hd720&autoplay=1&controls=0&showinfo=0&loop=1&playlist=qNmhEgBqUY8" frameborder="0" autohide="1"></iframe>
 				</div>
 				<h2 class="text-center">Drag. Drop. Done.</h2>
 			</div>
@@ -39,9 +39,7 @@
 					<%= image_tag("iPhoneMockup.png", class: "iPhoneMockup ", alt: "iPhone Mockup") %>
 				</div>
 				<div class="demoVideo">
-					<% if true %>
-					<iframe width="224" height="399" src="https://www.youtube.com/embed/NwFphWk3w7g?vq=hd720&controls=0&showinfo=0&loop=1&playlist=NwFphWk3w7g" frameborder="0" autohide="1"></iframe>
-					<% end %>
+					<iframe width="224" height="399" src="https://www.youtube.com/embed/qNmhEgBqUY8?vq=hd720&controls=0&showinfo=0&loop=1&playlist=qNmhEgBqUY8" frameborder="0" autohide="1"></iframe>
 				</div>
 				<h2 class="text-center">Drag. Drop. Done.</h2>
 			</div>
@@ -79,14 +77,14 @@
 				<div class="mc-field-group">
 					<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
 				</label>
-					<input type="email" value="" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL">
+					<input type="email" value="" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" onclick="mixpanel.track('Email Field 1 Clicked');">
 				</div>
 					<div id="mce-responses" class="clear">
 						<div class="response" id="mce-error-response" style="display:none"></div>
 						<div class="response" id="mce-success-response" style="display:none"></div>
 					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 				    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5418fe1e541a0e43db9c54656_e1e62066d1" tabindex="-1" value=""></div>
-				    <div class="clear"><input type="submit" value="Meet Trevor" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+				    <div class="clear"><input type="submit" value="Meet Trevor" name="subscribe" id="mc-embedded-subscribe" class="button" onclick="mixpanel.track('Email Field 1 Submitted');"></div>
 				    </div>
 				</form>
 				</div>
@@ -95,7 +93,7 @@
 			</div>
 			<div class="col-md-4"></div>
 			<div class="col-xs-12">
-							<h3>Actually, Trevor is an intelligent time management assistant,<br/> designed to help you make the most out of your day.</h3>
+							<h3>Actually, Trevor is a personal assistant<br/>that helps you manage your time in a mindful way.</h3>
 				<p></p>
 			</div>
 		</div>
@@ -197,6 +195,8 @@
   ga('send', 'pageview');
 
 </script>
+
+<script type="text/javascript">mixpanel.track("Home Page Visit");</script>
 
 
 

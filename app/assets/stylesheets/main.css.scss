@@ -502,6 +502,7 @@ ul {
 
 
 #press {
+	padding-top: 20px;
 	h1 {
 		padding-top: 100px;
 	}
@@ -523,6 +524,29 @@ ul {
 	}
 }
 
+#team {
+	padding-top: 20px;
+	h1 {
+		padding-top: 100px;
+	}
+	.assets-preview {
+		img {
+			width: 100%;
+		}
+	}
+	.roles {
+		img {
+			width: 175px;
+			display: block;
+			margin: 75px auto 25px;
+		}
+		a {
+			font-size: 1.8em;
+			color: rgb(0,140,180);
+			font-weight: 300;
+		}
+	}
+}
 
 
 

@@ -5983,22 +5983,51 @@ ul li {
   color: black;
 }
 
-/* line 505, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 504, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+#press {
+  padding-top: 20px;
+}
+/* line 506, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #press h1 {
   padding-top: 100px;
 }
-/* line 509, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 510, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #press .assets-preview img {
   width: 100%;
 }
-/* line 514, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 515, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #press .roles img {
   width: 200px;
   margin: 25px;
 }
-/* line 518, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 519, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #press .roles a {
   font-size: 2em;
+  color: #008cb4;
+  font-weight: 300;
+}
+
+/* line 527, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+#team {
+  padding-top: 20px;
+}
+/* line 529, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+#team h1 {
+  padding-top: 100px;
+}
+/* line 533, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+#team .assets-preview img {
+  width: 100%;
+}
+/* line 538, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+#team .roles img {
+  width: 175px;
+  display: block;
+  margin: 75px auto 25px;
+}
+/* line 543, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+#team .roles a {
+  font-size: 1.8em;
   color: #008cb4;
   font-weight: 300;
 }
