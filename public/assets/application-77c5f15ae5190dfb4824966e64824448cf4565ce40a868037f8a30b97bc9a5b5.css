@@ -6031,3 +6031,14 @@ ul li {
   color: #008cb4;
   font-weight: 300;
 }
+
+/* line 551, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.appStoreButton {
+  width: 220px;
+  margin-bottom: 70px;
+}
+
+/* line 556, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.appStoreButtonFooter {
+  width: 150px;
+}
