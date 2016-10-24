@@ -12,10 +12,6 @@ body {
 	min-width: 100%;
 }
 
-.dark-red {
-	color: #991A45;
-}
-
 .navbar {
 	margin-bottom: 0;
 }
@@ -33,6 +29,11 @@ h2 {
 h3 {
 	font-size: 2em;
 	font-weight: 200;
+}
+
+h4 {
+	font-size: 1.6em;
+	font-weight: 300;
 }
 
 p {
@@ -59,6 +60,13 @@ ul {
 	color: gray;
 }
 
+.dark-red {
+	color: #991A45;
+}
+
+.zen-green {
+	color: rgb(67,179,164);
+}
 
 .emphasize-color {
 	color: #00ccff;
@@ -118,8 +126,9 @@ ul {
 			margin-top: 120px;
 		}
 
-		h3 {
+		h4 {
 			margin-top: 50px;
+			line-height: 1.5em;
 		}
 	}
 }
@@ -152,6 +161,144 @@ ul {
 }
 
 	
+#framework {
+	max-width: 100%;
+	background-color: rgb(245,245,245);
+	padding-top: 50px;
+	@media (max-width: 992px) {
+		padding-bottom: 200px;
+		h2 {
+			text-align: center;
+		}
+	}
+	h2 {
+		color: rgb(0,140,180);
+		font-weight: 200;
+		font-size: 2.5em;
+		&.text-left {
+			margin-left: 38px;
+		}
+	}
+	hr {
+		margin: 75px 0;
+	}
+	.benefitList {
+		text-align: left;
+		margin-bottom: 0;
+		padding-top: 30px;
+		padding-bottom: 0;
+		list-style: none;
+		li {
+			min-height: 60px;
+			vertical-align: center;
+			font-size: 1.3em;
+		}
+		.positive {
+			background: image-url("checkmark.png") no-repeat left top;
+			background-size: 35px;
+			padding: 3px 0px 3px 50px;
+			margin: 0; 
+		}
+		.negative {
+			background: image-url("x.png") no-repeat left top;
+			background-size: 35px;
+			padding: 3px 0px 3px 50px;
+			margin: 0; 
+		}
+	}
+	hr.small {
+		margin: 10px 0 20px 0;
+	}
+	p.probability {
+		text-align: left;
+		padding-left: 38px;
+		color: rgb(200,200,200);
+	}
+	img {
+		width: 70%;
+	}
+	.add_to_schedule {
+		width: 650px;
+		margin: 20px 0;
+		@media (max-width: 992px) {
+			width: 100%;
+			padding-right: 20px;
+		}
+	}
+	.focus {
+		width: 650px;
+		margin: 50px 0;
+		@media (max-width: 992px) {
+			width: 100%;
+		}
+	}
+	.matt {
+		width: 250px;
+		position: absolute;
+		right: 5%;
+		bottom: 0;
+		@media (max-width: 992px) {
+			bottom: -250px;
+		}
+	}
+	.path_left_right, .path_right_left {
+		width: 35%;
+		margin: 20px 35% 20px auto
+	}
+	.path_main {
+		width: 70%;
+		margin: 20px 0;
+	}
+	.path_straight {
+		height: 100px;
+		width: auto;
+		margin: 30px auto;
+	}
+	a {
+		text-decoration: none;
+	}
+	#card_share {
+		background: rgb(255,255,255);
+		font-size: 1.3em;
+		border-radius: 7px;
+		width: 350px;
+		height: 70px;
+		color: black;
+		box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+	}
+	.card_share {
+		height: 100%;
+		width: 100%;
+		border-radius: 7px;
+		background: image-url("heart.png") no-repeat 17px 17px;
+		background-size: 40px;
+		padding: 22px 20px 18px 35px;
+		-o-transition:.5s;
+		-ms-transition:.5s;
+		-moz-transition:.5s;
+		-webkit-transition:.5s;
+		transition:.5s;
+		&:hover {
+			box-shadow: 0px 0px 30px rgba(0,0,0,0.30);
+			background: image-url("checkmark_green.png") no-repeat 17px 22px;
+			background-size: 40px;
+			text-decoration: none;
+			text-decoration: line-through;
+			-o-transition:.5s;
+			-ms-transition:.5s;
+			-moz-transition:.5s;
+			-webkit-transition:.5s;
+			transition:.5s;
+		}
+		&.completedState {
+			background: image-url("checkmark_green.png") no-repeat 17px 22px;
+			background-size: 40px;
+			text-decoration: line-through;
+		}
+	}
+
+}
+
 #demo {
 	max-width: 100%;
 	.schedule {

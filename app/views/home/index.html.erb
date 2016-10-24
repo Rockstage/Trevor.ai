@@ -2,11 +2,174 @@
 	<div class="row">
 
 		<%= image_tag("logo.png", class: "logo", alt: "Logo of Trevor AI") %>
-		<h3 class="animated fadeInUp">The smartest way to schedule your day</h3>
-	
+		<h4 class="animated fadeInUp">Making productivity simple again<br/><span style="color:rgba(255,255,255,0.5);">with human-centric design and a robot friend called Trevor</span></h4>
+		
 	</div>
 	
 </div>
+
+
+
+
+
+<div id="framework" class="container-fluid">
+	<div class="row text-center">
+		
+		<div class="col-md-12">
+
+			<h1 class="animated fadeInUp">Stuff to do?</h1>
+			<p class="dark-blue animated fadeInUp">Let's say your friend Matt has a birthday<span class="hidden-sm hidden-xs", you can either...</span></p>
+			<%= image_tag('path_main.png', class: 'path_main animated fadeIn hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+
+		</div>
+
+		<div class="col-md-4">
+			<h2>Save it as a card</h2>
+			<%= image_tag("card_birthday.png", style: "width: 350px;") %>
+			<ul class="benefitList">
+				<li class="positive">It will never get lost</li>
+				<li class="positive">The art of stress-free productivity <%= link_to "- David Allen", "#" %></li>
+				<li class="negative">Takes < 20 seconds of your life, to save you many more</li>
+			</ul>
+			<hr class="small"/>
+			<p class="probability"><span class="zen-green">30%</span> probability for success</p>
+		</div>
+
+
+
+		<div class="col-md-4 hidden-sm hidden-xs">
+			<!-- seperator -->
+		</div>
+
+		<div class="col-md-4 hidden-sm hidden-xs">
+			<h2>Remember it</h2>
+			<%= image_tag("paperplane.png", style: "width: 100px; margin: 20px") %>
+			<ul class="benefitList">
+				<li class="negative">Very, very high chance of forgetting<br/>(Matt will be sad)</li>
+				<li class="negative">Reduces focus and causes anxiety</li>
+				<li class="positive">Faster</li>
+			</ul>
+			<hr class="small"/>
+			<p class="probability"><span class="zen-green">10%</span> probability for success</p>
+		</div>
+
+		<div class="col-md-12">
+			<%= image_tag('path_left_right', class: 'path_left_right hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+			<h2>Organize your cards</h2>
+		</div>
+
+		<div class="col-md-4">
+			<ul class="benefitList">
+				<li class="positive">Say it like you normaly would:<br/>“I <u>must</u> <i>buy a gift for Matt</i> <u>by thursday</u>”</li>
+				<li class="positive">Organize Cards into lists and priorities</li>
+				<li class="positive">Find & visualize everything you need to do</li>
+			</ul>
+			<hr class="small"/>
+			<p class="probability"><span class="zen-green">40%</span> probability for success</p>
+		</div>
+
+		<div class="col-md-4">
+			<%= image_tag("card_list.png", style: "width: 350px; margin: 20px 0;") %>
+		</div>
+
+		<div class="col-md-4 text-left" style="padding-top: 100px;">
+			<p>"Organization makes a system of many appear fewer" <%= link_to "- The Art of Simplicity by John Maeda", "#" %></p>
+			<p>Organization can make or break your productivity. Keep a healthy balance between planning & doing.</p>
+		</div>
+
+		<div class="col-md-12">
+			<%= image_tag('path_right_left', class: 'path_right_left hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+			<h2 class="text-left">Add Cards to your Schedule</h2>
+		</div>
+
+		<div class="col-md-8">
+			<%= image_tag("add_to_schedule.png", class: 'add_to_schedule') %>
+		</div>
+
+		<div class="col-md-4">
+			<ul class="benefitList">
+				<li class="positive">Add the "When" to your "What</li>
+				<li class="positive">Scleduling Cards is a plan for action, turning your list into action</li>
+				<li class="positive">You can always reschedule in seconds</li>
+			</ul>
+			<hr class="small"/>
+			<p class="probability"><span class="zen-green">60%</span> probability for success</p>
+		</div>
+
+		<div class="col-md-12">
+			<%= image_tag('path_right_left', class: 'path_right_left hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+			<h2 class="text-left">Focus on the current Card</h2>
+		</div>
+
+		<div class="col-md-8">
+			<%= image_tag("focus.png", class: 'focus') %>
+		</div>
+
+		<div class="col-md-4">
+			<ul class="benefitList">
+				<li class="positive">A Card scheduled in time helps you focus</li>
+				<li class="positive">You get notified when it's time for action</li>
+				<li class="positive">Your energy on the right task, at the right time</li>
+			</ul>
+			<hr class="small"/>
+			<p class="probability"><span class="zen-green">90%</span> probability for success</p>
+		</div>
+
+		<div class="col-md-12">
+			<%= image_tag('path_left_right', class: 'path_left_right hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+			<h2>Success</h2>
+			<%= image_tag("card_birthday_complete.png", style: "width: 350px;") %>
+			<h4>Learn from it, grow from it, repeat it, make people happy</h4>
+			<br/>
+			<hr/>
+			<h2>Here's a card for you :)</h2>
+			<br/>
+			
+				<div id="card_share" class="center-block">
+					<div id="card_share_inner" class="card_share">
+						Share this guide with friends
+					</div>
+				</div>
+			
+			<br/>
+			<div onclick="completedState()" class="addthis_sharing_toolbox"></div>
+			<div class="addthis_horizontal_follow_toolbox center-block"></div>
+			<%= image_tag('gift_matt.png', class: "matt") %>
+		</div>
+
+
+
+
+
+	</div>
+</div>
+
+
+<div id="meettrevor" class="container-fluid section dark bluebg">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<% if false %><%= image_tag("app-icon.png", class: "app-icon visible-xs center-block") %><% end %>
+				<h1>What is Trevor?</h1>
+				<h3>Trevor is a personal assistant for time management - the first calendar that helps you get your tasks done.</h3>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
 
 <div id="demo" class="container-fluid">
 
@@ -62,14 +225,13 @@
 
 </div>
 
-
 <div id="meettrevor" class="container-fluid section dark bluebg">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
 				<% if false %><%= image_tag("app-icon.png", class: "app-icon visible-xs center-block") %><% end %>
-				<h1>Meet Trevor</h1>
-				<h2>A calendar with character</h2>
+				<h1>What is Trevor?</h1>
+				<h3>Trevor is the first calendar that helps you get your tasks done.</h3>
 			</div>
 			<div class="col-md-4"></div>
 			<div id="download" class="col-md-4">
@@ -105,6 +267,7 @@
 </div>
 
 
+<% if false %>
 
 <div id="core-features" class="container-fluid">
 		<div class="row background-image intuitive">
@@ -188,8 +351,14 @@
 
 </div>
 
+<% end %>
 
-
+<script type="text/javascript">
+	function completedState()
+	{
+		document.getElementById("card_share_inner").className += " completedState";
+	}
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
