@@ -60,6 +60,10 @@ ul {
 	color: gray;
 }
 
+.light-gray {
+	color: rgb(170,170,170);
+}
+
 .dark-red {
 	color: #991A45;
 }
@@ -113,7 +117,7 @@ ul {
 
 
 #intro {
-	height: 600px;
+	height: 700px;
 	color: white;
 	text-align: center;
 	padding-top: 50px;
@@ -129,6 +133,11 @@ ul {
 		h4 {
 			margin-top: 50px;
 			line-height: 1.5em;
+		}
+	}
+	.download {
+		form {
+			padding: 0;
 		}
 	}
 }
@@ -173,7 +182,7 @@ ul {
 	}
 	h2 {
 		color: rgb(0,140,180);
-		font-weight: 200;
+		font-weight: 300;
 		font-size: 2.5em;
 		&.text-left {
 			margin-left: 38px;
@@ -181,6 +190,9 @@ ul {
 	}
 	hr {
 		margin: 75px 0;
+	}
+	p {
+		font-size: 1.2em;
 	}
 	.benefitList {
 		text-align: left;
@@ -191,19 +203,23 @@ ul {
 		li {
 			min-height: 60px;
 			vertical-align: center;
-			font-size: 1.3em;
+			font-size: 1.2em;
 		}
 		.positive {
 			background: image-url("checkmark.png") no-repeat left top;
-			background-size: 35px;
-			padding: 3px 0px 3px 50px;
+			background-size: 30px;
+			padding: 3px 3px 3px 40px;
 			margin: 0; 
 		}
 		.negative {
 			background: image-url("x.png") no-repeat left top;
-			background-size: 35px;
-			padding: 3px 0px 3px 50px;
+			background-size: 30px;
+			padding: 3px 3px 3px 40px;
 			margin: 0; 
+		}
+		.quote {
+			color: rgb(170,170,170);
+			padding-top: 20px;
 		}
 	}
 	hr.small {
@@ -310,7 +326,7 @@ ul {
 	.mockup {
 		position: relative;
 		top: -130px;
-		height: 800px;
+		height: 700px;
 		width: 415px;
 		margin: 0 auto;
 		@media (max-width: 992px) {
@@ -375,7 +391,6 @@ ul {
 
 
 #meettrevor {
-	padding-top: 110px;
 	background-color: rgb(30,30,30);
 	color: white;
 	text-align: center;
@@ -384,55 +399,54 @@ ul {
 	h3 {
 		font-size: 1.7em;
 	}
+}
 
-	#download {
-		padding: 0;
-		#mc_embed_signup {
-			height: 100%;
-			background-color: rgba(255,255,255,0);
-			form {
-				
-				h1 {
-					font-family: inherit;
-					font-weight: 200;
+.download {
+	padding: 0;
+	#mc_embed_signup {
+		height: 100%;
+		background-color: rgba(255,255,255,0);
+		form {
+			
+			h1 {
+				font-family: inherit;
+				font-weight: 200;
+			}
+			#mce-EMAIL {
+				margin-top: 50px;
+				background-color: rgba(255,255,255,0);
+				border: none;
+				border-bottom: 1px solid white;
+				font-size: 2em;
+				font-weight: 200;
+			}
+			.button {
+				width: 100%;
+				height: 50px;
+				background-color: rgba(255,255,255,0);
+				border: 1px solid white;
+				color: white;
+				text-transform: uppercase;
+				&:hover {
+					background-color: rgba(255,255,255,0.1);
 				}
-				#mce-EMAIL {
-					margin-top: 50px;
-					background-color: rgba(255,255,255,0);
-					border: none;
-					border-bottom: 1px solid white;
-					font-size: 2em;
-					font-weight: 200;
-				}
-				.button {
-					width: 100%;
-					height: 50px;
-					background-color: rgba(255,255,255,0);
-					border: 1px solid white;
-					color: white;
-					text-transform: uppercase;
-					&:hover {
-						background-color: rgba(255,255,255,0.1);
-					}
-				}
-				.mce_inline_error {
-					background: none;
-					color: white;
-				}
-				.mce-responses * {
-					background: none;
-					color: white !important;
-				}
-				.indicates-required {
-					display: none;
-				}
-				.mc-field-group label {
-					display: none;
-				}
+			}
+			.mce_inline_error {
+				background: none;
+				color: white;
+			}
+			.mce-responses * {
+				background: none;
+				color: white !important;
+			}
+			.indicates-required {
+				display: none;
+			}
+			.mc-field-group label {
+				display: none;
 			}
 		}
 	}
-
 }
 
 #valueProposition {
@@ -503,8 +517,10 @@ ul {
 }
 
 #signup {
-	padding-bottom: 50px;
-	#download {
+	padding-top: 50px;
+
+	padding-bottom: 50px;	
+	.download {
 		padding: 0;
 		#mc_embed_signup {
 			height: 100%;
@@ -633,7 +649,7 @@ ul {
 	.row {
 		height: 100%;
 		margin: 0;
-		#download {
+		.download {
 			height: 100%;
 			color: black;
 			padding: 0;
