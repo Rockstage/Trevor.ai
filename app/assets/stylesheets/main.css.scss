@@ -275,7 +275,10 @@ ul {
 	}
 	.path_left_right, .path_right_left {
 		width: 35%;
-		margin: 20px 35% 20px auto
+		margin: 20px 35% 20px auto;
+		&.path_pull_right {
+			margin: 20px auto 20px 35%;
+		}
 	}
 	.path_main {
 		width: 70%;

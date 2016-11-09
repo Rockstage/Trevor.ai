@@ -2,7 +2,7 @@
 	<div class="row">
 
 		<%= image_tag("logo.png", class: "logo", alt: "Logo of Trevor AI") %>
-		<h4 class="animated fadeInUp" style="color:rgba(255,255,255,0.5);">Making productivity simple again<br/>with human-centric design and a robot friend called Trevor</h4>
+		<h4 class="" style="color:rgba(255,255,255,0.5);">Making productivity simple again<br/>with human-centric design and a robot friend called Trevor</h4>
 
 	</div>
 	
@@ -63,8 +63,10 @@
 				<%= image_tag("TaskList.png", class: "weapons") %>
 				<p>This is where you save and track progress of your assignments</p>
 				<%= image_tag('path_straight.png', class: 'path_straight') %>
-				<h4>Recommended:</h4>
-				<p>Others</p>
+				<p>Recommended tool:</p>
+				<h4>For iOS users: <%= link_to "Trevor AI", "#" %></h4>
+				<h4>For Android users: <%= link_to "Todoist", "#" %></h4>
+				<p>Alternatives: Any other digital todo list</p>
 			</div>
 
 			<div class="col-md-4">
@@ -72,8 +74,10 @@
 				<%= image_tag("Calendar.png", class: "weapons") %>
 				<p>This is where you assign the time for action for your assignments</p>
 				<%= image_tag('path_straight.png', class: 'path_straight') %>
-				<h4>Recommended:</h4>
-				<p>Others</p>
+				<p>Recommended tool:</p>
+				<h4>For iOS users: <%= link_to "Trevor AI", "#" %></h4>
+				<h4>For Android users: <%= link_to "Google Calendar", "#" %></h4>
+				<p>Alternatives: Any other digital calendar</p>
 			</div>
 
 			<div class="col-md-4">
@@ -81,8 +85,9 @@
 				<%= image_tag("Notepad.png", class: "weapons") %>
 				<p>This is where you work or record the work from your assignments, before you send it to the Founder Institute</p>
 				<%= image_tag('path_straight.png', class: 'path_straight') %>
-				<h4>Recommended:</h4>
-				<p>Others</p>
+				<p>Recommended tool:</p>
+				<h4>For everyone: <%= link_to "Evernote", "#" %></h4>
+				<p>Alternatives: <%= link_to "Google Keep", "#" %></p>
 			</div>
 
 		</div>
@@ -90,61 +95,30 @@
 
 
 		<div class="col-md-12">
-			<%= image_tag('path_main.png', class: 'path_main flip-img hidden-sm hidden-xs') %>
+			<%= image_tag('path_main_upside.png', class: 'path_main hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight visible-sm visible-xs') %>
 
 			<h1>Process</h1>
+			<p style="padding: 0 20%;"><strong>Each week</strong> (usually Wednessday) you receive a bunch of assignments all of which you have to submit within 7 days (next Wednessday). Each of these assignments is clearly described and has an estimated duration which is surprisingly accurate - use it to your advantage.</p>
 			<%= image_tag('path_straight.png', class: 'path_straight') %>
-		</div>
-
-		<div class="col-md-12">
-
-			<div class="col-md-4">
-				<h2>Save Task</h2>
-			</div>
-			<div class="col-md-4">
-			</div>
-			<div class="col-md-4">
-				<h2>Schedule Task</h2>
-			</div>
-
-		</div>
-
-		<div class="col-md-12">
-			<div class="col-md-4">
-				<h2>Complete > Next</h2>
-			</div>
-			<div class="col-md-4">
-			</div>
-			<div class="col-md-4">
-				
-				<h2>Do the assignment</h2>
-			</div>
-		</div>
-
-		<div class="col-md-12">
-			<h2>Submit to FI</h2>
-		</div>
-
-		<div class="col-md-12">
+			<h2>1. I received my weekly assignments, now what?</h2>
+			<p>You pretty much have two options:</p>
+			<%= image_tag('path_main.png', class: 'path_main hidden-sm hidden-xs') %>
+  		</div>
 
 
-			<h1>Startup Life</h1>
-			<%= image_tag('path_straight.png', class: 'path_straight') %>
-
-		</div>
 
 		<div class="col-md-4">
-			<h2>Save it as a card</h2>
-			<%= image_tag("card_birthday.png", style: "width: 350px;") %>
+			<h2>Add them to your Task List</h2>
+			<%= image_tag("TaskList.png", class: "weapons") %>
 			<ul class="benefitList">
-				<li class="positive">It will never get lost</li>
-				<li class="positive">A peaceful, productive mind</li>
-				<li class="negative">Takes 20 seconds of your life<br/><span class="light-gray">(to save you many more)</span></li>
+				<li class="positive">You have a clear step-by-step overview of everything you have to do</li>
+				<li class="positive">You can break big tasks into smaller actions</li>
+				<li class="positive">You can easily keep track of your progress</li>
+				<li class="negative">Takes 20 seconds of your life, per task<br/><span class="light-gray">(to save you many more)</span></li>
+				<hr class="small"/>
 				<li class="quote">"Your mind is for having ideas, not holding them"<br/><%= link_to "- David Allen", "http://gettingthingsdone.com", target: "_blank" %></li>
 			</ul>
-			<hr class="small"/>
-			<p class="probability"><span class="zen-green">30%</span> probability for success</p>
 		</div>
 
 
@@ -154,69 +128,66 @@
 		</div>
 
 		<div class="col-md-4 hidden-sm hidden-xs">
-			<h2>Remember it</h2>
+			<h2>Remember</h2>
 			<%= image_tag("paperplane.png", style: "width: 100px; margin: 20px") %>
 			<ul class="benefitList">
-				<li class="negative">Very, very high chance of forgetting<br/><span class="light-gray">(Matt will be sad)</span></li>
-				<li class="negative">Reduces focus and causes anxiety</li>
+				<li class="negative">High chance of forgetting a task = "Bonus Assignment"</li>
+				<li class="negative">Constant worrying about everything you have to do</li>
+				<li class="negative">Reduced mental focus due to feeling overwhelmed</li>
 				<li class="positive">Faster</li>
 			</ul>
-			<hr class="small"/>
-			<p class="probability"><span class="zen-green">10%</span> probability for success</p>
 		</div>
 
 		<div class="col-md-12">
 			<%= image_tag('path_left_right.png', class: 'path_left_right hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<h2>Organize your cards</h2>
+			<h2>Assign time for action, for each task, in your Calendar</h2>
 		</div>
 
 		<div class="col-md-4">
 			<ul class="benefitList" style="padding-top: 95px;">
 				<!-- <li class="positive">Fast and easy:<br/>“I <u>must</u> <i>buy a gift for Matt</i> <u>by thursday</u>”</li> -->
-				<li class="positive">"Organization makes a system of many appear fewer" <%= link_to "- The Laws of Simplicity", "http://lawsofsimplicity.com", target: "_blank" %></li>
-				<li class="positive">Helps you focus on the right cards</li>
-				<li class="negative">Too much planning or doing can kill productivity</li>
+				<li class="positive">Add the "When" to your "What"</li>
+				<li class="positive">A calendar will help you find the ~25 hours you need for your assignments each week</li>
+				<li class="positive">Durations of Tasks are already provided by the Founder Institute</li>
+				<li class="positive">You can sleep at night knowing you have enough time for everything you have to do, and more</li>
 			</ul>
-			<hr class="small"/>
-			<p class="probability"><span class="zen-green">40%</span> probability for success</p>
 		</div>
 
 		<div class="col-md-4">
-			<%= image_tag("card_list.png", style: "width: 350px; margin: 20px 0;") %>
+			<%= image_tag("Calendar.png", class: "weapons") %>
 		</div>
 
-		<div class="col-md-4 text-left" style="padding-top: 100px;">
-			<p class="light-gray">"It's not about how to get more things done,<br/>it’s about how to get <u>the right things</u> done."<br/>
-					<%= link_to "Essentialism: The Disciplined Pursuit of Less by Greg McKeown", "http://gregmckeown.com/book/", target: "_blank" %></p>
+		<div class="col-md-4 text-left" style="padding-top: 150px;">
+			<p class="gray">"If you talk about it, it’s a dream, if you envision it, it’s possible, but if you schedule it, it’s real."<br/>
+					<%= link_to "- Anthony Robbins", "https://www.tonyrobbins.com", target: "_blank" %></p>
 		</div>
 
 		<div class="col-md-12">
 			<%= image_tag('path_right_left.png', class: 'path_right_left hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<h2 class="text-left">Add Cards to your Schedule</h2>
+			<h2 class="text-left">Input your work in your Notepad</h2>
 		</div>
 
-		<div class="col-md-8">
-			<%= image_tag("add_to_schedule.png", class: 'add_to_schedule') %>
+		<div class="col-md-4">
+			<%= image_tag("Notepad.png", class: "weapons") %>
 		</div>
 
 		<div class="col-md-4">
 			<ul class="benefitList">
-				<li class="positive">Add the "When" to your "What"</li>
-				<li class="positive">Turn Cards into a solid plan for action</li>
-				<li class="positive">You can always reschedule in seconds</li>
-				<li class="quote">"If you talk about it, it’s a dream, if you envision it, it’s possible, but if you schedule it, it’s real."<br/>
-					<%= link_to "- Anthony Robbins", "https://www.tonyrobbins.com", target: "_blank" %></li>
+				<li class="positive">Make a note for each Week</li>
+				<li class="positive">Record all the data you collected (text,images,links,resources)</li>
+				<li class="positive">Write down your assignment</li>
+				<li class="positive">Respect your calendar and move on whether you're ready or not</li>
 			</ul>
-			<hr class="small"/>
-			<p class="probability"><span class="zen-green">60%</span> probability for success</p>
 		</div>
 
+		<div class="col-md-4"></div>
+
 		<div class="col-md-12">
-			<%= image_tag('path_right_left.png', class: 'path_right_left hidden-sm hidden-xs') %>
+			<%= image_tag('path_left_right.png', class: 'path_right_left hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<h2 class="text-left">Focus on the current Card</h2>
+			<h2>Keep your head in the game!</h2>
 		</div>
 
 		<div class="col-md-8">
@@ -225,39 +196,69 @@
 
 		<div class="col-md-4">
 			<ul class="benefitList">
-				<li class="positive">A Card scheduled in time helps you focus</li>
-				<li class="positive">You get notified when it's time for action</li>
-				<li class="positive">Your energy on the right task, at the right time</li>
+				<li class="negative">Most founders have jobs</li>
+				<li class="negative">Some founders have families</li>
+				<li class="negative">All founders struggle with work-life-startup balance</li>
+				<li class="negative">Distractions, procrastination and doubt are always 'round the corner</li>
+				<li class="positive">Your 3 weapons will help you conquer your time and get to the results you want</li>
+				<li class="positive">When times get tough, your Peers and Mentors are there for you</li>
 			</ul>
-			<hr class="small"/>
-			<p class="probability"><span class="zen-green">90%</span> probability for success</p>
 		</div>
 
 		<div class="col-md-12">
-			<%= image_tag('path_left_right.png', class: 'path_left_right hidden-sm hidden-xs') %>
+			<%= image_tag('path_left_right.png', class: 'path_left_right path_pull_right hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+		</div>
+
+		<div class="col-md-4">
+
+		</div>
+
+		<div class="col-md-4">
+			<ul class="benefitList" style="padding-top: 95px;">
+				<!-- <li class="positive">Fast and easy:<br/>“I <u>must</u> <i>buy a gift for Matt</i> <u>by thursday</u>”</li> -->
+				<li class="positive">Share & collaborate with Working Group</li>
+				<li class="positive">Create a channel for each project and share ideas & feedback</li>
+				<li class="positive">Share news, tools & resources</li>
+				<li class="positive">Get as much help from Mentors as possible</li>
+			</ul>
+		</div>
+
+		<div class="col-md-4">
+			<h2>Communicate & Collaborate</h2>
+			<%= image_tag("Slack.png", class: "weapons") %>
+			<p>Recommended tool:</p>
+			<h4><%= link_to "Slack", "#" %></h4>
+		</div>
+
+		<div class="col-md-12">
+			<%= image_tag('path_right_left.png', class: 'path_right_left path_pull_right hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
 			<h2>Success</h2>
+			<h3>Submit your assignments, enjoy the FI session and drink a beer or two with your peers</h3>
 			<%= image_tag("card_birthday_complete.png", style: "width: 350px;") %>
 			<h4>Learn from it, grow from it, repeat it, make people happy</h4>
 			<br/>
 			<hr/>
-			<h2>Here's a card for you :)</h2>
+			<h2>Here's your first bonus assignment:</h2>
 			<br/>
 			
 				<div id="card_share" class="center-block">
 					<div id="card_share_inner" class="card_share">
-						Share this guide with friends
+						Share this guide with peers
 					</div>
 				</div>
 			
 			<br/>
 			<div onclick="completedState()" class="addthis_sharing_toolbox"></div>
-			<div class="addthis_horizontal_follow_toolbox center-block hidden-sm hidden-xs"></div>
+			<%= link_to "www.trevorai.com/fi", "www.trevorai.com/fi", style: "font-size: 1.5em;", "onselect" => "completedState()" %>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
 			<%= image_tag('gift_matt.png', class: "matt") %>
 		</div>
-
-
-
 
 
 	</div>
