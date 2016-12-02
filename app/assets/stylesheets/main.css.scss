@@ -259,7 +259,7 @@ hr.margin {
 }
 
 .bubble {
-	min-height: 60px;
+	min-height: 40px;
 	max-height: 120px;
 	max-width: 600px;
 	background: rgb(235,235,235);
@@ -269,7 +269,7 @@ hr.margin {
 	p {
 		font-size: 1.5em;
 		line-height: 30px;
-		margin: 15px 30px;
+		margin: 10px 30px;
 	}
 	&.bubble-self {
 		background: rgb(0,140,180);
@@ -281,10 +281,11 @@ hr.margin {
 	&.bubble-trevor {
 		background-image: image-url('trevor-avatar.png');
 		background-repeat: no-repeat;
-		background-position: 10px 10px;
-		background-size: 40px;
+		background-position: 8px 8px;
+		background-size: 35px;
 		p {
-			text-indent: 25px;
+			// text-indent: 20px;
+			margin-left: 50px;
 		}
 	}
 	&.bubble-actions {
@@ -921,7 +922,11 @@ hr.margin {
 	}
 }
 
-
+#webDemo {
+	height: 1400px;
+	background: image-url('webapp.jpg') no-repeat center;
+	background-size: cover;
+}
 
 
 
