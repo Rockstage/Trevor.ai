@@ -2,6 +2,12 @@ class HomeController < ApplicationController
   def index
   end
 
+  def web
+  end
+
+  def app
+  end
+
   def blog
   end
 

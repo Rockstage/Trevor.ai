@@ -1,45 +1,93 @@
-<div id="intro" class="container-fluid section section-top dark bluebg">
+<div id="header" class="container-fluid dark bluebg">
 	<div class="row">
-
-		<%= image_tag("logo.png", class: "logo", alt: "Logo of Trevor AI") %>
-		<h4 class="animated fadeInUp">Making productivity simple again<br/><span style="color:rgba(255,255,255,0.5);">with human-centric design and a robot friend called Trevor</span></h4>
-		
-		<div class="col-md-4">
-
+		<div class="col-sm-6">
+			<%= image_tag("logo2.png", class: "logo2", alt: "Logo of Trevor AI") %>
 		</div>
-
-		<div id="" class="download col-md-4 animated fadeInUp">
-		<!-- Begin MailChimp Signup Form -->
-			<div id="mc_embed_signup">
-			<form action="//linkedin.us12.list-manage.com/subscribe/post?u=5418fe1e541a0e43db9c54656&amp;id=e1e62066d1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-			    <div id="mc_embed_signup_scroll">
-			<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-			<div class="mc-field-group">
-				<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-			</label>
-				<input type="email" value="" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" onclick="mixpanel.track('Email Field 1 Clicked');">
-			</div>
-				<div id="mce-responses" class="clear">
-					<div class="response" id="mce-error-response" style="display:none"></div>
-					<div class="response" id="mce-success-response" style="display:none"></div>
-				</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-			    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5418fe1e541a0e43db9c54656_e1e62066d1" tabindex="-1" value=""></div>
-			    <div class="clear"><input type="submit" value="Get Trevor" name="subscribe" id="mc-embedded-subscribe" class="button" onclick="mixpanel.track('Email Field 1 Submitted');"></div>
-			    </div>
-			</form>
-			</div>		
-			<!--End mc_embed_signup-->
-		</div>
-
-		<div class="col-md-4">
-
+		<div class="col-sm-6">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><%= link_to "Trevor AI", root_path %></li>
+				<li><%= link_to "Web", web_path %></li>
+				<li><%= link_to "App", app_path %></li>
+			</ul>
 		</div>
 	</div>
-	
+</div>
+
+<div id="intro-bot" class="container">
+	<div class="row">
+		<h1 class="text-center">Find time for everything you want to do,<br/><underline>in a natural way</underline></h1>
+		<div class="chatbox">
+			<div class="row">
+				<div class="bubble bubble-self pull-right">
+					<p><strong>Trevor,</strong> I have to buy groceries</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="bubble bubble-trevor">
+					<p>Here are the best available times...</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="bubble bubble-actions">
+					<ul>
+						<li>After work</li>
+						<li>Tomorrow morning</li>
+						<li>Wednesday at 3 pm</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<hr class="margin"/>
+		<div class="col-md-3 availability vertical-align">
+			<p class="text-right"><strong>Will be</strong> available on:</p>
+		</div>
+		<div class="col-md-6 availability vertical-align center-block">
+			<%= image_tag('html_icon.png') %>
+			<%= image_tag('messenger_icon.png') %>
+			<%= image_tag('slack_icon.png') %>
+		</div>
+		<div class="col-md-3 availability vertical-align">
+			<p>In January-ish..probably<br/>
+				<span class="faded">with Telegram, Kik, Cortana, Alexa, and more, right after that.</span></p>
+		</div>
+	</div>
 </div>
 
 
-
+<div id="meettrevor" class="container-fluid section dark bluebg">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h3 class="text-left">Trevor is a personal assistant<br/><span class="faded">that connects your task lists with your calendar,</span><br/>to help you manage your time,<br/><span class="faded">the same way you already do in your mind.</span></h3>
+			</div>
+			<div class="col-md-6"></div>
+			<div id="" class="download col-md-4">
+			<!-- Begin MailChimp Signup Form -->
+				<div id="mc_embed_signup">
+				<form action="//linkedin.us12.list-manage.com/subscribe/post?u=5418fe1e541a0e43db9c54656&amp;id=e1e62066d1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				    <div id="mc_embed_signup_scroll">
+				<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+				<div class="mc-field-group">
+					<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+				</label>
+					<input type="email" value="" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" onclick="mixpanel.track('Email Field 1 Clicked');">
+				</div>
+					<div id="mce-responses" class="clear">
+						<div class="response" id="mce-error-response" style="display:none"></div>
+						<div class="response" id="mce-success-response" style="display:none"></div>
+					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5418fe1e541a0e43db9c54656_e1e62066d1" tabindex="-1" value=""></div>
+				    <div class="clear"><input type="submit" value="Get Early Access" name="subscribe" id="mc-embedded-subscribe" class="button" onclick="mixpanel.track('Email Field 1 Submitted');"></div>
+				    </div>
+				</form>
+				</div>
+				
+			<!--End mc_embed_signup-->
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+</div>
 
 
 <div id="framework" class="container-fluid">
@@ -47,15 +95,15 @@
 		
 		<div class="col-md-12">
 
-			<h1 class="animated fadeInUp">Stuff to do?</h1>
-			<p class="dark-blue animated fadeInUp" style="font-size:1.5em;">Let's say your friend Matt has a birthday<span class="hidden-sm hidden-xs">, you can either...</span></p>
+			<h1 class="animated fadeInUp">How does it work?</h1>
+			<p class="dark-blue animated fadeInUp" style="font-size:1.5em;">Trevor integrates your Task Lists and your Calendars, to help you <u>find time for your tasks</u></p>
 			<%= image_tag('path_main.png', class: 'path_main animated fadeIn hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
 
 		</div>
 
 		<div class="col-md-4">
-			<h2>Save it as a card</h2>
+			<h2>Task List</h2>
 			<%= image_tag("card_birthday.png", style: "width: 350px;") %>
 			<ul class="benefitList">
 				<li class="positive">It will never get lost</li>
@@ -74,7 +122,7 @@
 		</div>
 
 		<div class="col-md-4 hidden-sm hidden-xs">
-			<h2>Remember it</h2>
+			<h2>Calendar</h2>
 			<%= image_tag("paperplane.png", style: "width: 100px; margin: 20px") %>
 			<ul class="benefitList">
 				<li class="negative">Very, very high chance of forgetting<br/><span class="light-gray">(Matt will be sad)</span></li>
@@ -88,7 +136,7 @@
 		<div class="col-md-12">
 			<%= image_tag('path_left_right.png', class: 'path_left_right hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<h2>Organize your cards</h2>
+			<p class="dark-blue" style="font-size:1.5em;">Trevor then seperates your days into natural, meaningful sections,<br/>to help you manage time without even thinking about time:<br/><span class="faded">Morning, Afternoon, Evening, Work, After work, Weekend, etc.</span></p>
 		</div>
 
 		<div class="col-md-4">
@@ -114,160 +162,96 @@
 		<div class="col-md-12">
 			<%= image_tag('path_right_left.png', class: 'path_right_left hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<h2 class="text-left">Add Cards to your Schedule</h2>
+			<p class="dark-blue" style="font-size:1.5em;">Finally, all you have to do, is tell him what you need to do,<br/>as if you are speaking to an assistant</p>
 		</div>
-
-		<div class="col-md-8">
-			<%= image_tag("add_to_schedule.png", class: 'add_to_schedule') %>
-		</div>
-
-		<div class="col-md-4">
-			<ul class="benefitList">
-				<li class="positive">Add the "When" to your "What"</li>
-				<li class="positive">Turn Cards into a solid plan for action</li>
-				<li class="positive">You can always reschedule in seconds</li>
-				<li class="quote">"If you talk about it, it’s a dream, if you envision it, it’s possible, but if you schedule it, it’s real."<br/>
-					<%= link_to "- Anthony Robbins", "https://www.tonyrobbins.com", target: "_blank" %></li>
-			</ul>
-			<hr class="small"/>
-			<p class="probability"><span class="zen-green">60%</span> probability for success</p>
-		</div>
-
-		<div class="col-md-12">
-			<%= image_tag('path_right_left.png', class: 'path_right_left hidden-sm hidden-xs') %>
-			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<h2 class="text-left">Focus on the current Card</h2>
-		</div>
-
-		<div class="col-md-8">
-			<%= image_tag("focus.png", class: 'focus') %>
-		</div>
-
-		<div class="col-md-4">
-			<ul class="benefitList">
-				<li class="positive">A Card scheduled in time helps you focus</li>
-				<li class="positive">You get notified when it's time for action</li>
-				<li class="positive">Your energy on the right task, at the right time</li>
-			</ul>
-			<hr class="small"/>
-			<p class="probability"><span class="zen-green">90%</span> probability for success</p>
-		</div>
-
-		<div class="col-md-12">
-			<%= image_tag('path_left_right.png', class: 'path_left_right hidden-sm hidden-xs') %>
-			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<h2>Success</h2>
-			<%= image_tag("card_birthday_complete.png", style: "width: 350px;") %>
-			<h4>Learn from it, grow from it, repeat it, make people happy</h4>
-			<br/>
-			<hr/>
-			<h2>Here's a card for you :)</h2>
-			<br/>
-			
-				<div id="card_share" class="center-block">
-					<div id="card_share_inner" class="card_share">
-						Share this guide with friends
-					</div>
-				</div>
-			
-			<br/>
-			<div onclick="completedState()" class="addthis_sharing_toolbox"></div>
-			<div class="addthis_horizontal_follow_toolbox center-block hidden-sm hidden-xs"></div>
-			<%= image_tag('gift_matt.png', class: "matt") %>
-		</div>
-
-
-
 
 
 	</div>
 </div>
 
-
-<div id="meettrevor" class="container-fluid section dark bluebg">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<h1>What is Trevor?</h1>
-				<h3>Trevor is a personal assistant for time management - the first calendar that helps you get your tasks done.</h3>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-
-
-<div id="demo" class="container-fluid">
-
+<div class="container">
 	<div class="row">
+		<div class="chatbox chatbox-wide">
+			<div class="row">
+				<div class="bubble bubble-self pull-right">
+					<p>Marketing Assignment</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="bubble bubble-trevor">
+					<p>"Marketing Assignment" added to your Inbox.<br/>When would you like to schedule it?</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="bubble bubble-actions">
+					<ul>
+						<li>Today</li>
+						<li>This week</li>
+						<li>Next week</li>
+					</ul>
+				</div>
+			</div>
 
-		<div class="col-md-4 hidden-sm hidden-xs schedule animated fadeInLeft">
-			<div align="right">
-				<h1>This is your <span class="dark-blue">schedule</span></h1>
-				<p>It syncs with your calendars</p>
+			<div class="row">
+				<div class="bubble bubble-self pull-right">
+					<p>This week</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="bubble bubble-trevor">
+					<p>Best available times this week...</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="bubble bubble-actions">
+					<ul>
+						<li>Tomorrow at work</li>
+						<li>Friday at work</li>
+						<li>Weekend</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="bubble bubble-self pull-right">
+					<p>Tomorrow at work</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="bubble bubble-trevor">
+					<p>Great, it's scheduled. I'll notify you when it's time.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="bubble bubble-actions">
+					<ul>
+						<li class="card">Marketing Assignment<br/><span class="faded">10 am, tomorrow</span></li>
+						<li>View in Calendar</li>
+						<li>Undo</li>
+					</ul>
+				</div>
 			</div>
 
 		</div>
-		<div class="col-md-4 hidden-sm hidden-xs">
-			<div class="mockup animated fadeInUp">
-				<div class="placeholder">
-					<%= image_tag("iPhoneMockup.png", class: "iPhoneMockup", alt: "iPhone Mockup") %>
-					<%= image_tag("arrowRight.png", class: "arrowRight", alt: "Arrow pointing right") %>
-					<%= image_tag("arrowLeft.png", class: "arrowLeft", alt: "Arrow pointing left") %>
-				</div>
-				<div class="demoVideo">
-					<iframe width="326" height="580" src="https://www.youtube.com/embed/qNmhEgBqUY8?vq=hd720&autoplay=1&controls=0&showinfo=0&loop=1&playlist=qNmhEgBqUY8" frameborder="0" autohide="1"></iframe>
-				</div>
 
-				<!-- <h3 class="text-center">Tasks and time smarter, together</h3> -->
-				
-			</div>
-			<% link_to (image_tag("appStore.svg", class: "appStoreButton center-block", alt: "Download from the App Store")), "https://itunes.apple.com/app/trevor-ai-time-management/id1113523247", target: "_blank" %>
-		</div>
+		<hr class="margin"/>
 
-		<div class="col-sm-12 col-xs-12 hidden-md hidden-lg">
-			<div class="mockup animated fadeInUp">
-				<div class="placeholder">
-					<%= image_tag("iPhoneMockup.png", class: "iPhoneMockup ", alt: "iPhone Mockup") %>
-				</div>
-				<div class="demoVideo">
-					<iframe width="224" height="399" src="https://www.youtube.com/embed/qNmhEgBqUY8?vq=hd720&controls=0&showinfo=0&loop=1&playlist=qNmhEgBqUY8" frameborder="0" autohide="1"></iframe>
-				</div>
-				<% if false %>
-				<h3 class="text-center">Tasks and time smarter, together</h3>
-				
-				<%= link_to (image_tag("appStore.svg", class: "appStoreButton center-block", alt: "Download from the App Store")), "https://itunes.apple.com/app/trevor-ai-time-management/id1113523247", target: "_blank" %>
-				<% end %>
-			</div>
-			
-		</div>
-
-		<div class="col-md-4 hidden-sm hidden-xs todo animated fadeInRight">
-			
-			
-			<h1>Those are your <span class="dark-blue">cards</span></h1>
-			<p>They sync with your todo lists</p>
-			
+		<div class="row bottom-nav vertical-align center-block">
+			<%= link_to "Back to Top", root_path %>
+			<%= link_to "Trevor on Web", web_path %>
+			<%= link_to "Trevor on iOS", app_path %>
 		</div>
 
 	</div>
-
 </div>
+
+
 
 <div id="meettrevor" class="container-fluid section dark bluebg">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<% if false %><%= image_tag("app-icon.png", class: "app-icon visible-xs center-block") %><% end %>
-				<h1>Get Trevor</h1>
-				<h3>Trevor is available on iOS for free. Other platforms coming soon.</h3>
+				<h3>That's all there is really, just tell Trevor and he will help you find the time...</h3>
 			</div>
 			<div class="col-md-4"></div>
 			<div id="" class="download col-md-4">
@@ -286,7 +270,7 @@
 						<div class="response" id="mce-success-response" style="display:none"></div>
 					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 				    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5418fe1e541a0e43db9c54656_e1e62066d1" tabindex="-1" value=""></div>
-				    <div class="clear"><input type="submit" value="Get Trevor" name="subscribe" id="mc-embedded-subscribe" class="button" onclick="mixpanel.track('Email Field 1 Submitted');"></div>
+				    <div class="clear"><input type="submit" value="Take control of your time" name="subscribe" id="mc-embedded-subscribe" class="button" onclick="mixpanel.track('Email Field 1 Submitted');"></div>
 				    </div>
 				</form>
 				</div>
@@ -298,91 +282,7 @@
 	</div>
 </div>
 
-<% if false %>
 
-<div id="core-features" class="container-fluid">
-		<div class="row background-image intuitive">
-			<div>
-				<h1 class="dark-blue">Schedule everything you do</h1>
-				<p>Trevor syncs with amazing apps, so you can schedule everything you do, in one simple place. Import your tasks from iOS Reminders, with more, such as Todoist, Trello, Evernote, Pocket and others, coming soon!</p>
-			</div>
-		</div>
-		<div class="row background-image intelligent">
-			<div>
-				<h1 class="dark-blue">Plan a meaningful day</h1>
-				<p>Trevor is a personal assistant. He understands natural language and the meaning of the tasks you do. As soon as Trevor learns enough about your lifestyle he will start making suggestions that would help you plan a more balanced, productive, and meaningful day. <span class="faded">(Don't worry tho, no one can read your personal information)</span></p>
-			</div>
-		</div>
-		<div class="row background-image connected">
-			<div>
-				<h1 class="dark-blue">Learn more about yourself</h1>
-				<p>Trevor's purpose is to help you grow. Even the little things we do each day have a big impact on our lives. With Trevor you can gain powerful insights on how you spend your most valuable resource - time.</p>
-			</div>
-		</div>
-</div>
-
-<div id="features-pricing" class="container-fluid">
-	<div class="container">
-		<div class="row">
-			<h1>Features</h1>
-			<p>Out of the box, for free</p>
-			<div class="col-md-4 feature">
-				<h2>Sync Calendar Events</h2>
-				<p>Sync with iCloud, Google, Outlook, and more</p>
-			</div>
-			<div class="col-md-4 feature">
-				<h2>Sync your Tasks</h2>
-				<p>Sync with iOS Reminders and Todoist, with more, coming soon</p>
-			</div>
-			<div class="col-md-4 feature">
-				<h2>One Smart Inbox</h2>
-				<p>All of your tasks from your favourite apps in one place</p>
-			</div>
-
-			<div class="col-md-4 feature">
-				<h2>Schedule with Drag & Drop</h2>
-				<p>Schedule any task right into your calendar with just a swipe</p>
-			</div>
-
-			<div class="col-md-4 feature">
-				<h2>Natural Language</h2>
-				<p>Trevor understands things like "Meeting tomorrow at 2pm"</p>
-			</div>
-
-			<div class="col-md-4 feature">
-				<h2>Track Time & Progress</h2>
-				<p>Complete tasks scheduled in your calendar to track both time and progress</p>
-			</div>
-
-			<% if false %>
-
-			<h1>Premium Features</h1>
-			<p>For those serious about personal growth, we've got something special.</p>
-
-			<div class="col-md-4 feature">
-				<h2>Your own assistant</h2>
-				<p>Personalize Trevor to you, as you would your own A.I. personal assistant.</p>
-			</div>
-			<div class="col-md-4 feature">
-				<h2>Unlimited integrations</h2>
-				<p>Integrate with apps without boundaries. Schedule anything and everything.</p>
-			</div>
-			<div class="col-md-4 feature">
-				<h2>Advanced Personal Analytics</h2>
-				<p>Powerful data mining and neuro-linguistic programming algorithms helping you learn even more about yourself.</p>
-			</div>
-			
-			<h2>Premium membership costs just $4.99/mo.</h2>
-			<p>Hacking your personal growth is priceless, yet we ask for no higher than a cup of coffee.</p>
-
-			<% end %>
-
-		</div>
-	</div>
-
-</div>
-
-<% end %>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

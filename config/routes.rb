@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'founder-institute' => 'home#fi'
   get 'foundersinstitute' => 'home#fi'
   get 'founders-institute' => 'home#fi'
+  get 'web' => 'home#web'
+  get 'app' => 'home#app'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
