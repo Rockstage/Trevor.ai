@@ -1,11 +1,11 @@
 <div id="header" class="container-fluid dark bluebg">
 	<div class="row">
-		<div class="col-sm-6">
+		<div class="col-xs-6">
 			<%= image_tag("logo2.png", class: "logo2", alt: "Logo of Trevor AI") %>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-xs-6 hidden-xs">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><%= link_to "Trevor AI", root_path %></li>
+				<li class="active"><%= link_to "Trevor AI".html_safe, root_path %></li>
 				<li><%= link_to "Web", web_path %></li>
 				<li><%= link_to "App", app_path %></li>
 			</ul>
@@ -96,7 +96,11 @@
 		<div class="col-md-12">
 
 			<h1 class="animated fadeInUp">How does it work?</h1>
-			<p class="dark-blue animated fadeInUp" style="font-size:1.5em;">Trevor integrates your Task Lists and your Calendars, to help you <u>find time for your tasks</u></p>
+			<br/>
+			<br/>
+			<h2>Trevor integrates your Task List and your Calendar</h2>
+			<p class="dark-blue animated fadeInUp" style="font-size:1.5em;">to help you find <u>time</u> for your <u>tasks</u></p><br/>
+			<%= image_tag('trevorCircle.png', style: "width: 150px;") %><br/>
 			<%= image_tag('path_main.png', class: 'path_main animated fadeIn hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
 
@@ -104,15 +108,7 @@
 
 		<div class="col-md-4">
 			<h2>Task List</h2>
-			<%= image_tag("card_birthday.png", style: "width: 350px;") %>
-			<ul class="benefitList">
-				<li class="positive">It will never get lost</li>
-				<li class="positive">A peaceful, productive mind</li>
-				<li class="negative">Takes 20 seconds of your life<br/><span class="light-gray">(to save you many more)</span></li>
-				<li class="quote">"Your mind is for having ideas, not holding them"<br/><%= link_to "- David Allen", "http://gettingthingsdone.com", target: "_blank" %></li>
-			</ul>
-			<hr class="small"/>
-			<p class="probability"><span class="zen-green">30%</span> probability for success</p>
+			<%= image_tag("card_list.png", style: "width: 300px; margin: 20px 0;") %>
 		</div>
 
 
@@ -121,54 +117,79 @@
 			<!-- seperator -->
 		</div>
 
-		<div class="col-md-4 hidden-sm hidden-xs">
+		<div class="col-md-4">
 			<h2>Calendar</h2>
-			<%= image_tag("paperplane.png", style: "width: 100px; margin: 20px") %>
-			<ul class="benefitList">
-				<li class="negative">Very, very high chance of forgetting<br/><span class="light-gray">(Matt will be sad)</span></li>
-				<li class="negative">Reduces focus and causes anxiety</li>
-				<li class="positive">Faster</li>
-			</ul>
-			<hr class="small"/>
-			<p class="probability"><span class="zen-green">10%</span> probability for success</p>
+			<%= image_tag("calendar2.png", style: "width: 270px; margin: 20px 0; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);") %>
 		</div>
+
+		<!-- END OF ROW 1 -->
 
 		<div class="col-md-12">
-			<%= image_tag('path_left_right.png', class: 'path_left_right hidden-sm hidden-xs') %>
+			<%= image_tag('path_right_left.png', class: 'path_right_left path_pull_right hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<p class="dark-blue" style="font-size:1.5em;">Trevor then seperates your days into natural, meaningful sections,<br/>to help you manage time without even thinking about time:<br/><span class="faded">Morning, Afternoon, Evening, Work, After work, Weekend, etc.</span></p>
+			<h2>Trevor makes time management simple</h2>
+			<p class="dark-blue" style="font-size:1.5em;">by seperating your days into natural, meaningful sections, such as:<br/><span class="faded">Morning, Afternoon, Evening, Work, After work, Weekend, etc.</span></p>
 		</div>
 
 		<div class="col-md-4">
-			<ul class="benefitList" style="padding-top: 95px;">
-				<!-- <li class="positive">Fast and easy:<br/>“I <u>must</u> <i>buy a gift for Matt</i> <u>by thursday</u>”</li> -->
-				<li class="positive">"Organization makes a system of many appear fewer" <%= link_to "- The Laws of Simplicity", "http://lawsofsimplicity.com", target: "_blank" %></li>
-				<li class="positive">Helps you focus on the right cards</li>
-				<li class="negative">Too much planning or doing can kill productivity</li>
-			</ul>
-			<hr class="small"/>
-			<p class="probability"><span class="zen-green">40%</span> probability for success</p>
+
 		</div>
 
 		<div class="col-md-4">
-			<%= image_tag("card_list.png", style: "width: 350px; margin: 20px 0;") %>
+			<%= image_tag("dailyView.png", style: "width: 355px; margin: 20px 0;") %>
 		</div>
 
-		<div class="col-md-4 text-left" style="padding-top: 100px;">
-			<p class="light-gray">"It's not about how to get more things done,<br/>it’s about how to get <u>the right things</u> done."<br/>
-					<%= link_to "Essentialism: The Disciplined Pursuit of Less by Greg McKeown", "http://gregmckeown.com/book/", target: "_blank" %></p>
+		<div class="col-md-4 text-left hidden-sm hidden-xs" style="padding-top: 200px;">
+			<p class="light-gray">"Organization makes a system of many appear fewer"<br/>
+					<%= link_to "- The Laws of Simplicity", "http://lawsofsimplicity.com", target: "_blank" %>
 		</div>
 
 		<div class="col-md-12">
 			<%= image_tag('path_right_left.png', class: 'path_right_left hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<p class="dark-blue" style="font-size:1.5em;">Finally, all you have to do, is tell him what you need to do,<br/>as if you are speaking to an assistant</p>
+			<h2 class="text-left">All you need to do is tell</h2>
+			<p class="dark-blue text-left" style="font-size:1.5em;">Trevor will run enough calculations to find the best time for you to carry out your task.</p>
 		</div>
 
+
+		<div class="col-md-6">
+			<%= image_tag("botConversation2.png", style: "width: 355px; margin: 20px 0; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);") %>
+		</div>
+
+		<div class="col-md-6 text-left" style="padding-top: 100px;">
+			<p class="light-gray">"The most fundamental principle of the organized mind, the one most critical to keeping us from forgetting or losing things, is to shift the burden of organizing from our brains to the external world."<br/>
+			<%= link_to "- The Organized Mind", "http://www.daniellevitin.com/theorganizedmind/", target: "_blank" %>
+			<br/>
+			<br/>
+			<br/>
+			<p class="dark-blue">Trevor helps you do that, in such a natural way, you don't even have to think about time.</p>
+
+			<% if false %>
+			<ul class="benefitList">
+				<li class="quote">Essentialism: The Disciplined Pursuit of Less</li>
+				<li class="quote">Laws of Simplicity: Design, Technology, Business, Life</li>
+				<li class="quote">The Organized Mind: Thinking Straight in the Age of Information Overload</li>
+				<li class="quote">Time Management that doesn't suck</li>
+				<li class="quote">Becoming the 1%<br/><%= link_to "- David Allen", "http://gettingthingsdone.com", target: "_blank" %></li>
+			</ul>
+			<% end %>
+		</div>	
+
+		<div class="col-md-12">
+
+			<hr class="margin"/>
+			<div class="row bottom-nav vertical-align center-block">
+				<%= link_to "Back to Top", root_path %>
+				<%= link_to "Trevor on Web", web_path %>
+				<%= link_to "Trevor on iOS", app_path %>
+			</div>
+		</div>
 
 	</div>
 </div>
 
+<% if false %>
+<!-- BOT CONVERSATION 2 -->
 <div class="container">
 	<div class="row">
 		<div class="chatbox chatbox-wide">
@@ -234,16 +255,9 @@
 
 		</div>
 
-		<hr class="margin"/>
-
-		<div class="row bottom-nav vertical-align center-block">
-			<%= link_to "Back to Top", root_path %>
-			<%= link_to "Trevor on Web", web_path %>
-			<%= link_to "Trevor on iOS", app_path %>
-		</div>
-
 	</div>
 </div>
+<% end %>
 
 
 
@@ -295,7 +309,8 @@
 
 </script>
 
-
+<!-- Share Buttons -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56b5ad3805522642" async="async"></script>
 
 
 

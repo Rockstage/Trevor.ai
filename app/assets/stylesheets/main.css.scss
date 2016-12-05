@@ -242,6 +242,11 @@ hr.margin {
 	&.chatbox-wide {
 		width: 700px;
 	}
+	.row {
+		@media (max-width: 768px) {
+		margin: 5px;
+	}
+	}
 }
 
 .availability {
@@ -262,6 +267,8 @@ hr.margin {
 	min-height: 40px;
 	max-height: 120px;
 	max-width: 600px;
+	@media (max-width: 768px) {
+	}
 	background: rgb(235,235,235);
 	border-radius: 30px;
 	display: inline-block;
@@ -326,8 +333,8 @@ hr.margin {
 	background-color: rgb(245,245,245);
 	padding-top: 50px;
 	@media (max-width: 992px) {
-		padding-bottom: 200px;
-		h2 {
+		// padding-bottom: 200px;
+		h2, p, h1 {
 			text-align: center;
 		}
 	}
@@ -345,6 +352,9 @@ hr.margin {
 
 	p {
 		font-size: 1.2em;
+		&.text-left {
+			margin-left: 38px;
+		}
 	}
 	.benefitList {
 		text-align: left;
@@ -384,6 +394,9 @@ hr.margin {
 	}
 	img {
 		width: 70%;
+		@media (max-width: 992px) {
+			max-width: auto !important;
+		}
 	}
 	.add_to_schedule {
 		width: 650px;
@@ -698,8 +711,9 @@ hr.margin {
 	
 }
 
+
 #signup {
-	padding-top: 50px;
+	padding-top: 0;
 
 	padding-bottom: 50px;	
 	.download {
@@ -923,7 +937,10 @@ hr.margin {
 }
 
 #webDemo {
-	height: 1400px;
+	height: 100vh;
+	@media (max-width: 768px) {
+
+	}
 	background: image-url('webapp.jpg') no-repeat center;
 	background-size: cover;
 }
