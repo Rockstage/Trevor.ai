@@ -19,5 +19,11 @@ class HomeController < ApplicationController
 
   def fi
   end
+
+  def list_demo
+  end
+
+  def schedule_demo
+  end
   
 end

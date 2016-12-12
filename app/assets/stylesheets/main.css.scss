@@ -949,10 +949,66 @@ hr.margin {
 	background-size: cover;
 }
 
+.logo2IconOnly {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+	margin-left: 20px;
+	background: image-url('logo2.png');
+	background-size: 237px 60px;
+	background-repeat: no-repeat;
+	background-position: center left;
+	overflow-x: hidden;
+}
 
+#listDemo {
+	padding: 30px;
+	.search {
+		width: 100%;
+		input {
+			width: 100%;
+			min-height: 40px;
+			background: rgb(230,230,230);
+			border-radius: 10px;
+			border: 5px solid rgba(0,0,0,0);
+			&::placeholder {
+				font-size: 1.25em;
+				text-align: center;
+				color: rgb(150,150,150);
+			}
+		}
+	}
+	.taskLists {
+		.listTitle {
+			font-style: italic;
+			font-size: 2em;
+			font-weight: 200;
+			color: rgb(150,150,150);
+		}
+		.list {
+			border-top: 1px solid rgb(230,230,230);
+			padding: 0;
+			margin: 0 30px 0 30px;
+			list-style: none;
+			li {
+				width: 100%;
+				height: 50px;
+				font-size: 1.5em;
+				font-weight: 300;
+				color: rgb(0,140,180);
+				line-height: 50px;
+				border-bottom: 1px solid rgb(230,230,230);
+			}
+		}
+	}
+}
 
+#scheduleDemo {
 
-
+}
 
 
 
