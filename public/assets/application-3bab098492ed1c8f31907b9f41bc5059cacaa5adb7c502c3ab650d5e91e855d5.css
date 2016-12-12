@@ -6571,12 +6571,12 @@ hr.margin {
 /* line 1009, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo {
   background-color: whitesmoke;
-  padding: 30px;
+  padding: 15px;
 }
 /* line 1012, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .timeline {
   margin-top: -20px;
-  padding: 0 10px;
+  padding: 0 8px;
   height: 800px;
 }
 /* line 1017, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
@@ -6590,9 +6590,11 @@ hr.margin {
 /* line 1028, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule {
   height: 800px;
+  padding-left: 3px;
+  padding-right: 8px;
   border-left: 4px solid gainsboro;
 }
-/* line 1031, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1033, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection {
   background-color: white;
   border-radius: 15px;
@@ -6600,7 +6602,7 @@ hr.margin {
   padding: 5px 5px 5px 10px;
   margin: 5px;
 }
-/* line 1037, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1039, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection h2 {
   font-size: 1.25em;
   font-weight: 300;
@@ -6608,7 +6610,7 @@ hr.margin {
   margin: 0 0 0 45px;
   line-height: 40px;
 }
-/* line 1044, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1046, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection p {
   color: #008cb4;
   font-size: 1.25em;
@@ -6617,46 +6619,46 @@ hr.margin {
   padding-left: 45px;
   line-height: 30px;
 }
-/* line 1052, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1054, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection.morning {
   height: 145px;
 }
-/* line 1055, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1057, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection.work {
   height: 295px;
 }
-/* line 1058, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1060, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection.evening {
   height: 145px;
 }
-/* line 1061, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1063, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection.night {
   height: 195px;
 }
-/* line 1064, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1066, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon {
   height: 40px;
   background-size: 30px;
   background-repeat: no-repeat;
   background-position: center left;
 }
-/* line 1072, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1074, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon.iconMorning {
   background-image: url(/assets/scheduleMorning-aa4c8539301077d8ee157654a97fedf26a9594bbdc91425c59e048349ba07be7.png);
 }
-/* line 1075, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1077, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon.iconWork {
   background-image: url(/assets/scheduleWork-c0fdcc9da9e488e0c0123fd5b7feeafb1280f7c6fb67fcd6ebb0d4513b79faec.png);
 }
-/* line 1078, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1080, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon.iconAfternoon {
   background-image: url(/assets/scheduleAfternoon-f52d1b01494c1ffbdf6fa3edda3112430f6e5a95cfd59c01b15874ba04ee0ec5.png);
 }
-/* line 1081, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1083, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon.iconEvening {
   background-image: url(/assets/scheduleEvening-68657c1a9381a113e356f6cf82baf8dc711d480ca0f7205be334932822d14950.png);
 }
-/* line 1084, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1086, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon.iconNight {
   background-image: url(/assets/scheduleNight-56793c2c46987abe0646df0d786ad656978103bad842b93ec0fbd7fab738c067.png);
 }
