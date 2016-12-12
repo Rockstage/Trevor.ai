@@ -965,7 +965,7 @@ hr.margin {
 }
 
 #listDemo {
-	padding: 30px;
+	padding: 15px 30px 30px 30px;
 	.search {
 		width: 100%;
 		input {
@@ -1007,7 +1007,86 @@ hr.margin {
 }
 
 #scheduleDemo {
+	background-color: rgb(245,245,245);
+	padding: 30px;
+	.timeline {
+		margin-top: -20px;
+		padding: 0 10px;
+		height: 800px;
+		
+		p {
+			color: rgb(150,150,150);
+			font-size: 1.1em;
+			font-weight: 400;
+			line-height: 40px;
+			text-align: right;
 
+		}
+
+
+	}
+	.schedule {
+		height: 800px;
+		border-left: 4px solid rgb(220,220,220);
+		.daySection {
+			background-color: white;
+			border-radius: 15px;
+			box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+			padding: 5px 5px 5px 10px;
+			margin: 5px;
+			h2 {
+				font-size: 1.25em;
+				font-weight: 300;
+				color: rgb(220,220,220);
+				margin: 0 0 0 45px;
+				line-height: 40px;
+			}
+			p {
+				color: rgb(0,140,180);
+				font-size: 1.25em;
+				font-weight: 300;
+				margin: 0;
+				padding-left: 45px;
+				line-height: 30px;
+			}
+			&.morning {
+				height: 145px;
+			}
+			&.work {
+				height: 295px;
+			}
+			&.evening {
+				height: 145px;
+			}
+			&.night {
+				height: 195px;
+			}
+			.daySectionIcon {
+			
+				height: 40px;
+				
+				background-size: 30px;
+				background-repeat: no-repeat;
+				background-position: center left;
+
+				&.iconMorning {
+					background-image: image-url('scheduleMorning.png');		
+				}
+				&.iconWork {
+					background-image: image-url('scheduleWork.png');		
+				}
+				&.iconAfternoon {
+					background-image: image-url('scheduleAfternoon.png');		
+				}
+				&.iconEvening {
+					background-image: image-url('scheduleEvening.png');		
+				}
+				&.iconNight {
+					background-image: image-url('scheduleNight.png');		
+				}
+			}
+		}
+	}
 }
 
 
