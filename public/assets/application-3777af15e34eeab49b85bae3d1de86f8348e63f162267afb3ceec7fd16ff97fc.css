@@ -5701,22 +5701,28 @@ hr.margin {
 }
 
 /* line 256, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small {
+  max-width: 500px;
+  margin: 80px auto;
+}
+
+/* line 261, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .availability {
   height: 100px;
   margin-bottom: 30px;
 }
-/* line 259, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 264, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .availability p {
   font-size: 1em;
   font-color: #919191;
 }
-/* line 263, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 268, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .availability img {
   height: 70px;
   margin: 0 auto;
 }
 
-/* line 270, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 275, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bubble {
   min-height: 40px;
   max-height: 120px;
@@ -5726,46 +5732,46 @@ hr.margin {
   display: inline-block;
   margin: 10px;
 }
-/* line 280, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 285, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bubble p {
   font-size: 1.5em;
   line-height: 30px;
   margin: 10px 30px;
 }
-/* line 285, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 290, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bubble.bubble-self {
   background: #008cb4;
 }
-/* line 287, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 292, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bubble.bubble-self p {
   color: white;
   text-align: right;
 }
-/* line 292, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 297, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bubble.bubble-trevor {
   background-image: url(/assets/trevor-avatar-af40273e78b009abb10c34cd065182f567a5c248907ddd6222594680c587f4c6.png);
   background-repeat: no-repeat;
   background-position: 8px 8px;
   background-size: 35px;
 }
-/* line 297, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 302, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bubble.bubble-trevor p {
   margin-left: 50px;
 }
-/* line 302, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 307, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bubble.bubble-actions {
   margin-top: -7px;
   background: none;
   border: 2px solid #ebebeb;
   max-height: none;
 }
-/* line 307, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 312, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bubble.bubble-actions ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 311, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 316, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bubble.bubble-actions ul li {
   height: 40px;
   width: 100%;
@@ -5773,56 +5779,125 @@ hr.margin {
   text-align: center;
   padding: 5px 70px 0 70px;
 }
-/* line 317, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 322, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bubble.bubble-actions ul li:not(:last-child) {
   border-bottom: 2px solid #ebebeb;
 }
-/* line 320, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 325, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bubble.bubble-actions ul li.card {
   height: 70px;
   color: rgba(0, 0, 0, 0.65);
 }
 
-/* line 330, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 336, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small .bubble {
+  min-height: 30px;
+  max-height: 90px;
+  max-width: 600px;
+  background: #ebebeb;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 10px;
+}
+/* line 346, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small .bubble p {
+  font-size: 1em;
+  line-height: 20px;
+  margin: 8px 20px;
+}
+/* line 351, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small .bubble.bubble-self {
+  background: #008cb4;
+}
+/* line 353, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small .bubble.bubble-self p {
+  color: white;
+  text-align: right;
+}
+/* line 358, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small .bubble.bubble-trevor {
+  background-image: url(/assets/trevor-avatar-af40273e78b009abb10c34cd065182f567a5c248907ddd6222594680c587f4c6.png);
+  background-repeat: no-repeat;
+  background-position: 8px 5px;
+  background-size: 25px;
+  text-align: left;
+}
+/* line 364, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small .bubble.bubble-trevor p {
+  margin-left: 40px;
+}
+/* line 370, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small .bubble.bubble-actions {
+  margin-top: -7px;
+  background: none;
+  border: 2px solid #ebebeb;
+  max-height: none;
+}
+/* line 375, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small .bubble.bubble-actions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 379, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small .bubble.bubble-actions ul li {
+  font-size: 1.2em;
+  height: 33px;
+  width: 100%;
+  color: #008cb4;
+  text-align: center;
+  padding: 5px 70px 0 70px;
+}
+/* line 386, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small .bubble.bubble-actions ul li:not(:last-child) {
+  border-bottom: 2px solid #ebebeb;
+}
+/* line 389, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.chatbox-small .bubble.bubble-actions ul li.card {
+  height: 60px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/* line 400, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .app-icon {
   height: 100px;
 }
 
-/* line 335, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 405, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework {
   max-width: 100%;
   background-color: whitesmoke;
   padding-top: 50px;
 }
 @media (max-width: 992px) {
-  /* line 341, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 411, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #framework h2, #framework p, #framework h1 {
     text-align: center;
   }
 }
-/* line 345, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 415, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework h2 {
   color: #008cb4;
   font-weight: 300;
   font-size: 2.5em;
 }
-/* line 349, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 419, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework h2.text-left {
   margin-left: 38px;
 }
-/* line 353, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 423, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework hr {
   margin: 75px 0;
 }
-/* line 357, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 427, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework p {
   font-size: 1.2em;
 }
-/* line 359, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 429, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework p.text-left {
   margin-left: 38px;
 }
-/* line 363, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 433, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .benefitList {
   text-align: left;
   margin-bottom: 0;
@@ -5830,75 +5905,75 @@ hr.margin {
   padding-bottom: 0;
   list-style: none;
 }
-/* line 369, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 439, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .benefitList li {
   min-height: 60px;
   vertical-align: center;
   font-size: 1.2em;
 }
-/* line 374, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 444, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .benefitList .positive {
   background: url(/assets/checkmark-9f962f8f4c704b54d76376842bd4c93cf0923b0a70a302a82a458510519037a4.png) no-repeat left top;
   background-size: 30px;
   padding: 3px 3px 3px 40px;
   margin: 0;
 }
-/* line 380, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 450, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .benefitList .negative {
   background: url(/assets/x-2f8930992a6aeee35e39f81f4071003d305987b3ccb13a31731143d8c462145c.png) no-repeat left top;
   background-size: 30px;
   padding: 3px 3px 3px 40px;
   margin: 0;
 }
-/* line 386, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 456, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .benefitList .quote {
   color: #aaaaaa;
   padding-top: 20px;
 }
-/* line 391, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 461, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework hr.small {
   margin: 10px 0 20px 0;
 }
-/* line 394, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 464, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework p.probability {
   text-align: left;
   padding-left: 38px;
   color: #c8c8c8;
 }
-/* line 399, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 469, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework img {
   width: 70%;
 }
 @media (max-width: 992px) {
-  /* line 399, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 469, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #framework img {
     max-width: auto !important;
   }
 }
-/* line 405, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 475, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .add_to_schedule {
   width: 650px;
   margin: 20px 0;
 }
 @media (max-width: 992px) {
-  /* line 405, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 475, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #framework .add_to_schedule {
     width: 100%;
     padding-right: 20px;
   }
 }
-/* line 413, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 483, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .focus {
   width: 650px;
   margin: 50px 0;
 }
 @media (max-width: 992px) {
-  /* line 413, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 483, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #framework .focus {
     width: 100%;
   }
 }
-/* line 420, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 490, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .matt {
   width: 250px;
   position: absolute;
@@ -5906,36 +5981,36 @@ hr.margin {
   bottom: 0;
 }
 @media (max-width: 992px) {
-  /* line 420, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 490, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #framework .matt {
     bottom: -250px;
   }
 }
-/* line 429, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 499, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .path_left_right, #framework .path_right_left {
   width: 35%;
   margin: 20px 35% 20px auto;
 }
-/* line 432, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 502, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .path_left_right.path_pull_right, #framework .path_right_left.path_pull_right {
   margin: 20px auto 20px 35%;
 }
-/* line 436, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 506, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .path_main {
   width: 70%;
   margin: 20px 0;
 }
-/* line 440, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 510, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .path_straight {
   height: 100px;
   width: auto;
   margin: 30px auto;
 }
-/* line 445, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 515, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework a {
   text-decoration: none;
 }
-/* line 448, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 518, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework #card_share {
   background: white;
   font-size: 1.3em;
@@ -5945,7 +6020,7 @@ hr.margin {
   color: black;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
 }
-/* line 457, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 527, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .card_share {
   height: 100%;
   width: 100%;
@@ -5959,7 +6034,7 @@ hr.margin {
   -webkit-transition: .5s;
   transition: .5s;
 }
-/* line 469, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 539, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .card_share:hover {
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
   background: url(/assets/checkmark_green-3d4b48b09116718a511c1519cfcf4db9a60bef09079d99a58ba0ddae68472128.png) no-repeat 17px 22px;
@@ -5972,50 +6047,61 @@ hr.margin {
   -webkit-transition: .5s;
   transition: .5s;
 }
-/* line 481, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 551, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework .card_share.completedState {
   background: url(/assets/checkmark_green-3d4b48b09116718a511c1519cfcf4db9a60bef09079d99a58ba0ddae68472128.png) no-repeat 17px 22px;
   background-size: 40px;
   text-decoration: line-through;
 }
-/* line 490, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 560, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework.fi-framework .intro {
   padding: 0 50px;
 }
-/* line 493, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 563, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework.fi-framework .path_straight {
   width: 3px;
 }
-/* line 496, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 566, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework.fi-framework .subtitle {
   font-size: 1.5em;
 }
-/* line 499, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 569, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework.fi-framework .stats {
   padding-left: 180px;
 }
-/* line 502, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 572, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #framework.fi-framework img.weapons {
   width: 350px;
   margin: 40px 0;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
+/* line 578, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+#framework .quote {
+  max-width: 500px;
+  margin: 70px auto 50px auto;
+  padding: 20px;
+  border-left: 4px solid #e6e6e6;
+}
+/* line 583, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+#framework .quote p {
+  font-size: 1.5em;
+}
 
-/* line 512, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 590, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #demo {
   max-width: 100%;
 }
-/* line 514, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 592, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #demo .schedule {
   padding-top: 180px;
 }
 @media (max-width: 1200px) {
-  /* line 514, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 592, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #demo .schedule {
     font-size: 0.8em;
   }
 }
-/* line 520, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 598, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #demo .mockup {
   position: relative;
   top: -130px;
@@ -6024,71 +6110,71 @@ hr.margin {
   margin: 0 auto;
 }
 @media (max-width: 992px) {
-  /* line 520, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 598, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #demo .mockup {
     width: 100%;
     top: 50px;
     max-width: 300px;
   }
 }
-/* line 532, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 610, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #demo .mockup .placeholder {
   position: relative;
 }
-/* line 538, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 616, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #demo .mockup .placeholder .iPhoneMockup {
   height: 800px;
 }
 @media (max-width: 992px) {
-  /* line 538, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 616, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #demo .mockup .placeholder .iPhoneMockup {
     max-height: 550px;
   }
 }
-/* line 545, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 623, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #demo .mockup .placeholder .arrowRight {
   width: 200px;
   position: absolute;
   left: -180px;
   top: 200px;
 }
-/* line 552, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 630, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #demo .mockup .placeholder .arrowLeft {
   width: 200px;
   position: absolute;
   right: -180px;
   top: 490px;
 }
-/* line 559, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 637, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #demo .mockup .demoVideo {
   position: absolute;
   top: 105px;
   left: 50px;
 }
 @media (max-width: 992px) {
-  /* line 559, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 637, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #demo .mockup .demoVideo {
     top: 75px;
     left: 35px;
   }
 }
-/* line 569, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 647, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #demo .mockup h3 {
   padding-top: 20px;
 }
-/* line 575, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 653, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #demo .todo {
   padding-top: 180px;
 }
 @media (max-width: 1200px) {
-  /* line 575, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 653, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #demo .todo {
     padding-left: 100px;
     font-size: 0.8em;
   }
 }
 
-/* line 587, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 665, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #meettrevor {
   background-color: #1e1e1e;
   color: white;
@@ -6096,32 +6182,32 @@ hr.margin {
   padding-top: 70px;
   padding-bottom: 90px;
 }
-/* line 593, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 671, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #meettrevor h3 {
   font-size: 1.7em;
   font-weight: 300;
   line-height: 1.7em;
 }
-/* line 598, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 676, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #meettrevor .faded {
   opacity: 0.60;
 }
 
-/* line 603, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 681, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .download {
   padding: 0;
 }
-/* line 605, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 683, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .download #mc_embed_signup {
   height: 100%;
   background-color: rgba(255, 255, 255, 0);
 }
-/* line 610, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 688, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .download #mc_embed_signup form h1 {
   font-family: inherit;
   font-weight: 200;
 }
-/* line 614, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 692, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .download #mc_embed_signup form #mce-EMAIL {
   margin-top: 50px;
   background-color: rgba(255, 255, 255, 0);
@@ -6130,7 +6216,7 @@ hr.margin {
   font-size: 2em;
   font-weight: 200;
 }
-/* line 622, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 700, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .download #mc_embed_signup form .button {
   width: 100%;
   height: 50px;
@@ -6139,133 +6225,133 @@ hr.margin {
   color: white;
   text-transform: uppercase;
 }
-/* line 629, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 707, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .download #mc_embed_signup form .button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 633, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 711, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .download #mc_embed_signup form .mce_inline_error {
   background: none;
   color: white;
 }
-/* line 637, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 715, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .download #mc_embed_signup form .mce-responses * {
   background: none;
   color: white !important;
 }
-/* line 641, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 719, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .download #mc_embed_signup form .indicates-required {
   display: none;
 }
-/* line 644, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 722, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .download #mc_embed_signup form .mc-field-group label {
   display: none;
 }
 
-/* line 652, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 730, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #valueProposition h1 {
   font-size: 3em;
 }
-/* line 655, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 733, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #valueProposition h2 {
   font-size: 2.2em;
   font-weight: 200;
 }
 
-/* line 661, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 739, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #core-features {
   padding-top: 0;
 }
-/* line 663, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 741, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #core-features .background-image {
   position: relative;
   background-size: cover;
   background-position: center;
   height: 400px;
 }
-/* line 669, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 747, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #core-features .connected {
   background-image: url(/assets/connected-0bacc422095f3a20467ff83ce7e040f939b4bd7cf1725a8477d815734bdf7fec.jpg);
 }
-/* line 672, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 750, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #core-features .intuitive {
   background-image: url(/assets/intuitive-d7c8233bbe17ad39490c6b24f30c26b114bd0a6c92cac9fcf1c8c29c1af68826.jpg);
 }
-/* line 675, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 753, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #core-features .intelligent {
   background-image: url(/assets/intelligent-fe9cb9ff4b038937253c3789358963a48350342d92d4aeddc65ee03bf84532f7.jpg);
 }
-/* line 678, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 756, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #core-features .row > div {
   position: absolute;
   bottom: 0;
   padding: 140px 50px 50px 50px;
 }
 @media (max-width: 768px) {
-  /* line 683, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 761, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #core-features p {
     font-size: 1.2em;
   }
 }
 @media (max-width: 768px) {
-  /* line 689, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 767, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #core-features h1 {
     font-size: 30px;
   }
 }
 
-/* line 696, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 774, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #features-pricing {
   padding-top: 110px;
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
 }
-/* line 701, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 779, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #features-pricing .feature {
   padding: 50px;
 }
 @media (max-width: 768px) {
-  /* line 701, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 779, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #features-pricing .feature {
     padding: 30px;
   }
 }
-/* line 707, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 785, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #features-pricing h2 {
   font-size: 20px;
   font-weight: 400;
   color: #008cb4;
 }
-/* line 712, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 790, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #features-pricing p {
   color: #969696;
 }
 
-/* line 719, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 797, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup {
   padding-top: 0;
   padding-bottom: 50px;
 }
-/* line 723, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 801, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup .download {
   padding: 0;
 }
-/* line 725, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 803, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup .download #mc_embed_signup {
   height: 100%;
   background-color: rgba(255, 255, 255, 0);
 }
-/* line 728, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 806, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup .download #mc_embed_signup form {
   padding-left: 0;
 }
-/* line 730, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 808, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup .download #mc_embed_signup form h1 {
   font-family: inherit;
   font-weight: 200;
 }
-/* line 734, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 812, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup .download #mc_embed_signup form #mce-EMAIL {
   margin-top: 50px;
   background-color: rgba(255, 255, 255, 0);
@@ -6274,7 +6360,7 @@ hr.margin {
   font-size: 2em;
   font-weight: 200;
 }
-/* line 742, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 820, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup .download #mc_embed_signup form .button {
   width: 100%;
   height: 50px;
@@ -6283,39 +6369,39 @@ hr.margin {
   color: white;
   text-transform: uppercase;
 }
-/* line 749, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 827, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup .download #mc_embed_signup form .button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 753, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 831, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup .download #mc_embed_signup form .mce_inline_error {
   background: none;
   color: white;
 }
-/* line 757, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 835, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup .download #mc_embed_signup form .mce-responses * {
   background: none;
   color: white !important;
 }
-/* line 761, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 839, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup .download #mc_embed_signup form .indicates-required {
   display: none;
 }
-/* line 764, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 842, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup .download #mc_embed_signup form .mc-field-group label {
   display: none;
 }
-/* line 772, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 850, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup #footer {
   text-align: center;
 }
-/* line 777, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 855, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #signup #footer p {
   color: white;
   margin-top: 25px;
 }
 
-/* line 784, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 862, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .button {
   display: inline-block;
   text-align: center;
@@ -6330,66 +6416,66 @@ hr.margin {
   border-radius: 5px;
   text-transform: uppercase;
 }
-/* line 797, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 875, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .button.button-blue {
   color: #008cb4;
   border: 1px solid #008cb4;
 }
-/* line 800, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 878, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .button.button-blue:hover {
   background-color: rgba(0, 140, 180, 0.1);
   color: #008cb4;
 }
-/* line 805, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 883, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .button:hover {
   background-color: rgba(255, 255, 255, 0.1);
   text-decoration: none;
   color: white;
 }
 
-/* line 812, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 890, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #howitworks {
   background-color: #e6e6e6;
 }
 
-/* line 816, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 894, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #features {
   text-align: center;
   background-color: #1e1e1e;
   color: white;
 }
-/* line 820, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 898, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #features hr {
   border-top: 1px solid gray;
 }
-/* line 823, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 901, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #features .row {
   overflow-x: hidden;
 }
-/* line 826, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 904, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #features .screenshot {
   width: 15vw;
   padding: 10px;
 }
 @media (max-width: 1200px) {
-  /* line 826, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 904, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #features .screenshot {
     width: 30vw;
   }
 }
 @media (max-width: 768px) {
-  /* line 826, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+  /* line 904, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
   #features .screenshot {
     width: 90vw;
   }
 }
 
-/* line 837, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 915, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #cta {
   background-color: #1e1e1e;
 }
 
-/* line 843, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 921, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #outro {
   height: 500px;
   background-image: url(/images/outro.jpg);
@@ -6397,98 +6483,98 @@ hr.margin {
   background-position: center;
   padding: 0;
 }
-/* line 849, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 927, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #outro .row {
   height: 100%;
   margin: 0;
 }
-/* line 852, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 930, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #outro .row .download {
   height: 100%;
   color: black;
   padding: 0;
 }
-/* line 856, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 934, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #outro .row .download #mc_embed_signup {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.8);
 }
-/* line 859, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 937, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #outro .row .download #mc_embed_signup form {
   padding-top: 100px;
 }
-/* line 861, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 939, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #outro .row .download #mc_embed_signup form p {
   color: black;
 }
 
-/* line 872, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 950, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #press {
   padding-top: 20px;
 }
-/* line 874, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 952, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #press h1 {
   padding-top: 100px;
 }
-/* line 878, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 956, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #press .assets-preview img {
   width: 100%;
 }
-/* line 883, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 961, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #press .roles img {
   width: 200px;
   margin: 25px;
 }
-/* line 887, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 965, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #press .roles a {
   font-size: 2em;
   color: #008cb4;
   font-weight: 300;
 }
 
-/* line 895, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 973, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #team {
   padding-top: 20px;
 }
-/* line 897, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 975, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #team h1 {
   padding-top: 100px;
 }
-/* line 901, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 979, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #team .assets-preview img {
   width: 100%;
 }
-/* line 906, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 984, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #team .roles img {
   width: 175px;
   display: block;
   margin: 75px auto 25px;
 }
-/* line 911, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 989, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #team .roles a {
   font-size: 1.8em;
   color: #008cb4;
   font-weight: 300;
 }
 
-/* line 919, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 997, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .appStoreButton {
   width: 220px;
   margin-bottom: 70px;
 }
 
-/* line 924, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1002, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .appStoreButtonFooter {
   width: 150px;
 }
 
-/* line 928, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1006, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bottom-nav {
   max-width: 450px;
   height: 100px;
   margin-bottom: 30px;
 }
-/* line 932, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1010, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .bottom-nav a {
   display: inline-block;
   margin: 0 auto;
@@ -6498,14 +6584,14 @@ hr.margin {
   border-radius: 5px;
 }
 
-/* line 943, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1021, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #webDemo {
   height: 100vh;
   background: url(/assets/webapp-b03eede1c6da09eb6198ea582199ecaa5c70237fc1d1dff3d125bbd5f74094ef.jpg) no-repeat center;
   background-size: cover;
 }
 
-/* line 952, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1030, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 .logo2IconOnly {
   position: absolute;
   top: 0;
@@ -6521,15 +6607,15 @@ hr.margin {
   overflow-x: hidden;
 }
 
-/* line 967, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1045, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #listDemo {
   padding: 15px 30px 30px 30px;
 }
-/* line 969, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1047, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #listDemo .search {
   width: 100%;
 }
-/* line 971, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1049, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #listDemo .search input {
   width: 100%;
   min-height: 40px;
@@ -6537,27 +6623,27 @@ hr.margin {
   border-radius: 10px;
   border: 5px solid transparent;
 }
-/* line 977, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1055, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #listDemo .search input::placeholder {
   font-size: 1.25em;
   text-align: center;
   color: #969696;
 }
-/* line 985, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1063, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #listDemo .taskLists .listTitle {
   font-style: italic;
   font-size: 2em;
   font-weight: 200;
   color: #969696;
 }
-/* line 991, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1069, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #listDemo .taskLists .list {
   border-top: 1px solid #e6e6e6;
   padding: 0;
   margin: 0 30px 0 30px;
   list-style: none;
 }
-/* line 996, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1074, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #listDemo .taskLists .list li {
   width: 100%;
   height: 50px;
@@ -6568,18 +6654,18 @@ hr.margin {
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* line 1009, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1087, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo {
   background-color: whitesmoke;
   padding: 15px;
 }
-/* line 1012, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1090, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .timeline {
   margin-top: -20px;
   padding: 0 8px;
   height: 800px;
 }
-/* line 1017, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1095, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .timeline p {
   color: #969696;
   font-size: 1.1em;
@@ -6587,14 +6673,14 @@ hr.margin {
   line-height: 40px;
   text-align: right;
 }
-/* line 1028, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1106, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule {
   height: 800px;
   padding-left: 3px;
   padding-right: 8px;
   border-left: 4px solid gainsboro;
 }
-/* line 1033, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1111, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection {
   background-color: white;
   border-radius: 15px;
@@ -6602,7 +6688,7 @@ hr.margin {
   padding: 5px 5px 5px 10px;
   margin: 5px;
 }
-/* line 1039, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1117, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection h2 {
   font-size: 1.25em;
   font-weight: 300;
@@ -6610,7 +6696,7 @@ hr.margin {
   margin: 0 0 0 45px;
   line-height: 40px;
 }
-/* line 1046, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1124, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection p {
   color: #008cb4;
   font-size: 1.25em;
@@ -6619,46 +6705,46 @@ hr.margin {
   padding-left: 45px;
   line-height: 30px;
 }
-/* line 1054, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1132, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection.morning {
   height: 145px;
 }
-/* line 1057, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1135, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection.work {
   height: 295px;
 }
-/* line 1060, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1138, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection.evening {
   height: 145px;
 }
-/* line 1063, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1141, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection.night {
   height: 195px;
 }
-/* line 1066, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1144, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon {
   height: 40px;
   background-size: 30px;
   background-repeat: no-repeat;
   background-position: center left;
 }
-/* line 1074, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1152, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon.iconMorning {
   background-image: url(/assets/scheduleMorning-aa4c8539301077d8ee157654a97fedf26a9594bbdc91425c59e048349ba07be7.png);
 }
-/* line 1077, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1155, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon.iconWork {
   background-image: url(/assets/scheduleWork-c0fdcc9da9e488e0c0123fd5b7feeafb1280f7c6fb67fcd6ebb0d4513b79faec.png);
 }
-/* line 1080, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1158, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon.iconAfternoon {
   background-image: url(/assets/scheduleAfternoon-f52d1b01494c1ffbdf6fa3edda3112430f6e5a95cfd59c01b15874ba04ee0ec5.png);
 }
-/* line 1083, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1161, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon.iconEvening {
   background-image: url(/assets/scheduleEvening-68657c1a9381a113e356f6cf82baf8dc711d480ca0f7205be334932822d14950.png);
 }
-/* line 1086, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+/* line 1164, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #scheduleDemo .schedule .daySection .daySectionIcon.iconNight {
   background-image: url(/assets/scheduleNight-56793c2c46987abe0646df0d786ad656978103bad842b93ec0fbd7fab738c067.png);
 }

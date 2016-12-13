@@ -98,8 +98,23 @@
 			<h1 class="animated fadeInUp">How does it work?</h1>
 			<br/>
 			<br/>
+
+			<h2>Our Goals require Action</h2>
+
+			<div class="quote text-left">
+				<p>Action requires a <span class="dark-blue">what</span> and a <span class="dark-blue">when</span>.</p>
+				<p>We're good at knowing the <span class="dark-blue">what</span> (task),</p>
+				<p>but figuring out the <span class="dark-blue">when</span> (time), requires a tremendous amount of effort.</p>
+				<br/>
+				<!-- <p class="dark-blue" style="font-size:1.5em;">How do you act on your goals, when figuring out the time, for each of your tasks, takes most of your energy away?</p> -->
+				<p class="dark-blue" style="font-size:1.5em;">Figuring out the <u>right</u> time, for <u>each</u> of our tasks, is so complex, it's just not worth it - stopping us from acting on our goals.</p>
+				<br/>
+				<h3>That's why we made Trevor.</h3>
+			</div>
+
+			<%= image_tag('path_straight.png', class: 'path_straight') %>
 			<h2>Trevor integrates your Task List and your Calendar</h2>
-			<p class="dark-blue animated fadeInUp" style="font-size:1.5em;">to help you find <u>time</u> for your <u>tasks</u></p><br/>
+			<p class="dark-blue" style="font-size:1.5em;">to help you find <u>time</u> for your <u>tasks</u></p><br/>
 			<%= image_tag('trevorCircle.png', style: "width: 150px;") %><br/>
 			<%= image_tag('path_main.png', class: 'path_main animated fadeIn hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
@@ -127,7 +142,7 @@
 		<div class="col-md-12">
 			<%= image_tag('path_right_left.png', class: 'path_right_left path_pull_right hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<h2>Trevor makes time management simple</h2>
+			<h2>Simplifies time management</h2>
 			<p class="dark-blue" style="font-size:1.5em;">by separating your days into natural, meaningful sections, such as:<br/><span class="faded">Morning, Afternoon, Evening, Work, After work, Weekend, etc.</span></p>
 		</div>
 
@@ -147,16 +162,86 @@
 		<div class="col-md-12">
 			<%= image_tag('path_right_left.png', class: 'path_right_left hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<h2 class="text-left">All you need to do is tell</h2>
-			<p class="dark-blue text-left" style="font-size:1.5em;">Trevor will run enough calculations to find the best time for you to carry out your task.</p>
+			<h2 class="text-left">Suggests the right time for your task</h2>
+			<p class="dark-blue text-left" style="font-size:1.5em;">In a blink of an eye, Trevor will run enough intelligent calculations,<br/>to find the best time for you to carry out your task.</p>
 		</div>
 
+	</div>
 
+	<div class="row">
 		<div class="col-md-6">
-			<%= image_tag("botConversation2.png", style: "width: 355px; margin: 20px 0; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);") %>
+			<% if false %><%= image_tag("botConversation2.png", style: "width: 355px; margin: 20px 0; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);") %><% end %>
+			
+			<div class="chatbox-small">
+				<div class="row">
+					<div class="bubble bubble-trevor">
+						<p>What would you like to do, George?</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bubble bubble-self pull-right">
+						<p>Marketing Assignment</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bubble bubble-trevor">
+						<p>"Marketing Assignment" added to Inbox.<br/>Finding available time...</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bubble bubble-actions">
+						<ul>
+							<li>Tomorrow after work</li>
+							<li>Wednesday morning</li>
+							<li>More options</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="bubble bubble-self pull-right">
+						<p>Wednesday morning</p>
+					</div>
+				</div>
+				<!-- <div class="row">
+					<div class="bubble bubble-trevor">
+						<p>Best available times this week...</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bubble bubble-actions">
+						<ul>
+							<li>Tomorrow at work</li>
+							<li>Friday at work</li>
+							<li>Weekend</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="bubble bubble-self pull-right">
+						<p>Tomorrow at work</p>
+					</div>
+				</div> -->
+				<div class="row">
+					<div class="bubble bubble-trevor">
+						<p>Great, it's scheduled. I'll notify you when it's time.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bubble bubble-actions">
+						<ul>
+							<li class="card">Marketing Assignment<br/><span class="faded">Wednesday, morning</span></li>
+							<li>View in Schedule</li>
+							<li>Undo</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
 		</div>
 
-		<div class="col-md-6 text-left" style="padding-top: 100px;">
+		<div class="col-md-6 text-left" style="padding-top: 200px;">
 			<p class="light-gray">"The most fundamental principle of the organized mind, the one most critical to keeping us from forgetting or losing things, is to shift the burden of organizing from our brains to the external world."<br/>
 			<%= link_to "- The Organized Mind", "http://www.daniellevitin.com/theorganizedmind/", target: "_blank" %>
 			<br/>
@@ -175,10 +260,13 @@
 			<% end %>
 		</div>	
 
-		<div class="col-md-12">
-
+		<div class="col-md-12 text-center">
+			<h2>All <u>you</u> have to do... is send a text.</h2>
 			<br/>
-				<div onclick="completedState()" class="addthis_sharing_toolbox"></div>
+			<div onclick="completedState()" class="addthis_sharing_toolbox"></div>
+		</div>
+
+		<div class="col-md-12">
 
 			<hr class="margin"/>
 			<div class="row bottom-nav vertical-align center-block">
@@ -186,81 +274,13 @@
 				<%= link_to "Trevor on Web", web_path %>
 				<%= link_to "Trevor on iOS", app_path %>
 			</div>
-		</div>
-
-	</div>
-</div>
-
-<% if false %>
-<!-- BOT CONVERSATION 2 -->
-<div class="container">
-	<div class="row">
-		<div class="chatbox chatbox-wide">
-			<div class="row">
-				<div class="bubble bubble-self pull-right">
-					<p>Marketing Assignment</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="bubble bubble-trevor">
-					<p>"Marketing Assignment" added to your Inbox.<br/>When would you like to schedule it?</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="bubble bubble-actions">
-					<ul>
-						<li>Today</li>
-						<li>This week</li>
-						<li>Next week</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="bubble bubble-self pull-right">
-					<p>This week</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="bubble bubble-trevor">
-					<p>Best available times this week...</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="bubble bubble-actions">
-					<ul>
-						<li>Tomorrow at work</li>
-						<li>Friday at work</li>
-						<li>Weekend</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="bubble bubble-self pull-right">
-					<p>Tomorrow at work</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="bubble bubble-trevor">
-					<p>Great, it's scheduled. I'll notify you when it's time.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="bubble bubble-actions">
-					<ul>
-						<li class="card">Marketing Assignment<br/><span class="faded">10 am, tomorrow</span></li>
-						<li>View in Calendar</li>
-						<li>Undo</li>
-					</ul>
-				</div>
-			</div>
 
 		</div>
 
 	</div>
 </div>
-<% end %>
+
+
 
 
 
