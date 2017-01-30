@@ -32,7 +32,7 @@
 					<ul>
 						<li>After work</li>
 						<li>Tomorrow morning</li>
-						<li>Wednesday at 3 pm</li>
+						<li>More options</li>
 					</ul>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 			<%= image_tag('slack_icon.png') %>
 		</div>
 		<div class="col-md-3 availability vertical-align">
-			<p>In January-ish..probably<br/>
+			<p>In February-ish, probably<br/>
 				<span class="faded">with Telegram, Kik, Cortana, Alexa, and more, right after that.</span></p>
 		</div>
 	</div>
@@ -99,20 +99,7 @@
 			<br/>
 			<br/>
 
-			<h2>Our Goals require Action</h2>
-
-			<div class="quote text-left">
-				<p>Action requires a <span class="dark-blue">what</span> and a <span class="dark-blue">when</span>.</p>
-				<p>We're good at knowing the <span class="dark-blue">what</span> (task),</p>
-				<p>but figuring out the <span class="dark-blue">when</span> (time), requires a tremendous amount of effort.</p>
-				<br/>
-				<!-- <p class="dark-blue" style="font-size:1.5em;">How do you act on your goals, when figuring out the time, for each of your tasks, takes most of your energy away?</p> -->
-				<p class="dark-blue" style="font-size:1.5em;">Figuring out the <u>right</u> time, for <u>each</u> of our tasks, is so complex, it's just not worth it - stopping us from acting on our goals.</p>
-				<br/>
-				<h3>That's why we made Trevor.</h3>
-			</div>
-
-			<%= image_tag('path_straight.png', class: 'path_straight') %>
+			
 			<h2>Trevor integrates your Task List and your Calendar</h2>
 			<p class="dark-blue" style="font-size:1.5em;">to help you find <u>time</u> for your <u>tasks</u></p><br/>
 			<%= image_tag('trevorCircle.png', style: "width: 150px;") %><br/>
@@ -162,8 +149,8 @@
 		<div class="col-md-12">
 			<%= image_tag('path_right_left.png', class: 'path_right_left hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<h2 class="text-left">Suggests the right time for your task</h2>
-			<p class="dark-blue text-left" style="font-size:1.5em;">In a blink of an eye, Trevor will run enough intelligent calculations,<br/>to find the best time for you to carry out your task.</p>
+			<h2 class="text-left">Suggests time for each of your tasks</h2>
+			<p class="dark-blue text-left" style="font-size:1.5em;">Action requires a <u>what</u> and a <u>when</u>. <span class="faded">We're good at knowing the what (task),<br/>but figuring out the when (time) requires a tremendous amount of effort.</span><br/>That's why we made Trevor.</p>
 		</div>
 
 	</div>
@@ -260,7 +247,27 @@
 			<% end %>
 		</div>	
 
+
+
 		<div class="col-md-12 text-center">
+			<% if false %>
+			<h2>Our Goals require Action</h2>
+
+			<div class="quote text-left">
+				<p>Action requires a <span class="dark-blue">what</span> and a <span class="dark-blue">when</span>.</p>
+				<p>We're good at knowing the <span class="dark-blue">what</span> (task),</p>
+				<p>but figuring out the <span class="dark-blue">when</span> (time), requires a tremendous amount of effort.</p>
+				<br/>
+				<!-- <p class="dark-blue" style="font-size:1.5em;">How do you act on your goals, when figuring out the time, for each of your tasks, takes most of your energy away?</p> -->
+				<p class="dark-blue" style="font-size:1.5em;">Figuring out the <u>right</u> time, for <u>each</u> of our tasks, is so complex, it's just not worth it - stopping us from acting on our goals.</p>
+				<br/>
+				<h3>That's why we made Trevor.</h3>
+			</div>
+
+
+			<%= image_tag('path_straight.png', class: 'path_straight') %>
+			<% end %>
+
 			<h2>All <u>you</u> have to do... is send a text.</h2>
 			<br/>
 			<div onclick="completedState()" class="addthis_sharing_toolbox"></div>
@@ -288,7 +295,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<h3>That's all there is really, just tell Trevor and he will help you find the time...</h3>
+				<h3>Find time for everything you want to do, in seconds.</h3>
 			</div>
 			<div class="col-md-4"></div>
 			<div id="" class="download col-md-4">
