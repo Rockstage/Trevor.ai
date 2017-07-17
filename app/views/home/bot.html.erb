@@ -1,0 +1,347 @@
+<div id="header" class="container-fluid dark bluebg">
+	<div class="row">
+		<div class="col-xs-6">
+			<%= link_to image_tag("logo2.png", class: "logo2", alt: "Logo of Trevor AI"), root_path %>
+		</div>
+		<div class="col-xs-6 hidden-xs">
+			<ul class="nav navbar-nav navbar-right">
+				<li><%= link_to "Web", web_path %></li>
+				<li class="active"><%= link_to "Bot", bot_path %></li>
+				<li><%= link_to "App", app_path %></li>
+				<li><%= link_to "FI", fi_path %></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="intro-bot" class="container">
+	<div class="row">
+		<h1 class="text-center">Find time for everything you want to do,<br/><underline>in a natural way</underline></h1>
+		<div class="chatbox">
+			<div class="row">
+				<div class="bubble bubble-self pull-right">
+					<p><strong>Trevor,</strong> I have to buy groceries</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="bubble bubble-trevor">
+					<p>Here are the best available times...</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="bubble bubble-actions">
+					<ul>
+						<li>After work</li>
+						<li>Tomorrow morning</li>
+						<li>More options</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<hr class="margin"/>
+		<div class="col-md-3 availability vertical-align">
+			<p class="text-right"><strong>Will be</strong> available on:</p>
+		</div>
+		<div class="col-md-6 availability vertical-align center-block">
+			<%= image_tag('html_icon.png') %>
+			<%= image_tag('messenger_icon.png') %>
+			<%= image_tag('slack_icon.png') %>
+		</div>
+		<div class="col-md-3 availability vertical-align">
+			<p>in May-June, 2017<br/>
+				<span class="faded">with Telegram, Kik, Cortana, Alexa, and more, right after that.</span></p>
+		</div>
+	</div>
+</div>
+
+
+<div id="meettrevor" class="container-fluid section dark bluebg">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h3 class="text-left">Trevor is a personal assistant<br/><span class="faded">that connects your task lists with your calendar,</span><br/>to help you manage your time,<br/><span class="faded">the same way you already do in your mind.</span></h3>
+			</div>
+			
+			<div id="" class="download col-md-6">
+			<!-- Begin MailChimp Signup Form -->
+				<div id="mc_embed_signup">
+					<form action="//linkedin.us12.list-manage.com/subscribe/post?u=5418fe1e541a0e43db9c54656&amp;id=e1e62066d1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					    <div id="mc_embed_signup_scroll">
+					<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+					<div class="mc-field-group">
+						<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+					</label>
+						<input type="email" value="" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" onclick="mixpanel.track('Email Field 1 Clicked');">
+					</div>
+						<div id="mce-responses" class="clear">
+							<div class="response" id="mce-error-response" style="display:none"></div>
+							<div class="response" id="mce-success-response" style="display:none"></div>
+						</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5418fe1e541a0e43db9c54656_e1e62066d1" tabindex="-1" value=""></div>
+					    <div class="clear"><input type="submit" value="Get Early Access" name="subscribe" id="mc-embedded-subscribe" class="button" onclick="mixpanel.track('Email Field 1 Submitted');"></div>
+					    </div>
+					</form>
+				</div>
+				
+			<!--End mc_embed_signup-->
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+<div id="framework" class="container-fluid">
+	<div class="row text-center">
+		
+		<div class="col-md-12">
+
+			<h1 class="animated fadeInUp">How does it work?</h1>
+			<br/>
+			<br/>
+
+			
+			<h2>Trevor integrates your Task List and your Calendar</h2>
+			<p class="dark-blue" style="font-size:1.5em;">to help you find <u>time</u> for your <u>tasks</u></p><br/>
+			<%= image_tag('trevorCircle.png', style: "width: 150px;") %><br/>
+			<%= image_tag('path_main.png', class: 'path_main animated fadeIn hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+
+		</div>
+
+		<div class="col-md-4">
+			<h2>Task List</h2>
+			<%= image_tag("card_list.png", style: "width: 300px; margin: 20px 0;") %>
+		</div>
+
+
+
+		<div class="col-md-4 hidden-sm hidden-xs">
+			<!-- seperator -->
+		</div>
+
+		<div class="col-md-4">
+			<h2>Calendar</h2>
+			<%= image_tag("calendar2.png", style: "width: 270px; margin: 20px 0; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);") %>
+		</div>
+
+		<!-- END OF ROW 1 -->
+
+		<div class="col-md-12">
+			<%= image_tag('path_right_left.png', class: 'path_right_left path_pull_right hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+			<h2>Simplifies time management</h2>
+			<p class="dark-blue" style="font-size:1.5em;">by separating your days into natural, meaningful sections, such as:<br/><span class="faded">Morning, Afternoon, Evening, Work, After work, Weekend, etc.</span></p>
+		</div>
+
+		<div class="col-md-4">
+
+		</div>
+
+		<div class="col-md-4">
+			<%= image_tag("dailyView.png", style: "width: 355px; margin: 20px 0;") %>
+		</div>
+
+		<div class="col-md-4 text-left hidden-sm hidden-xs" style="padding-top: 200px;">
+			<p class="light-gray">"Organization makes a system of many appear fewer"<br/>
+					<%= link_to "- The Laws of Simplicity", "http://lawsofsimplicity.com", target: "_blank" %>
+		</div>
+
+		<div class="col-md-12">
+			<%= image_tag('path_right_left.png', class: 'path_right_left hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+			<h2 class="text-left">Suggests time for each of your tasks</h2>
+			<p class="dark-blue text-left" style="font-size:1.5em;">Action requires a <u>what</u> and a <u>when</u>. <span class="faded">We're good at knowing the what (task),<br/>but figuring out the when (time) requires a tremendous amount of effort.<br/>That's why we made Trevor.</span></p>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<% if false %><%= image_tag("botConversation2.png", style: "width: 355px; margin: 20px 0; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);") %><% end %>
+			
+			<div class="chatbox-small">
+				<div class="row">
+					<div class="bubble bubble-trevor">
+						<p>What would you like to do, George?</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bubble bubble-self pull-right">
+						<p>Marketing Assignment</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bubble bubble-trevor">
+						<p>"Marketing Assignment" added to Inbox.<br/>Finding available time...</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bubble bubble-actions">
+						<ul>
+							<li>Tomorrow after work</li>
+							<li>Wednesday morning</li>
+							<li>More options</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="bubble bubble-self pull-right">
+						<p>Wednesday morning</p>
+					</div>
+				</div>
+				<!-- <div class="row">
+					<div class="bubble bubble-trevor">
+						<p>Best available times this week...</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bubble bubble-actions">
+						<ul>
+							<li>Tomorrow at work</li>
+							<li>Friday at work</li>
+							<li>Weekend</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="bubble bubble-self pull-right">
+						<p>Tomorrow at work</p>
+					</div>
+				</div> -->
+				<div class="row">
+					<div class="bubble bubble-trevor">
+						<p>Great, it's scheduled. I'll notify you when it's time.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bubble bubble-actions">
+						<ul>
+							<li class="card">Marketing Assignment<br/><span class="faded">Wednesday, morning</span></li>
+							<li>View in Schedule</li>
+							<li>Undo</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-md-6 text-left" style="padding-top: 200px;">
+			<p class="light-gray">"The most fundamental principle of the organized mind, the one most critical to keeping us from forgetting or losing things, is to shift the burden of organizing from our brains to the external world."<br/>
+			<%= link_to "- The Organized Mind", "http://www.daniellevitin.com/theorganizedmind/", target: "_blank" %>
+			<br/>
+			<br/>
+			<br/>
+			<p class="dark-blue">Trevor helps you do that, in such a natural way, you don't even have to think about time.</p>
+
+			<% if false %>
+			<ul class="benefitList">
+				<li class="quote">Essentialism: The Disciplined Pursuit of Less</li>
+				<li class="quote">Laws of Simplicity: Design, Technology, Business, Life</li>
+				<li class="quote">The Organized Mind: Thinking Straight in the Age of Information Overload</li>
+				<li class="quote">Time Management that doesn't suck</li>
+				<li class="quote">Becoming the 1%<br/><%= link_to "- David Allen", "http://gettingthingsdone.com", target: "_blank" %></li>
+			</ul>
+			<% end %>
+		</div>	
+
+
+
+		<div class="col-md-12 text-center">
+			<% if false %>
+			<h2>Our Goals require Action</h2>
+
+			<div class="quote text-left">
+				<p>Action requires a <span class="dark-blue">what</span> and a <span class="dark-blue">when</span>.</p>
+				<p>We're good at knowing the <span class="dark-blue">what</span> (task),</p>
+				<p>but figuring out the <span class="dark-blue">when</span> (time), requires a tremendous amount of effort.</p>
+				<br/>
+				<!-- <p class="dark-blue" style="font-size:1.5em;">How do you act on your goals, when figuring out the time, for each of your tasks, takes most of your energy away?</p> -->
+				<p class="dark-blue" style="font-size:1.5em;">Figuring out the <u>right</u> time, for <u>each</u> of our tasks, is so complex, it's just not worth it - stopping us from acting on our goals.</p>
+				<br/>
+				<h3>That's why we made Trevor.</h3>
+			</div>
+
+
+			<%= image_tag('path_straight.png', class: 'path_straight') %>
+			<% end %>
+
+			<h2>All <u>you</u> have to do... is send a text.</h2>
+			<br/>
+			<div onclick="completedState()" class="addthis_sharing_toolbox"></div>
+		</div>
+
+		<div class="col-md-12">
+
+			<hr class="margin"/>
+			<div class="row bottom-nav vertical-align center-block">
+				<%= link_to "Back to Top", root_path %>
+				<%= link_to "Trevor on Web", web_path %>
+				<%= link_to "Trevor on iOS", app_path %>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+<div id="meettrevor" class="container-fluid section dark bluebg">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h3>Find time for everything you want to do, in seconds.</h3>
+			</div>
+			<div class="col-md-4"></div>
+			<div id="" class="download col-md-4">
+			<!-- Begin MailChimp Signup Form -->
+				<div id="mc_embed_signup">
+				<form action="//linkedin.us12.list-manage.com/subscribe/post?u=5418fe1e541a0e43db9c54656&amp;id=e1e62066d1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				    <div id="mc_embed_signup_scroll">
+				<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+				<div class="mc-field-group">
+					<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+				</label>
+					<input type="email" value="" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" onclick="mixpanel.track('Email Field 1 Clicked');">
+				</div>
+					<div id="mce-responses" class="clear">
+						<div class="response" id="mce-error-response" style="display:none"></div>
+						<div class="response" id="mce-success-response" style="display:none"></div>
+					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5418fe1e541a0e43db9c54656_e1e62066d1" tabindex="-1" value=""></div>
+				    <div class="clear"><input type="submit" value="Take control of your time" name="subscribe" id="mc-embedded-subscribe" class="button" onclick="mixpanel.track('Email Field 1 Submitted');"></div>
+				    </div>
+				</form>
+				</div>
+				
+			<!--End mc_embed_signup-->
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+</div>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72755983-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Share Buttons -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56b5ad3805522642" async="async"></script>
+
+
+

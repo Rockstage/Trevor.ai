@@ -5,6 +5,9 @@ class HomeController < ApplicationController
   def web
   end
 
+  def bot
+  end
+
   def app
   end
 
