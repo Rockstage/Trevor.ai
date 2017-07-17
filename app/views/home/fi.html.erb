@@ -1,7 +1,7 @@
 <div id="header" class="container-fluid dark bluebg">
 	<div class="row">
 		<div class="col-sm-6">
-			<%= link_to image_tag("logo2.png", class: "logo2", alt: "Logo of Trevor AI"), root_path %>
+			<% if false %><%= link_to image_tag("logo2.png", class: "logo2", alt: "Logo of Trevor AI"), root_path %><% end %>
 		</div>
 		<div class="col-sm-6 hidden-xs">
 			<ul class="nav navbar-nav navbar-right">
@@ -17,7 +17,7 @@
 	<div class="row">
 
 		<%= image_tag("logo.png", class: "logo", alt: "Logo of Trevor AI") %>
-		<h4 class="" style="color:rgba(255,255,255,0.5);">Making productivity simple again<br/>with human-centric design and a robot friend called Trevor</h4>
+		<h4 class="" style="color:rgba(255,255,255,0.5);">All-in-one productivity tool <u>from</u> FI Founders <u>for</u> FI Founders</h4>
 
 	</div>
 	
@@ -60,7 +60,7 @@
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 				<h2>About me</h2>
-				<p class="text-left intro">My name is George, I graduated early 2016 from Europe. Some of you may have met me at FounderX in the US this October. I am obsessed with productivity, personal growth and artificially intelligent assistants. <br/><br/> This guide is based on some brilliant books, such as <a href="https://www.amazon.com/Essentialism-Disciplined-Pursuit-Greg-McKeown/dp/0804137382" target="_blank">Essentialism</a>, <a href="https://www.amazon.com/Laws-Simplicity-Design-Technology-Business/dp/0262134721" target="_blank">The Laws of Simplicity</a>, <a href="https://www.amazon.com/Time-Management-that-Doesnt-Suck-ebook/dp/B003Y74RYQ/ref=sr_1_1?s=books&ie=UTF8&qid=1478697718&sr=1-1&keywords=time+management+that+doesn%27t+suck" target="_blank">Time Management that doesn't suck</a>, <a href="https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898/ref=sr_1_1?s=books&ie=UTF8&qid=1478697733&sr=1-1&keywords=the+lean+startup" target="_blank">The Lean Startup</a> and a couple others.<br/><br/>P.S. I never got a bonus assignment, so can you.</p>
+				<p class="text-left intro">My name is George, I graduated early 2016 from Europe. Some of you may have met me at FounderX in the US this October. I am obsessed with productivity, personal growth and artificially intelligent assistants. <br/><br/> This guide is based on some brilliant books, such as <a href="https://www.amazon.com/Essentialism-Disciplined-Pursuit-Greg-McKeown/dp/0804137382" target="_blank">Essentialism</a>, <a href="https://www.amazon.com/Laws-Simplicity-Design-Technology-Business/dp/0262134721" target="_blank">The Laws of Simplicity</a>, <a href="https://www.amazon.com/Time-Management-that-Doesnt-Suck-ebook/dp/B003Y74RYQ/ref=sr_1_1?s=books&ie=UTF8&qid=1478697718&sr=1-1&keywords=time+management+that+doesn%27t+suck" target="_blank">Time Management that doesn't suck</a>, <a href="https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898/ref=sr_1_1?s=books&ie=UTF8&qid=1478697733&sr=1-1&keywords=the+lean+startup" target="_blank">The Lean Startup</a>, <a href="https://www.amazon.com/Becoming-1-Master-Time-Management-ebook/dp/B00AAESF3U" target="_blank">Becoming the 1%</a> and a couple others.<br/><br/>P.S. I never got a bonus assignment, so can you.</p>
 				<%= image_tag('path_straight.png', class: 'path_straight') %>
 			</div>
 			<div class="col-md-3"></div>
@@ -76,33 +76,34 @@
 			<div class="col-md-4">
 				<h2>The Task List</h2>
 				<%= image_tag("TaskList.png", class: "weapons") %>
-				<p>This is where you save and track progress of your assignments</p>
+				<p>Where you save and track progress of your assignments</p>
 				<%= image_tag('path_straight.png', class: 'path_straight') %>
-				<p>Recommended tool:</p>
-				<h4>For iOS users: <%= link_to "Trevor AI", "https://itunes.apple.com/app/trevor-ai-time-management/id1113523247", target: "_blank" %></h4>
-				<h4>For Android users: <%= link_to "Todoist", "https://todoist.com", target: "_blank" %></h4>
-				<p>Alternatives: Any other digital todo list</p>
+				<h4>Recommended tool:</h4>
+				<h4><%= link_to "Trevor AI", "http://app.trevorai.com", target: "_blank" %></h4>
+				<p>Alternative: <%= link_to "Todoist", "https://todoist.com", target: "_blank" %></p>
+				<p>or any other digital todo list</p>
 			</div>
 
 			<div class="col-md-4">
-				<h2>The Calendar</h2>
+				<h2>The Schedule</h2>
 				<%= image_tag("Calendar.png", class: "weapons") %>
-				<p>This is where you assign the time for action for your assignments</p>
+				<p>Where you assign the time for action for your assignments</p>
 				<%= image_tag('path_straight.png', class: 'path_straight') %>
-				<p>Recommended tool:</p>
-				<h4>For iOS users: <%= link_to "Trevor AI", "https://itunes.apple.com/app/trevor-ai-time-management/id1113523247", target: "_blank" %></h4>
-				<h4>For Android users: <%= link_to "Google Calendar", "https://www.google.com/calendar", target: "_blank" %></h4>
-				<p>Alternatives: Any other digital calendar</p>
+				<h4>Recommended tool:</h4>
+				<h4><%= link_to "Trevor AI", "http://app.trevorai.com", target: "_blank" %></h4>
+				<p>Alternative: <%= link_to "Google Calendar", "https://www.google.com/calendar", target: "_blank" %></p>
+				<p>or any other digital calendar</p>
 			</div>
 
 			<div class="col-md-4">
 				<h2>The Notepad</h2>
 				<%= image_tag("Notepad.png", class: "weapons") %>
-				<p>This is where you work or record the work from your assignments, before you send it to the Founder Institute</p>
+				<p>Where you save your work for your assignments, before you send it to the Founder Institute</p>
 				<%= image_tag('path_straight.png', class: 'path_straight') %>
-				<p>Recommended tool:</p>
-				<h4>For everyone: <%= link_to "Evernote", "https://evernote.com/", target: "_blank" %></h4>
-				<p>Alternatives: <%= link_to "Google Keep", "https://www.google.com/keep/", target: "_blank" %></p>
+				<h4>Recommended tool:</h4>
+				<h4><%= link_to "Trevor AI", "http://app.trevorai.com", target: "_blank" %></h4>
+				<p>Alternative: <%= link_to "Evernote", "https://evernote.com/", target: "_blank" %></p>
+				<p>or any other digital notepad</p>
 			</div>
 
 		</div>
@@ -127,7 +128,7 @@
 
 		<div class="col-md-4">
 			<h2>Add them to your Task List</h2>
-			<%= image_tag("TaskList.png", class: "weapons") %>
+			<%= image_tag("tasklist2.png", class: "weapons") %>
 			<ul class="benefitList">
 				<li class="positive">You have a clear step-by-step overview of everything you have to do</li>
 				<li class="positive">You can break big tasks into smaller actions</li>
@@ -158,7 +159,7 @@
 		<div class="col-md-12">
 			<%= image_tag('path_left_right.png', class: 'path_left_right hidden-sm hidden-xs') %>
 			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
-			<h2>Assign time for action, for each task, in your Calendar</h2>
+			<h2>Assign time for action, for each task, in your Schedule</h2>
 		</div>
 
 		<div class="col-md-4">
@@ -168,11 +169,12 @@
 				<li class="positive">A calendar will help you find the ~25 hours you need for your assignments each week</li>
 				<li class="positive">Durations of Tasks are already provided by the Founder Institute</li>
 				<li class="positive">You can sleep at night knowing you have enough time for everything you have to do, and more</li>
+				<li class="positive">Scheduling an assignment with Trevor is as easy as drag & drop</li>
 			</ul>
 		</div>
 
 		<div class="col-md-4">
-			<%= image_tag("Calendar.png", class: "weapons") %>
+			<%= image_tag("calendar4.png", class: "weapons") %>
 		</div>
 
 		<div class="col-md-4 text-left" style="padding-top: 150px;">
@@ -187,14 +189,14 @@
 		</div>
 
 		<div class="col-md-4">
-			<%= image_tag("Notepad.png", class: "weapons") %>
+			<%= image_tag("notepad2.png", class: "weapons") %>
 		</div>
 
 		<div class="col-md-4">
 			<ul class="benefitList">
-				<li class="positive">Make a note for each Week</li>
+				<li class="positive">Make a #list for each Week</li>
 				<li class="positive">Record all the data you collected (text,images,links,resources)</li>
-				<li class="positive">Write down your assignment</li>
+				<li class="positive">Write down your assignments in their corresponding tasks so you can copy them later</li>
 				<li class="positive">Respect your calendar and move on whether you're ready or not</li>
 			</ul>
 		</div>
@@ -271,16 +273,17 @@
 		<div class="col-md-12">
 			<h3>Now go on... do your thing. Make a dent in the universe.</h3>
 			<br/>
+			<div class="bottom-nav vertical-align center-block">
+				<%= link_to "SIGN IN TO TREVOR", "https://app.trevorai.com/", target: "_blank" %>
+			</div>
 			<hr/>
 			<h2>Ohh... and here's your first bonus assignment:</h2>
 			<br/>
-			
-				<div id="card_share" class="center-block">
-					<div id="card_share_inner" class="card_share">
-						Share this guide with peers
-					</div>
+			<div id="card_share" class="center-block">
+				<div id="card_share_inner" class="card_share">
+					Share this guide with peers
 				</div>
-			
+			</div>
 			<br/>
 			<div onclick="completedState()" class="addthis_sharing_toolbox"></div>
 			<%= link_to "www.trevorai.com/fi", "http://www.trevorai.com/fi", style: "font-size: 1.5em;", "onselect" => "completedState()" %>
