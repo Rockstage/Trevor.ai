@@ -218,6 +218,11 @@ hr.margin {
 			    	background: rgba(255,255,255,0.1);
 			    	text-decoration: underline;
 			    }
+			    &.signin {
+			    	font-weight: bold;
+			    	// background-color: rgba(255,255,255,0.5);
+			    	// color: rgb(0,140,180);
+			    }
 			}
 			&.active {
 				a {
@@ -620,6 +625,14 @@ hr.margin {
 				}
 			}
 
+			.macbookMockup {
+				width: 630px;
+				margin: 0 auto;
+				@media (max-width 992px) {
+					max-width: 90vw;
+				}
+			}
+
 			.arrowRight {
 				width: 200px;
 				position: absolute;
@@ -642,6 +655,10 @@ hr.margin {
 				top: 75px;
 				left: 35px;
 			}
+			&.web {
+				top: 35px;
+				left: 74px;
+			}
 		}
 
 		h3 {
@@ -655,6 +672,39 @@ hr.margin {
 		@media (max-width: 1200px) { 
 			padding-left: 100px;
 			font-size: 0.8em;
+		}
+	}
+
+	&.web-demo {
+		.mockup {
+			width: 630px;
+			height: auto;
+			@media (max-width: 992px) {
+				width: 630px;
+				top: 50px;
+				max-width: 100%;
+			}
+			.placeholder {
+				.arrowRight {
+					width: 150px;
+					left: -130px;
+					top: 100px;
+				}
+
+				.arrowLeft {
+					width: 150px;
+					right: -130px;
+					top: 100px;
+				}
+			}
+		}
+		.schedule {
+			font-size: 0.9em;
+			padding: 30px 20px 10px 0px;
+		}
+		.todo {
+			font-size: 0.9em;
+			padding: 30px 0px 10px 20px;
 		}
 	}
 }

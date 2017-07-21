@@ -9,6 +9,7 @@
 				<li><%= link_to "Bot", bot_path %></li>
 				<li><%= link_to "App", app_path %></li>
 				<li><%= link_to "FI", fi_path %></li>
+				<li><%= link_to "Sign In", 'https://app.trevorai.com', class: 'signin' %></li>
 			</ul>
 		</div>
 	</div>
@@ -33,8 +34,154 @@
 	</div>
 </div>
 
+<div id="demo" class="container-fluid web-demo">
+
+	<div class="row">
+
+		<div class="col-md-2 hidden-sm hidden-xs todo animated fadeInLeft">
+			<div align="right">
+				<h1>Those are your <span class="dark-blue">tasks</span></h1>
+			</div>
+		</div>
+
+		<div class="col-md-8 hidden-sm hidden-xs">
+			<div class="mockup animated fadeInUp">
+				<div class="placeholder">
+					<%= image_tag("macbookMockup.png", class: "macbookMockup", alt: "Macbook Mockup") %>
+					<%= image_tag("arrowRight.png", class: "arrowRight", alt: "Arrow pointing right") %>
+					<%= image_tag("arrowLeft.png", class: "arrowLeft", alt: "Arrow pointing left") %>
+				</div>
+				<div class="demoVideo web">
+					<iframe width="480" height="300" src="https://www.youtube.com/embed/u4SBxz13P74?ecver=2&vq=hd720&autoplay=1&controls=0&showinfo=0&loop=1&playlist=u4SBxz13P74" frameborder="0" autohide="1"></iframe>
+				</div>
+
+				<!-- <h3 class="text-center">Tasks and time smarter, together</h3> -->
+				
+			</div>
+			<div style="position: relative; top: -75px">
+			<h2 class="text-center dark-blue">A smarter approach to time management</h2>
+			<p class="text-center">Trevor combines the familiar <u>Todo List</u> workflow with the power of a <u>Schedule</u><br/>to help you keep your lists empty and your goals within reach.</p>
+			</div>
+			<br/>
+		</div>
+
+		<div class="col-sm-12 col-xs-12 hidden-md hidden-lg">
+			<div class="mockup animated fadeInUp">
+				<div class="placeholder">
+					<%= image_tag("macbookMockup.png", class: "macbookMockup", alt: "Macbook Mockup") %>
+				</div>
+				<div class="demoVideo web">
+					<iframe width="480" height="300" src="https://www.youtube.com/embed/u4SBxz13P74?ecver=2&vq=hd720&autoplay=1&controls=0&showinfo=0&loop=1&playlist=u4SBxz13P74" frameborder="0" autohide="1"></iframe>
+				</div>
+				<% if false %>
+				<h3 class="text-center">Tasks and time smarter, together</h3>
+				
+				<%= link_to (image_tag("appStore.svg", class: "appStoreButton center-block", alt: "Download from the App Store")), "https://itunes.apple.com/app/trevor-ai-time-management/id1113523247", target: "_blank" %>
+				<% end %>
+			</div>
+			
+		</div>
+
+		<div class="col-md-2 hidden-sm hidden-xs schedule animated fadeInRight">
+			<h1>This is your <span class="dark-blue">schedule</span></h1>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid section">
+	<div class="row">
+		<div class="col-md-4 text-center">
+			<h3>Task List</h3>
+			<p>A lightweight, full-featured task list that helps you beautifully organize everything you have to do.</p>
+		</div>
+		<div class="col-md-4 text-center">
+			<h3>Schedule</h3>
+			<p>A minimalist schedule, in sync with your calendar, helping you improve focus, take action and track progress.</p>
+		</div>
+		<div class="col-md-4 text-center">
+			<h3>Assistant</h3>
+			<p>An assistant providing tips and suggestions that will help you conquer the art of time-management.</p>
+		</div>
+	</div>
+</div>
+
 <div id="webDemo" class="container-fluid">
 </div>
+
+<div class="container section">
+	<h1>Testimonials</h1>
+</div>
+
+<div id="features-pricing" class="container-fluid">
+	<div class="container">
+		<div class="row">
+			<h1>Features</h1>
+			<p>Out of the box, for free</p>
+			<div class="col-md-4 feature">
+				<h2>Sync Calendar Events</h2>
+				<p>Sync with iCloud, Google, Outlook, and more</p>
+			</div>
+			<div class="col-md-4 feature">
+				<h2>Sync your Tasks</h2>
+				<p>Sync with iOS Reminders and Todoist, with more, coming soon</p>
+			</div>
+			<div class="col-md-4 feature">
+				<h2>One Smart Inbox</h2>
+				<p>All of your tasks from your favourite apps in one place</p>
+			</div>
+
+			<div class="col-md-4 feature">
+				<h2>Schedule with Drag & Drop</h2>
+				<p>Schedule any task right into your calendar with just a swipe</p>
+			</div>
+
+			<div class="col-md-4 feature">
+				<h2>Natural Language</h2>
+				<p>Trevor understands things like "Meeting tomorrow at 2pm"</p>
+			</div>
+
+			<div class="col-md-4 feature">
+				<h2>Track Time & Progress</h2>
+				<p>Complete tasks scheduled in your calendar to track both time and progress</p>
+			</div>
+
+			<% if false %>
+
+			<h1>Premium Features</h1>
+			<p>For those serious about personal growth, we've got something special.</p>
+
+			<div class="col-md-4 feature">
+				<h2>Your own assistant</h2>
+				<p>Personalize Trevor to you, as you would your own A.I. personal assistant.</p>
+			</div>
+			<div class="col-md-4 feature">
+				<h2>Unlimited integrations</h2>
+				<p>Integrate with apps without boundaries. Schedule anything and everything.</p>
+			</div>
+			<div class="col-md-4 feature">
+				<h2>Advanced Personal Analytics</h2>
+				<p>Powerful data mining and neuro-linguistic programming algorithms helping you learn even more about yourself.</p>
+			</div>
+			
+			<h2>Premium membership costs just $4.99/mo.</h2>
+			<p>Hacking your personal growth is priceless, yet we ask for no higher than a cup of coffee.</p>
+
+			<% end %>
+
+		</div>
+	</div>
+
+</div>
+
+<div class="container section">
+	<h1>Methodology & Research behind Trevor's effectiveness</h1>
+	<p>Describe the benefits and validate with data.</p>
+	<p>Describe</p>
+	<p>80% of scheduled tasks get completed</p>
+	<p></p>
+</div>
+
+
 
 <div id="meettrevor" class="container-fluid section dark bluebg">
 	<div class="container">

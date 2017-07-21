@@ -1,0 +1,142 @@
+
+<div id="framework" class="container-fluid">
+	<div class="row text-center">
+		
+		<div class="col-md-12">
+
+			<h1 class="animated fadeInUp">Stuff to do?</h1>
+			<p class="dark-blue animated fadeInUp" style="font-size:1.5em;">Let's say your friend Max has a birthday<span class="hidden-sm hidden-xs">, you can either...</span></p>
+			<%= image_tag('path_main.png', class: 'path_main animated fadeIn hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+
+		</div>
+
+		<div class="col-md-4">
+			<h2>Save it as a card</h2>
+			<%= image_tag("card_birthday.png", style: "width: 350px;") %>
+			<ul class="benefitList">
+				<li class="positive">It will never get lost</li>
+				<li class="positive">A peaceful, productive mind</li>
+				<li class="negative">Takes 20 seconds of your life<br/><span class="light-gray">(to save you many more)</span></li>
+				<li class="quote">"Your mind is for having ideas, not holding them"<br/><%= link_to "- David Allen", "http://gettingthingsdone.com", target: "_blank" %></li>
+			</ul>
+			<hr class="small"/>
+			<p class="probability"><span class="zen-green">30%</span> probability for success</p>
+		</div>
+
+
+
+		<div class="col-md-4 hidden-sm hidden-xs">
+			<!-- seperator -->
+		</div>
+
+		<div class="col-md-4 hidden-sm hidden-xs">
+			<h2>Remember it</h2>
+			<%= image_tag("paperplane.png", style: "width: 100px; margin: 20px") %>
+			<ul class="benefitList">
+				<li class="negative">Very, very high chance of forgetting<br/><span class="light-gray">(Max will be sad)</span></li>
+				<li class="negative">Reduces focus and causes anxiety</li>
+				<li class="positive">Faster</li>
+			</ul>
+			<hr class="small"/>
+			<p class="probability"><span class="zen-green">10%</span> probability for success</p>
+		</div>
+
+		<div class="col-md-12">
+			<%= image_tag('path_left_right.png', class: 'path_left_right hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+			<h2>Organize your cards</h2>
+		</div>
+
+		<div class="col-md-4">
+			<ul class="benefitList" style="padding-top: 95px;">
+				<!-- <li class="positive">Fast and easy:<br/>“I <u>must</u> <i>buy a gift for Matt</i> <u>by thursday</u>”</li> -->
+				<li class="positive">"Organization makes a system of many appear fewer" <%= link_to "- The Laws of Simplicity", "http://lawsofsimplicity.com", target: "_blank" %></li>
+				<li class="positive">Helps you focus on the right cards</li>
+				<li class="negative">Too much planning or doing can kill productivity</li>
+			</ul>
+			<hr class="small"/>
+			<p class="probability"><span class="zen-green">40%</span> probability for success</p>
+		</div>
+
+		<div class="col-md-4">
+			<%= image_tag("card_list.png", style: "width: 350px; margin: 20px 0;") %>
+		</div>
+
+		<div class="col-md-4 text-left" style="padding-top: 100px;">
+			<p class="light-gray">"It's not about how to get more things done,<br/>it’s about how to get <u>the right things</u> done."<br/>
+					<%= link_to "Essentialism: The Disciplined Pursuit of Less by Greg McKeown", "http://gregmckeown.com/book/", target: "_blank" %></p>
+		</div>
+
+		<div class="col-md-12">
+			<%= image_tag('path_right_left.png', class: 'path_right_left hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+			<h2 class="text-left">Add Cards to your Schedule</h2>
+		</div>
+
+		<div class="col-md-8">
+			<%= image_tag("add_to_schedule.png", class: 'add_to_schedule') %>
+		</div>
+
+		<div class="col-md-4">
+			<ul class="benefitList">
+				<li class="positive">Add the "When" to your "What"</li>
+				<li class="positive">Turn Cards into a solid plan for action</li>
+				<li class="positive">You can always reschedule in seconds</li>
+				<li class="quote">"If you talk about it, it’s a dream, if you envision it, it’s possible, but if you schedule it, it’s real."<br/>
+					<%= link_to "- Anthony Robbins", "https://www.tonyrobbins.com", target: "_blank" %></li>
+			</ul>
+			<hr class="small"/>
+			<p class="probability"><span class="zen-green">60%</span> probability for success</p>
+		</div>
+
+		<div class="col-md-12">
+			<%= image_tag('path_right_left.png', class: 'path_right_left hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+			<h2 class="text-left">Focus on the current Card</h2>
+		</div>
+
+		<div class="col-md-8">
+			<%= image_tag("focus.png", class: 'focus') %>
+		</div>
+
+		<div class="col-md-4">
+			<ul class="benefitList">
+				<li class="positive">A Card scheduled in time helps you focus</li>
+				<li class="positive">You get notified when it's time for action</li>
+				<li class="positive">Your energy on the right task, at the right time</li>
+			</ul>
+			<hr class="small"/>
+			<p class="probability"><span class="zen-green">90%</span> probability for success</p>
+		</div>
+
+		<div class="col-md-12">
+			<%= image_tag('path_left_right.png', class: 'path_left_right hidden-sm hidden-xs') %>
+			<%= image_tag('path_straight.png', class: 'path_straight animated fadeIn visible-sm visible-xs') %>
+			<h2>Success</h2>
+			<%= image_tag("card_birthday_complete.png", style: "width: 350px;") %>
+			<h4>Learn from it, grow from it, repeat it, make people happy</h4>
+			<br/>
+			<hr/>
+			<h2>Here's a card for you :)</h2>
+			<br/>
+			
+				<div id="card_share" class="center-block">
+					<div id="card_share_inner" class="card_share">
+						Share this guide with friends
+					</div>
+				</div>
+			
+			<br/>
+			<div onclick="completedState()" class="addthis_sharing_toolbox"></div>
+			<!-- <div class="addthis_horizontal_follow_toolbox center-block hidden-sm hidden-xs"></div> -->
+			<br/>
+			<%= image_tag('gift_matt.png', class: "matt hidden-xs hidden-sm") %>
+		</div>
+
+
+
+
+
+	</div>
+</div>
