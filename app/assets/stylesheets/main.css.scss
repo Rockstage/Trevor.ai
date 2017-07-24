@@ -803,12 +803,24 @@ hr.margin {
 	.intelligent {
 		background-image: image-url("intelligent.jpg");
 	}
+	.planning {
+		background-image: image-url("web-planning.jpg");
+	}
+	.focus {
+		background-image: image-url("web-focus.jpg");
+	}
+	.progress {
+		background-image: image-url("web-progress.jpg");
+		margin-bottom: 0;
+	}
 	.row > div {
 		position: absolute;
 		bottom: 0;
 		padding: 140px 50px 50px 50px;
 	}
 	p {
+		font-weight: 400;
+		color: black;
 		@media (max-width: 768px) {
 		font-size: 1.2em;
 		}
