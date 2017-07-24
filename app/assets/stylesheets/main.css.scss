@@ -831,6 +831,11 @@ hr.margin {
 		font-size: 30px;
 		}
 	}
+	&.features-web {
+		.background-image {
+			height: 500px;
+		}
+	}
 }
 
 #what-is-trevor {
