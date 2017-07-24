@@ -15,17 +15,12 @@
 	</div>
 </div>
 
-<!-- The first calendar that helps you get your tasks done. -->
-<!-- It's an easy way of keeping your todo lists empty and your goals within reach. -->
-
 <div id="meettrevor" class="container-fluid section dark bluebg" style="padding: 30px 0;">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
 				<h1>Meet Trevor</h1>
 				<h3>The first <u>calendar</u> designed to help you get your <u>tasks</u> done.<h3/>
-				<!-- <h4 class="faded">Trevor connects your task lists with your calendar to help you manage your time in for the self-organized. It's universally loved by entrepreneurs, freelancers, managers and alike who take control of their own time.</h4> -->
-				
 				<br/>
 				<br/>
 				<br/>
@@ -61,6 +56,8 @@
 			<div style="position: relative; top: -75px">
 			<h2 class="text-center dark-blue">A smarter approach to time management</h2>
 			<p class="text-center">Trevor combines the familiar <u>Get Things Done</u> workflow with the power of a <u>Schedule</u><br/>to help you keep your lists empty and your goals within reach.</p>
+			<%= link_to "Sign in", "https://app.trevorai.com", class: 'button button-blue button-blue-solid sign-up-button-blue' %>
+			<p class="text-center" style="color: rgb(200,200,200)">It's free.</p>
 			</div>
 			<br/>
 		</div>
@@ -73,12 +70,13 @@
 				<div class="demoVideo web">
 					<iframe width="480" height="300" src="https://www.youtube.com/embed/u4SBxz13P74?ecver=2&vq=hd720&autoplay=1&controls=0&showinfo=0&loop=1&playlist=u4SBxz13P74" frameborder="0" autohide="1"></iframe>
 				</div>
-				<% if false %>
-				<h3 class="text-center">Tasks and time smarter, together</h3>
-				
-				<%= link_to (image_tag("appStore.svg", class: "appStoreButton center-block", alt: "Download from the App Store")), "https://itunes.apple.com/app/trevor-ai-time-management/id1113523247", target: "_blank" %>
-				<% end %>
 			</div>
+			<div style="position: relative; top: 75px">
+			<h2 class="text-center dark-blue">A smarter approach to time management</h2>
+			<p class="text-center">Trevor combines the familiar <u>Get Things Done</u> workflow with the power of a <u>Schedule</u><br/>to help you keep your lists empty and your goals within reach.</p>
+			<%= link_to "Sign in", "https://app.trevorai.com", class: 'button button-blue button-blue-solid sign-up-button-blue' %>
+			</div>
+			<br/>
 			
 		</div>
 
@@ -93,12 +91,12 @@
 		<div class="col-md-4 text-center">
 			<%= image_tag("icon_checkbox.svg") %>
 			<h3 class="dark-blue">Task Lists</h3>
-			<p>A powerful, lightweight task manager that helps you beautifully organize everything you have to do.</p>
+			<p>A powerful, lightweight task manager that helps you beautifully organize everything you want to do.</p>
 		</div>
 		<div class="col-md-4 text-center">
 			<%= image_tag("icon_event.svg") %>
 			<h3 class="dark-blue">Schedule</h3>
-			<p>A minimalist schedule, in sync with your calendar, helping you schedule everything you do.</p>
+			<p>A minimalist schedule, in sync with your calendar, helping you schedule everything you have to do.</p>
 		</div>
 		<div class="col-md-4 text-center">
 			<%= image_tag("icon_bulb.svg") %>
@@ -134,11 +132,24 @@
 </div> -->
 
 
+<div id="testimonials" class="container-fluid section">
+	<div class="row">
+		<h1 class="text-center">Trevor is for the self-organized</h1>
+		<p class="text-center">Entrepreneurs, Freelancers, Doers & Achievers</p>
+		<hr style="margin: 50px 0;"/>
+		<div class="col-md-3"><p><i>Trevor is fantastic! I have been looking for this type of calendar-task scheduling tool for a long time. Now it is here!</i></p><h3 style="text-align: right">- Colin Liu</h3></div>
 
-<div class="container section">
-	<h1>Testimonials</h1>
+		<div class="col-md-3"><p><i>First impressions: Clear UI, simple to understand, drag & drop todo to calendar is a great feature. I can already see it helping me make better progress towards completing my tasks/goals.</i></p><h3 style="text-align: right">- Patrick Buchholz</h3></div>
+
+		<div class="col-md-3"><p><i>Just wanted to say that I was so excited to find this! It's the missing link between my to-do list & my calendar that I've been looking for for such a long time.</i></p><h3 style="text-align: right;">- Rebecca Chapman</h3></div>
+
+		<div class="col-md-3"><p><i>Currently I schedule my tasks by creating events in my calender everyday, exactly what you automate. I do it to get a better feeling of what I'm spending my time on and to get in as many productive hours as possible, which can be hard without a fixed schedule.</i></p><h3 style="text-align: right;">- Maximilian Pohlman</h3></div>
+
+	</div>
+	<hr style="margin: 50px 0 0 0;"/>
 </div>
 
+<% if false %>
 <div id="features-pricing" class="container-fluid">
 	<div class="container">
 		<div class="row">
@@ -172,7 +183,7 @@
 				<p>Complete tasks scheduled in your calendar to track both time and progress</p>
 			</div>
 
-			<% if false %>
+			
 
 			<h1>Premium Features</h1>
 			<p>For those serious about personal growth, we've got something special.</p>
@@ -193,21 +204,19 @@
 			<h2>Premium membership costs just $4.99/mo.</h2>
 			<p>Hacking your personal growth is priceless, yet we ask for no higher than a cup of coffee.</p>
 
-			<% end %>
+			
 
 		</div>
 	</div>
 
 </div>
+<% end %>
 
-<div class="container section">
-	<h1>Methodology & Research behind Trevor's effectiveness</h1>
-	<p>Describe the benefits and validate with data.</p>
-	<h3>2x your Planning skills and task completion ratio</h3>
-	<p>Planning, Focus, Progress</p>
-	<p>Describe</p>
-	<p>80% of scheduled tasks get completed</p>
-	<p></p>
+<div id="proof-of-concept" class="container ">
+	<h1>Effective by design</h1>
+	<p><span>20k </span>scheduled tasks so far</p>
+	<p><span>80% </span>completion rate for scheduled tasks, 2x the to-do list average.</p>
+	<p><span>30 sec </span>to setup Trevor and take control of your time.</p>
 </div>
 
 
@@ -215,8 +224,15 @@
 <div id="meettrevor" class="container-fluid section dark bluebg">
 	<div class="container">
 		<div class="row">
-
+			<%= link_to "GET STARTED FOR FREE", "https://app.trevorai.com", class: 'button sign-up-button' %>
+			<% if false %>
 			<div class="col-md-4"></div>
+
+			<div class="col-md-4">
+				
+			</div>
+
+			
 			<div id="" class="download col-md-4">
 			<!-- Begin MailChimp Signup Form -->
 				<div id="mc_embed_signup">
@@ -240,7 +256,9 @@
 				
 			<!--End mc_embed_signup-->
 			</div>
+			
 			<div class="col-md-4"></div>
+			<% end %>
 		</div>
 	</div>
 </div>
