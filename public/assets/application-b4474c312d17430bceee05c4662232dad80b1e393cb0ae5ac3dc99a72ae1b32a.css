@@ -6746,7 +6746,7 @@ hr.margin {
   min-height: 40px;
   background: #e6e6e6;
   border-radius: 10px;
-  border: 5px solid transparent;
+  border: 5px solid rgba(0, 0, 0, 0);
 }
 /* line 1167, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
 #listDemo .search input::placeholder {
@@ -6886,4 +6886,9 @@ hr.margin {
   margin: 20px auto;
   font-size: 1.5em;
   max-width: 150px;
+}
+
+/* line 1296, /Users/George/Documents/WebDev/Projects/trevorai/app/assets/stylesheets/main.css.scss */
+.cc-window {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }

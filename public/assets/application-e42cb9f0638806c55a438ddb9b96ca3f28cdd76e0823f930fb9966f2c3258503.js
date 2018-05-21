@@ -1,5 +1,5 @@
 /*!
- * jQuery JavaScript Library v1.12.0
+ * jQuery JavaScript Library v1.12.4
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -9,7 +9,7 @@
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-01-08T19:56Z
+ * Date: 2016-05-20T17:17Z
  */
 
 
@@ -66,7 +66,7 @@ var support = {};
 
 
 var
-	version = "1.12.0",
+	version = "1.12.4",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -3626,11 +3626,10 @@ jQuery.ready.promise = function( obj ) {
 
 		// Catch cases where $(document).ready() is called
 		// after the browser event has already occurred.
-		// we once tried to use readyState "interactive" here,
-		// but it caused issues like the one
-		// discovered by ChrisS here:
-		// http://bugs.jquery.com/ticket/12282#comment:15
-		if ( document.readyState === "complete" ) {
+		// Support: IE6-10
+		// Older IE sometimes signals "interactive" too soon
+		if ( document.readyState === "complete" ||
+			( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
 
 			// Handle it asynchronously to allow scripts the opportunity to delay ready
 			window.setTimeout( jQuery.ready );
@@ -6674,6 +6673,7 @@ var documentElement = document.documentElement;
 		if ( reliableHiddenOffsetsVal ) {
 			div.style.display = "";
 			div.innerHTML = "<table><tr><td></td><td>t</td></tr></table>";
+			div.childNodes[ 0 ].style.borderCollapse = "separate";
 			contents = div.getElementsByTagName( "td" );
 			contents[ 0 ].style.cssText = "margin:0;border:0;padding:0;display:none";
 			reliableHiddenOffsetsVal = contents[ 0 ].offsetHeight === 0;
@@ -6702,7 +6702,7 @@ if ( window.getComputedStyle ) {
 		// FF meanwhile throws on frame elements through "defaultView.getComputedStyle"
 		var view = elem.ownerDocument.defaultView;
 
-		if ( !view.opener ) {
+		if ( !view || !view.opener ) {
 			view = window;
 		}
 
@@ -6718,11 +6718,14 @@ if ( window.getComputedStyle ) {
 		// getPropertyValue is only needed for .css('filter') in IE9, see #12537
 		ret = computed ? computed.getPropertyValue( name ) || computed[ name ] : undefined;
 
-		if ( computed ) {
+		// Support: Opera 12.1x only
+		// Fall back to style even without computed
+		// computed is undefined for elems on document fragments
+		if ( ( ret === "" || ret === undefined ) && !jQuery.contains( elem.ownerDocument, elem ) ) {
+			ret = jQuery.style( elem, name );
+		}
 
-			if ( ret === "" && !jQuery.contains( elem.ownerDocument, elem ) ) {
-				ret = jQuery.style( elem, name );
-			}
+		if ( computed ) {
 
 			// A tribute to the "awesome hack by Dean Edwards"
 			// Chrome < 17 and Safari 5.0 uses "computed value"
@@ -6994,19 +6997,6 @@ function getWidthOrHeight( elem, name, extra ) {
 		styles = getStyles( elem ),
 		isBorderBox = support.boxSizing &&
 			jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
-
-	// Support: IE11 only
-	// In IE 11 fullscreen elements inside of an iframe have
-	// 100x too small dimensions (gh-1764).
-	if ( document.msFullscreenElement && window.top !== window ) {
-
-		// Support: IE11 only
-		// Running getBoundingClientRect on a disconnected node
-		// in IE throws an error.
-		if ( elem.getClientRects().length ) {
-			val = Math.round( elem.getBoundingClientRect()[ name ] * 100 );
-		}
-	}
 
 	// some non-html elements return undefined for offsetWidth, so check for null/undefined
 	// svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
@@ -8197,7 +8187,8 @@ jQuery.fn.delay = function( time, type ) {
 } )();
 
 
-var rreturn = /\r/g;
+var rreturn = /\r/g,
+	rspaces = /[\x20\t\r\n\f]+/g;
 
 jQuery.fn.extend( {
 	val: function( value ) {
@@ -8277,7 +8268,9 @@ jQuery.extend( {
 
 					// Support: IE10-11+
 					// option.text throws exceptions (#14686, #14858)
-					jQuery.trim( jQuery.text( elem ) );
+					// Strip and collapse whitespace
+					// https://html.spec.whatwg.org/#strip-and-collapse-whitespace
+					jQuery.trim( jQuery.text( elem ) ).replace( rspaces, " " );
 			}
 		},
 		select: {
@@ -8331,7 +8324,7 @@ jQuery.extend( {
 				while ( i-- ) {
 					option = options[ i ];
 
-					if ( jQuery.inArray( jQuery.valHooks.option.get( option ), values ) >= 0 ) {
+					if ( jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1 ) {
 
 						// Support: IE6
 						// When new option element is added to select box we need to
@@ -8750,8 +8743,11 @@ if ( !support.hrefNormalized ) {
 }
 
 // Support: Safari, IE9+
-// mis-reports the default selected property of an option
-// Accessing the parent's selectedIndex property fixes it
+// Accessing the selectedIndex property
+// forces the browser to respect setting selected
+// on the option
+// The getter ensures a default option is selected
+// when in an optgroup
 if ( !support.optSelected ) {
 	jQuery.propHooks.selected = {
 		get: function( elem ) {
@@ -8766,6 +8762,16 @@ if ( !support.optSelected ) {
 				}
 			}
 			return null;
+		},
+		set: function( elem ) {
+			var parent = elem.parentNode;
+			if ( parent ) {
+				parent.selectedIndex;
+
+				if ( parent.parentNode ) {
+					parent.parentNode.selectedIndex;
+				}
+			}
 		}
 	};
 }
@@ -9982,6 +9988,11 @@ function getDisplay( elem ) {
 }
 
 function filterHidden( elem ) {
+
+	// Disconnected elements are considered hidden
+	if ( !jQuery.contains( elem.ownerDocument || document, elem ) ) {
+		return true;
+	}
 	while ( elem && elem.nodeType === 1 ) {
 		if ( getDisplay( elem ) === "none" || elem.type === "hidden" ) {
 			return true;
@@ -10348,13 +10359,6 @@ function createActiveXHR() {
 
 
 
-// Prevent auto-execution of scripts when no explicit dataType was provided (See gh-2432)
-jQuery.ajaxPrefilter( function( s ) {
-	if ( s.crossDomain ) {
-		s.contents.script = false;
-	}
-} );
-
 // Install script dataType
 jQuery.ajaxSetup( {
 	accepts: {
@@ -10541,21 +10545,6 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 
 
-// Support: Safari 8+
-// In Safari 8 documents created via document.implementation.createHTMLDocument
-// collapse sibling forms: the second one becomes a child of the first one.
-// Because of that, this security measure has to be disabled in Safari 8.
-// https://bugs.webkit.org/show_bug.cgi?id=137337
-support.createHTMLDocument = ( function() {
-	if ( !document.implementation.createHTMLDocument ) {
-		return false;
-	}
-	var doc = document.implementation.createHTMLDocument( "" );
-	doc.body.innerHTML = "<form></form><form></form>";
-	return doc.body.childNodes.length === 2;
-} )();
-
-
 // data: string of html
 // context (optional): If specified, the fragment will be created in this context,
 // defaults to document
@@ -10568,12 +10557,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 		keepScripts = context;
 		context = false;
 	}
-
-	// document.implementation stops scripts or inline event handlers from
-	// being executed immediately
-	context = context || ( support.createHTMLDocument ?
-		document.implementation.createHTMLDocument( "" ) :
-		document );
+	context = context || document;
 
 	var parsed = rsingleTag.exec( data ),
 		scripts = !keepScripts && [];
@@ -10655,7 +10639,7 @@ jQuery.fn.load = function( url, params, callback ) {
 		// If it fails, this function gets "jqXHR", "status", "error"
 		} ).always( callback && function( jqXHR, status ) {
 			self.each( function() {
-				callback.apply( self, response || [ jqXHR.responseText, status, jqXHR ] );
+				callback.apply( this, response || [ jqXHR.responseText, status, jqXHR ] );
 			} );
 		} );
 	}
@@ -10819,11 +10803,8 @@ jQuery.fn.extend( {
 			}
 
 			// Add offsetParent borders
-			// Subtract offsetParent scroll positions
-			parentOffset.top += jQuery.css( offsetParent[ 0 ], "borderTopWidth", true ) -
-				offsetParent.scrollTop();
-			parentOffset.left += jQuery.css( offsetParent[ 0 ], "borderLeftWidth", true ) -
-				offsetParent.scrollLeft();
+			parentOffset.top  += jQuery.css( offsetParent[ 0 ], "borderTopWidth", true );
+			parentOffset.left += jQuery.css( offsetParent[ 0 ], "borderLeftWidth", true );
 		}
 
 		// Subtract parent offsets and element margins
@@ -11076,7 +11057,7 @@ return jQuery;
     requiredInputSelector: 'input[name][required]:not([disabled]), textarea[name][required]:not([disabled])',
 
     // Form file input elements
-    fileInputSelector: 'input[type=file]:not([disabled])',
+    fileInputSelector: 'input[name][type=file]:not([disabled])',
 
     // Link onClick disable selector with possible reenable after remote submission
     linkDisableSelector: 'a[data-disable-with], a[data-disable]',
@@ -11143,7 +11124,7 @@ return jQuery;
         if (element.is('form')) {
           method = element.data('ujs:submit-button-formmethod') || element.attr('method');
           url = element.data('ujs:submit-button-formaction') || element.attr('action');
-          data = $(element[0].elements).serializeArray();
+          data = $(element[0]).serializeArray();
           // memoized value from clicked submit button
           var button = element.data('ujs:submit-button');
           if (button) {
@@ -11337,24 +11318,45 @@ return jQuery;
 
     // Helper function which checks for blank inputs in a form that match the specified CSS selector
     blankInputs: function(form, specifiedSelector, nonBlank) {
-      var inputs = $(), input, valueToCheck,
-          selector = specifiedSelector || 'input,textarea',
-          allInputs = form.find(selector);
+      var foundInputs = $(),
+        input,
+        valueToCheck,
+        radiosForNameWithNoneSelected,
+        radioName,
+        selector = specifiedSelector || 'input,textarea',
+        requiredInputs = form.find(selector),
+        checkedRadioButtonNames = {};
 
-      allInputs.each(function() {
+      requiredInputs.each(function() {
         input = $(this);
-        valueToCheck = input.is('input[type=checkbox],input[type=radio]') ? input.is(':checked') : !!input.val();
-        if (valueToCheck === nonBlank) {
+        if (input.is('input[type=radio]')) {
 
-          // Don't count unchecked required radio if other radio with same name is checked
-          if (input.is('input[type=radio]') && allInputs.filter('input[type=radio]:checked[name="' + input.attr('name') + '"]').length) {
-            return true; // Skip to next input
+          // Don't count unchecked required radio as blank if other radio with same name is checked,
+          // regardless of whether same-name radio input has required attribute or not. The spec
+          // states https://www.w3.org/TR/html5/forms.html#the-required-attribute
+          radioName = input.attr('name');
+
+          // Skip if we've already seen the radio with this name.
+          if (!checkedRadioButtonNames[radioName]) {
+
+            // If none checked
+            if (form.find('input[type=radio]:checked[name="' + radioName + '"]').length === 0) {
+              radiosForNameWithNoneSelected = form.find(
+                'input[type=radio][name="' + radioName + '"]');
+              foundInputs = foundInputs.add(radiosForNameWithNoneSelected);
+            }
+
+            // We only need to check each name once.
+            checkedRadioButtonNames[radioName] = radioName;
           }
-
-          inputs = inputs.add(input);
+        } else {
+          valueToCheck = input.is('input[type=checkbox],input[type=radio]') ? input.is(':checked') : !!input.val();
+          if (valueToCheck === nonBlank) {
+            foundInputs = foundInputs.add(input);
+          }
         }
       });
-      return inputs.length ? inputs : false;
+      return foundInputs.length ? foundInputs : false;
     },
 
     // Helper function which checks for non-blank inputs in a form that match the specified CSS selector
@@ -11423,15 +11425,15 @@ return jQuery;
       });
     });
 
-    $document.delegate(rails.linkDisableSelector, 'ajax:complete', function() {
+    $document.on('ajax:complete', rails.linkDisableSelector, function() {
         rails.enableElement($(this));
     });
 
-    $document.delegate(rails.buttonDisableSelector, 'ajax:complete', function() {
+    $document.on('ajax:complete', rails.buttonDisableSelector, function() {
         rails.enableFormElement($(this));
     });
 
-    $document.delegate(rails.linkClickSelector, 'click.rails', function(e) {
+    $document.on('click.rails', rails.linkClickSelector, function(e) {
       var link = $(this), method = link.data('method'), data = link.data('params'), metaClick = e.metaKey || e.ctrlKey;
       if (!rails.allowAction(link)) return rails.stopEverything(e);
 
@@ -11455,7 +11457,7 @@ return jQuery;
       }
     });
 
-    $document.delegate(rails.buttonClickSelector, 'click.rails', function(e) {
+    $document.on('click.rails', rails.buttonClickSelector, function(e) {
       var button = $(this);
 
       if (!rails.allowAction(button) || !rails.isRemote(button)) return rails.stopEverything(e);
@@ -11472,7 +11474,7 @@ return jQuery;
       return false;
     });
 
-    $document.delegate(rails.inputChangeSelector, 'change.rails', function(e) {
+    $document.on('change.rails', rails.inputChangeSelector, function(e) {
       var link = $(this);
       if (!rails.allowAction(link) || !rails.isRemote(link)) return rails.stopEverything(e);
 
@@ -11480,7 +11482,7 @@ return jQuery;
       return false;
     });
 
-    $document.delegate(rails.formSubmitSelector, 'submit.rails', function(e) {
+    $document.on('submit.rails', rails.formSubmitSelector, function(e) {
       var form = $(this),
         remote = rails.isRemote(form),
         blankRequiredInputs,
@@ -11525,7 +11527,7 @@ return jQuery;
       }
     });
 
-    $document.delegate(rails.formInputClickSelector, 'click.rails', function(event) {
+    $document.on('click.rails', rails.formInputClickSelector, function(event) {
       var button = $(this);
 
       if (!rails.allowAction(button)) return rails.stopEverything(event);
@@ -11546,11 +11548,11 @@ return jQuery;
       form.data('ujs:submit-button-formmethod', button.attr('formmethod'));
     });
 
-    $document.delegate(rails.formSubmitSelector, 'ajax:send.rails', function(event) {
+    $document.on('ajax:send.rails', rails.formSubmitSelector, function(event) {
       if (this === event.target) rails.disableFormElements($(this));
     });
 
-    $document.delegate(rails.formSubmitSelector, 'ajax:complete.rails', function(event) {
+    $document.on('ajax:complete.rails', rails.formSubmitSelector, function(event) {
       if (this === event.target) rails.enableFormElements($(this));
     });
 
@@ -13679,786 +13681,13 @@ return jQuery;
 
 
 
-(function() {
-  var CSRFToken, Click, ComponentUrl, EVENTS, Link, ProgressBar, browserIsntBuggy, browserSupportsCustomEvents, browserSupportsPushState, browserSupportsTurbolinks, bypassOnLoadPopstate, cacheCurrentPage, cacheSize, changePage, clone, constrainPageCacheTo, createDocument, crossOriginRedirect, currentState, enableProgressBar, enableTransitionCache, executeScriptTags, extractTitleAndBody, fetch, fetchHistory, fetchReplacement, historyStateIsDefined, initializeTurbolinks, installDocumentReadyPageEventTriggers, installHistoryChangeHandler, installJqueryAjaxSuccessPageUpdateTrigger, loadedAssets, manuallyTriggerHashChangeForFirefox, pageCache, pageChangePrevented, pagesCached, popCookie, processResponse, progressBar, recallScrollPosition, ref, referer, reflectNewUrl, reflectRedirectedUrl, rememberCurrentState, rememberCurrentUrl, rememberReferer, removeNoscriptTags, requestMethodIsSafe, resetScrollPosition, setAutofocusElement, transitionCacheEnabled, transitionCacheFor, triggerEvent, visit, xhr,
-    indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
-    extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
-    hasProp = {}.hasOwnProperty,
-    slice = [].slice,
-    bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-
-  pageCache = {};
-
-  cacheSize = 10;
-
-  transitionCacheEnabled = false;
-
-  progressBar = null;
-
-  currentState = null;
-
-  loadedAssets = null;
-
-  referer = null;
-
-  xhr = null;
-
-  EVENTS = {
-    BEFORE_CHANGE: 'page:before-change',
-    FETCH: 'page:fetch',
-    RECEIVE: 'page:receive',
-    CHANGE: 'page:change',
-    UPDATE: 'page:update',
-    LOAD: 'page:load',
-    RESTORE: 'page:restore',
-    BEFORE_UNLOAD: 'page:before-unload',
-    EXPIRE: 'page:expire'
-  };
-
-  fetch = function(url) {
-    var cachedPage;
-    url = new ComponentUrl(url);
-    rememberReferer();
-    cacheCurrentPage();
-    if (progressBar != null) {
-      progressBar.start();
-    }
-    if (transitionCacheEnabled && (cachedPage = transitionCacheFor(url.absolute))) {
-      fetchHistory(cachedPage);
-      return fetchReplacement(url, null, false);
-    } else {
-      return fetchReplacement(url, resetScrollPosition);
-    }
-  };
-
-  transitionCacheFor = function(url) {
-    var cachedPage;
-    cachedPage = pageCache[url];
-    if (cachedPage && !cachedPage.transitionCacheDisabled) {
-      return cachedPage;
-    }
-  };
-
-  enableTransitionCache = function(enable) {
-    if (enable == null) {
-      enable = true;
-    }
-    return transitionCacheEnabled = enable;
-  };
-
-  enableProgressBar = function(enable) {
-    if (enable == null) {
-      enable = true;
-    }
-    if (!browserSupportsTurbolinks) {
-      return;
-    }
-    if (enable) {
-      return progressBar != null ? progressBar : progressBar = new ProgressBar('html');
-    } else {
-      if (progressBar != null) {
-        progressBar.uninstall();
-      }
-      return progressBar = null;
-    }
-  };
-
-  fetchReplacement = function(url, onLoadFunction, showProgressBar) {
-    if (showProgressBar == null) {
-      showProgressBar = true;
-    }
-    triggerEvent(EVENTS.FETCH, {
-      url: url.absolute
-    });
-    if (xhr != null) {
-      xhr.abort();
-    }
-    xhr = new XMLHttpRequest;
-    xhr.open('GET', url.withoutHashForIE10compatibility(), true);
-    xhr.setRequestHeader('Accept', 'text/html, application/xhtml+xml, application/xml');
-    xhr.setRequestHeader('X-XHR-Referer', referer);
-    xhr.onload = function() {
-      var doc;
-      triggerEvent(EVENTS.RECEIVE, {
-        url: url.absolute
-      });
-      if (doc = processResponse()) {
-        reflectNewUrl(url);
-        reflectRedirectedUrl();
-        changePage.apply(null, extractTitleAndBody(doc));
-        manuallyTriggerHashChangeForFirefox();
-        if (typeof onLoadFunction === "function") {
-          onLoadFunction();
-        }
-        return triggerEvent(EVENTS.LOAD);
-      } else {
-        return document.location.href = crossOriginRedirect() || url.absolute;
-      }
-    };
-    if (progressBar && showProgressBar) {
-      xhr.onprogress = (function(_this) {
-        return function(event) {
-          var percent;
-          percent = event.lengthComputable ? event.loaded / event.total * 100 : progressBar.value + (100 - progressBar.value) / 10;
-          return progressBar.advanceTo(percent);
-        };
-      })(this);
-    }
-    xhr.onloadend = function() {
-      return xhr = null;
-    };
-    xhr.onerror = function() {
-      return document.location.href = url.absolute;
-    };
-    return xhr.send();
-  };
-
-  fetchHistory = function(cachedPage) {
-    if (xhr != null) {
-      xhr.abort();
-    }
-    changePage(cachedPage.title, cachedPage.body);
-    recallScrollPosition(cachedPage);
-    return triggerEvent(EVENTS.RESTORE);
-  };
-
-  cacheCurrentPage = function() {
-    var currentStateUrl;
-    currentStateUrl = new ComponentUrl(currentState.url);
-    pageCache[currentStateUrl.absolute] = {
-      url: currentStateUrl.relative,
-      body: document.body,
-      title: document.title,
-      positionY: window.pageYOffset,
-      positionX: window.pageXOffset,
-      cachedAt: new Date().getTime(),
-      transitionCacheDisabled: document.querySelector('[data-no-transition-cache]') != null
-    };
-    return constrainPageCacheTo(cacheSize);
-  };
-
-  pagesCached = function(size) {
-    if (size == null) {
-      size = cacheSize;
-    }
-    if (/^[\d]+$/.test(size)) {
-      return cacheSize = parseInt(size);
-    }
-  };
-
-  constrainPageCacheTo = function(limit) {
-    var cacheTimesRecentFirst, i, key, len, pageCacheKeys, results;
-    pageCacheKeys = Object.keys(pageCache);
-    cacheTimesRecentFirst = pageCacheKeys.map(function(url) {
-      return pageCache[url].cachedAt;
-    }).sort(function(a, b) {
-      return b - a;
-    });
-    results = [];
-    for (i = 0, len = pageCacheKeys.length; i < len; i++) {
-      key = pageCacheKeys[i];
-      if (!(pageCache[key].cachedAt <= cacheTimesRecentFirst[limit])) {
-        continue;
-      }
-      triggerEvent(EVENTS.EXPIRE, pageCache[key]);
-      results.push(delete pageCache[key]);
-    }
-    return results;
-  };
-
-  changePage = function(title, body, csrfToken, runScripts) {
-    triggerEvent(EVENTS.BEFORE_UNLOAD);
-    document.title = title;
-    document.documentElement.replaceChild(body, document.body);
-    if (csrfToken != null) {
-      CSRFToken.update(csrfToken);
-    }
-    setAutofocusElement();
-    if (runScripts) {
-      executeScriptTags();
-    }
-    currentState = window.history.state;
-    if (progressBar != null) {
-      progressBar.done();
-    }
-    triggerEvent(EVENTS.CHANGE);
-    return triggerEvent(EVENTS.UPDATE);
-  };
-
-  executeScriptTags = function() {
-    var attr, copy, i, j, len, len1, nextSibling, parentNode, ref, ref1, script, scripts;
-    scripts = Array.prototype.slice.call(document.body.querySelectorAll('script:not([data-turbolinks-eval="false"])'));
-    for (i = 0, len = scripts.length; i < len; i++) {
-      script = scripts[i];
-      if (!((ref = script.type) === '' || ref === 'text/javascript')) {
-        continue;
-      }
-      copy = document.createElement('script');
-      ref1 = script.attributes;
-      for (j = 0, len1 = ref1.length; j < len1; j++) {
-        attr = ref1[j];
-        copy.setAttribute(attr.name, attr.value);
-      }
-      if (!script.hasAttribute('async')) {
-        copy.async = false;
-      }
-      copy.appendChild(document.createTextNode(script.innerHTML));
-      parentNode = script.parentNode, nextSibling = script.nextSibling;
-      parentNode.removeChild(script);
-      parentNode.insertBefore(copy, nextSibling);
-    }
-  };
-
-  removeNoscriptTags = function(node) {
-    node.innerHTML = node.innerHTML.replace(/<noscript[\S\s]*?<\/noscript>/ig, '');
-    return node;
-  };
-
-  setAutofocusElement = function() {
-    var autofocusElement, list;
-    autofocusElement = (list = document.querySelectorAll('input[autofocus], textarea[autofocus]'))[list.length - 1];
-    if (autofocusElement && document.activeElement !== autofocusElement) {
-      return autofocusElement.focus();
-    }
-  };
-
-  reflectNewUrl = function(url) {
-    if ((url = new ComponentUrl(url)).absolute !== referer) {
-      return window.history.pushState({
-        turbolinks: true,
-        url: url.absolute
-      }, '', url.absolute);
-    }
-  };
-
-  reflectRedirectedUrl = function() {
-    var location, preservedHash;
-    if (location = xhr.getResponseHeader('X-XHR-Redirected-To')) {
-      location = new ComponentUrl(location);
-      preservedHash = location.hasNoHash() ? document.location.hash : '';
-      return window.history.replaceState(window.history.state, '', location.href + preservedHash);
-    }
-  };
-
-  crossOriginRedirect = function() {
-    var redirect;
-    if (((redirect = xhr.getResponseHeader('Location')) != null) && (new ComponentUrl(redirect)).crossOrigin()) {
-      return redirect;
-    }
-  };
-
-  rememberReferer = function() {
-    return referer = document.location.href;
-  };
-
-  rememberCurrentUrl = function() {
-    return window.history.replaceState({
-      turbolinks: true,
-      url: document.location.href
-    }, '', document.location.href);
-  };
-
-  rememberCurrentState = function() {
-    return currentState = window.history.state;
-  };
-
-  manuallyTriggerHashChangeForFirefox = function() {
-    var url;
-    if (navigator.userAgent.match(/Firefox/) && !(url = new ComponentUrl).hasNoHash()) {
-      window.history.replaceState(currentState, '', url.withoutHash());
-      return document.location.hash = url.hash;
-    }
-  };
-
-  recallScrollPosition = function(page) {
-    return window.scrollTo(page.positionX, page.positionY);
-  };
-
-  resetScrollPosition = function() {
-    if (document.location.hash) {
-      return document.location.href = document.location.href;
-    } else {
-      return window.scrollTo(0, 0);
-    }
-  };
-
-  clone = function(original) {
-    var copy, key, value;
-    if ((original == null) || typeof original !== 'object') {
-      return original;
-    }
-    copy = new original.constructor();
-    for (key in original) {
-      value = original[key];
-      copy[key] = clone(value);
-    }
-    return copy;
-  };
-
-  popCookie = function(name) {
-    var ref, value;
-    value = ((ref = document.cookie.match(new RegExp(name + "=(\\w+)"))) != null ? ref[1].toUpperCase() : void 0) || '';
-    document.cookie = name + '=; expires=Thu, 01-Jan-70 00:00:01 GMT; path=/';
-    return value;
-  };
-
-  triggerEvent = function(name, data) {
-    var event;
-    if (typeof Prototype !== 'undefined') {
-      Event.fire(document, name, data, true);
-    }
-    event = document.createEvent('Events');
-    if (data) {
-      event.data = data;
-    }
-    event.initEvent(name, true, true);
-    return document.dispatchEvent(event);
-  };
-
-  pageChangePrevented = function(url) {
-    return !triggerEvent(EVENTS.BEFORE_CHANGE, {
-      url: url
-    });
-  };
-
-  processResponse = function() {
-    var assetsChanged, clientOrServerError, doc, extractTrackAssets, intersection, validContent;
-    clientOrServerError = function() {
-      var ref;
-      return (400 <= (ref = xhr.status) && ref < 600);
-    };
-    validContent = function() {
-      var contentType;
-      return ((contentType = xhr.getResponseHeader('Content-Type')) != null) && contentType.match(/^(?:text\/html|application\/xhtml\+xml|application\/xml)(?:;|$)/);
-    };
-    extractTrackAssets = function(doc) {
-      var i, len, node, ref, results;
-      ref = doc.querySelector('head').childNodes;
-      results = [];
-      for (i = 0, len = ref.length; i < len; i++) {
-        node = ref[i];
-        if ((typeof node.getAttribute === "function" ? node.getAttribute('data-turbolinks-track') : void 0) != null) {
-          results.push(node.getAttribute('src') || node.getAttribute('href'));
-        }
-      }
-      return results;
-    };
-    assetsChanged = function(doc) {
-      var fetchedAssets;
-      loadedAssets || (loadedAssets = extractTrackAssets(document));
-      fetchedAssets = extractTrackAssets(doc);
-      return fetchedAssets.length !== loadedAssets.length || intersection(fetchedAssets, loadedAssets).length !== loadedAssets.length;
-    };
-    intersection = function(a, b) {
-      var i, len, ref, results, value;
-      if (a.length > b.length) {
-        ref = [b, a], a = ref[0], b = ref[1];
-      }
-      results = [];
-      for (i = 0, len = a.length; i < len; i++) {
-        value = a[i];
-        if (indexOf.call(b, value) >= 0) {
-          results.push(value);
-        }
-      }
-      return results;
-    };
-    if (!clientOrServerError() && validContent()) {
-      doc = createDocument(xhr.responseText);
-      if (doc && !assetsChanged(doc)) {
-        return doc;
-      }
-    }
-  };
-
-  extractTitleAndBody = function(doc) {
-    var title;
-    title = doc.querySelector('title');
-    return [title != null ? title.textContent : void 0, removeNoscriptTags(doc.querySelector('body')), CSRFToken.get(doc).token, 'runScripts'];
-  };
-
-  CSRFToken = {
-    get: function(doc) {
-      var tag;
-      if (doc == null) {
-        doc = document;
-      }
-      return {
-        node: tag = doc.querySelector('meta[name="csrf-token"]'),
-        token: tag != null ? typeof tag.getAttribute === "function" ? tag.getAttribute('content') : void 0 : void 0
-      };
-    },
-    update: function(latest) {
-      var current;
-      current = this.get();
-      if ((current.token != null) && (latest != null) && current.token !== latest) {
-        return current.node.setAttribute('content', latest);
-      }
-    }
-  };
-
-  createDocument = function(html) {
-    var doc;
-    doc = document.documentElement.cloneNode();
-    doc.innerHTML = html;
-    doc.head = doc.querySelector('head');
-    doc.body = doc.querySelector('body');
-    return doc;
-  };
-
-  ComponentUrl = (function() {
-    function ComponentUrl(original1) {
-      this.original = original1 != null ? original1 : document.location.href;
-      if (this.original.constructor === ComponentUrl) {
-        return this.original;
-      }
-      this._parse();
-    }
-
-    ComponentUrl.prototype.withoutHash = function() {
-      return this.href.replace(this.hash, '').replace('#', '');
-    };
-
-    ComponentUrl.prototype.withoutHashForIE10compatibility = function() {
-      return this.withoutHash();
-    };
-
-    ComponentUrl.prototype.hasNoHash = function() {
-      return this.hash.length === 0;
-    };
-
-    ComponentUrl.prototype.crossOrigin = function() {
-      return this.origin !== (new ComponentUrl).origin;
-    };
-
-    ComponentUrl.prototype._parse = function() {
-      var ref;
-      (this.link != null ? this.link : this.link = document.createElement('a')).href = this.original;
-      ref = this.link, this.href = ref.href, this.protocol = ref.protocol, this.host = ref.host, this.hostname = ref.hostname, this.port = ref.port, this.pathname = ref.pathname, this.search = ref.search, this.hash = ref.hash;
-      this.origin = [this.protocol, '//', this.hostname].join('');
-      if (this.port.length !== 0) {
-        this.origin += ":" + this.port;
-      }
-      this.relative = [this.pathname, this.search, this.hash].join('');
-      return this.absolute = this.href;
-    };
-
-    return ComponentUrl;
-
-  })();
-
-  Link = (function(superClass) {
-    extend(Link, superClass);
-
-    Link.HTML_EXTENSIONS = ['html'];
-
-    Link.allowExtensions = function() {
-      var extension, extensions, i, len;
-      extensions = 1 <= arguments.length ? slice.call(arguments, 0) : [];
-      for (i = 0, len = extensions.length; i < len; i++) {
-        extension = extensions[i];
-        Link.HTML_EXTENSIONS.push(extension);
-      }
-      return Link.HTML_EXTENSIONS;
-    };
-
-    function Link(link1) {
-      this.link = link1;
-      if (this.link.constructor === Link) {
-        return this.link;
-      }
-      this.original = this.link.href;
-      this.originalElement = this.link;
-      this.link = this.link.cloneNode(false);
-      Link.__super__.constructor.apply(this, arguments);
-    }
-
-    Link.prototype.shouldIgnore = function() {
-      return this.crossOrigin() || this._anchored() || this._nonHtml() || this._optOut() || this._target();
-    };
-
-    Link.prototype._anchored = function() {
-      return (this.hash.length > 0 || this.href.charAt(this.href.length - 1) === '#') && (this.withoutHash() === (new ComponentUrl).withoutHash());
-    };
-
-    Link.prototype._nonHtml = function() {
-      return this.pathname.match(/\.[a-z]+$/g) && !this.pathname.match(new RegExp("\\.(?:" + (Link.HTML_EXTENSIONS.join('|')) + ")?$", 'g'));
-    };
-
-    Link.prototype._optOut = function() {
-      var ignore, link;
-      link = this.originalElement;
-      while (!(ignore || link === document)) {
-        ignore = link.getAttribute('data-no-turbolink') != null;
-        link = link.parentNode;
-      }
-      return ignore;
-    };
-
-    Link.prototype._target = function() {
-      return this.link.target.length !== 0;
-    };
-
-    return Link;
-
-  })(ComponentUrl);
-
-  Click = (function() {
-    Click.installHandlerLast = function(event) {
-      if (!event.defaultPrevented) {
-        document.removeEventListener('click', Click.handle, false);
-        return document.addEventListener('click', Click.handle, false);
-      }
-    };
-
-    Click.handle = function(event) {
-      return new Click(event);
-    };
-
-    function Click(event1) {
-      this.event = event1;
-      if (this.event.defaultPrevented) {
-        return;
-      }
-      this._extractLink();
-      if (this._validForTurbolinks()) {
-        if (!pageChangePrevented(this.link.absolute)) {
-          visit(this.link.href);
-        }
-        this.event.preventDefault();
-      }
-    }
-
-    Click.prototype._extractLink = function() {
-      var link;
-      link = this.event.target;
-      while (!(!link.parentNode || link.nodeName === 'A')) {
-        link = link.parentNode;
-      }
-      if (link.nodeName === 'A' && link.href.length !== 0) {
-        return this.link = new Link(link);
-      }
-    };
-
-    Click.prototype._validForTurbolinks = function() {
-      return (this.link != null) && !(this.link.shouldIgnore() || this._nonStandardClick());
-    };
-
-    Click.prototype._nonStandardClick = function() {
-      return this.event.which > 1 || this.event.metaKey || this.event.ctrlKey || this.event.shiftKey || this.event.altKey;
-    };
-
-    return Click;
-
-  })();
-
-  ProgressBar = (function() {
-    var className;
-
-    className = 'turbolinks-progress-bar';
-
-    function ProgressBar(elementSelector) {
-      this.elementSelector = elementSelector;
-      this._trickle = bind(this._trickle, this);
-      this.value = 0;
-      this.content = '';
-      this.speed = 300;
-      this.opacity = 0.99;
-      this.install();
-    }
-
-    ProgressBar.prototype.install = function() {
-      this.element = document.querySelector(this.elementSelector);
-      this.element.classList.add(className);
-      this.styleElement = document.createElement('style');
-      document.head.appendChild(this.styleElement);
-      return this._updateStyle();
-    };
-
-    ProgressBar.prototype.uninstall = function() {
-      this.element.classList.remove(className);
-      return document.head.removeChild(this.styleElement);
-    };
-
-    ProgressBar.prototype.start = function() {
-      return this.advanceTo(5);
-    };
-
-    ProgressBar.prototype.advanceTo = function(value) {
-      var ref;
-      if ((value > (ref = this.value) && ref <= 100)) {
-        this.value = value;
-        this._updateStyle();
-        if (this.value === 100) {
-          return this._stopTrickle();
-        } else if (this.value > 0) {
-          return this._startTrickle();
-        }
-      }
-    };
-
-    ProgressBar.prototype.done = function() {
-      if (this.value > 0) {
-        this.advanceTo(100);
-        return this._reset();
-      }
-    };
-
-    ProgressBar.prototype._reset = function() {
-      var originalOpacity;
-      originalOpacity = this.opacity;
-      setTimeout((function(_this) {
-        return function() {
-          _this.opacity = 0;
-          return _this._updateStyle();
-        };
-      })(this), this.speed / 2);
-      return setTimeout((function(_this) {
-        return function() {
-          _this.value = 0;
-          _this.opacity = originalOpacity;
-          return _this._withSpeed(0, function() {
-            return _this._updateStyle(true);
-          });
-        };
-      })(this), this.speed);
-    };
-
-    ProgressBar.prototype._startTrickle = function() {
-      if (this.trickling) {
-        return;
-      }
-      this.trickling = true;
-      return setTimeout(this._trickle, this.speed);
-    };
-
-    ProgressBar.prototype._stopTrickle = function() {
-      return delete this.trickling;
-    };
-
-    ProgressBar.prototype._trickle = function() {
-      if (!this.trickling) {
-        return;
-      }
-      this.advanceTo(this.value + Math.random() / 2);
-      return setTimeout(this._trickle, this.speed);
-    };
-
-    ProgressBar.prototype._withSpeed = function(speed, fn) {
-      var originalSpeed, result;
-      originalSpeed = this.speed;
-      this.speed = speed;
-      result = fn();
-      this.speed = originalSpeed;
-      return result;
-    };
-
-    ProgressBar.prototype._updateStyle = function(forceRepaint) {
-      if (forceRepaint == null) {
-        forceRepaint = false;
-      }
-      if (forceRepaint) {
-        this._changeContentToForceRepaint();
-      }
-      return this.styleElement.textContent = this._createCSSRule();
-    };
-
-    ProgressBar.prototype._changeContentToForceRepaint = function() {
-      return this.content = this.content === '' ? ' ' : '';
-    };
-
-    ProgressBar.prototype._createCSSRule = function() {
-      return this.elementSelector + "." + className + "::before {\n  content: '" + this.content + "';\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 2000;\n  background-color: #0076ff;\n  height: 3px;\n  opacity: " + this.opacity + ";\n  width: " + this.value + "%;\n  transition: width " + this.speed + "ms ease-out, opacity " + (this.speed / 2) + "ms ease-in;\n  transform: translate3d(0,0,0);\n}";
-    };
-
-    return ProgressBar;
-
-  })();
-
-  bypassOnLoadPopstate = function(fn) {
-    return setTimeout(fn, 500);
-  };
-
-  installDocumentReadyPageEventTriggers = function() {
-    return document.addEventListener('DOMContentLoaded', (function() {
-      triggerEvent(EVENTS.CHANGE);
-      return triggerEvent(EVENTS.UPDATE);
-    }), true);
-  };
-
-  installJqueryAjaxSuccessPageUpdateTrigger = function() {
-    if (typeof jQuery !== 'undefined') {
-      return jQuery(document).on('ajaxSuccess', function(event, xhr, settings) {
-        if (!jQuery.trim(xhr.responseText)) {
-          return;
-        }
-        return triggerEvent(EVENTS.UPDATE);
-      });
-    }
-  };
-
-  installHistoryChangeHandler = function(event) {
-    var cachedPage, ref;
-    if ((ref = event.state) != null ? ref.turbolinks : void 0) {
-      if (cachedPage = pageCache[(new ComponentUrl(event.state.url)).absolute]) {
-        cacheCurrentPage();
-        return fetchHistory(cachedPage);
-      } else {
-        return visit(event.target.location.href);
-      }
-    }
-  };
-
-  initializeTurbolinks = function() {
-    rememberCurrentUrl();
-    rememberCurrentState();
-    document.addEventListener('click', Click.installHandlerLast, true);
-    window.addEventListener('hashchange', function(event) {
-      rememberCurrentUrl();
-      return rememberCurrentState();
-    }, false);
-    return bypassOnLoadPopstate(function() {
-      return window.addEventListener('popstate', installHistoryChangeHandler, false);
-    });
-  };
-
-  historyStateIsDefined = window.history.state !== void 0 || navigator.userAgent.match(/Firefox\/2[6|7]/);
-
-  browserSupportsPushState = window.history && window.history.pushState && window.history.replaceState && historyStateIsDefined;
-
-  browserIsntBuggy = !navigator.userAgent.match(/CriOS\//);
-
-  requestMethodIsSafe = (ref = popCookie('request_method')) === 'GET' || ref === '';
-
-  browserSupportsTurbolinks = browserSupportsPushState && browserIsntBuggy && requestMethodIsSafe;
-
-  browserSupportsCustomEvents = document.addEventListener && document.createEvent;
-
-  if (browserSupportsCustomEvents) {
-    installDocumentReadyPageEventTriggers();
-    installJqueryAjaxSuccessPageUpdateTrigger();
-  }
-
-  if (browserSupportsTurbolinks) {
-    visit = fetch;
-    initializeTurbolinks();
-  } else {
-    visit = function(url) {
-      return document.location.href = url;
-    };
-  }
-
-  this.Turbolinks = {
-    visit: visit,
-    pagesCached: pagesCached,
-    enableTransitionCache: enableTransitionCache,
-    enableProgressBar: enableProgressBar,
-    allowLinkExtensions: Link.allowExtensions,
-    supported: browserSupportsTurbolinks,
-    EVENTS: clone(EVENTS)
-  };
-
-}).call(this);
+/*
+Turbolinks 5.1.0
+Copyright © 2018 Basecamp, LLC
+ */
+
+(function(){this.Turbolinks={supported:function(){return null!=window.history.pushState&&null!=window.requestAnimationFrame&&null!=window.addEventListener}(),visit:function(t,e){return Turbolinks.controller.visit(t,e)},clearCache:function(){return Turbolinks.controller.clearCache()},setProgressBarDelay:function(t){return Turbolinks.controller.setProgressBarDelay(t)}}}).call(this),function(){var t,e,r,n=[].slice;Turbolinks.copyObject=function(t){var e,r,n;r={};for(e in t)n=t[e],r[e]=n;return r},Turbolinks.closest=function(e,r){return t.call(e,r)},t=function(){var t,r;return t=document.documentElement,null!=(r=t.closest)?r:function(t){var r;for(r=this;r;){if(r.nodeType===Node.ELEMENT_NODE&&e.call(r,t))return r;r=r.parentNode}}}(),Turbolinks.defer=function(t){return setTimeout(t,1)},Turbolinks.throttle=function(t){var e;return e=null,function(){var r;return r=1<=arguments.length?n.call(arguments,0):[],null!=e?e:e=requestAnimationFrame(function(n){return function(){return e=null,t.apply(n,r)}}(this))}},Turbolinks.dispatch=function(t,e){var n,o,i,s,a,u;return a=null!=e?e:{},u=a.target,n=a.cancelable,o=a.data,i=document.createEvent("Events"),i.initEvent(t,!0,n===!0),i.data=null!=o?o:{},i.cancelable&&!r&&(s=i.preventDefault,i.preventDefault=function(){return this.defaultPrevented||Object.defineProperty(this,"defaultPrevented",{get:function(){return!0}}),s.call(this)}),(null!=u?u:document).dispatchEvent(i),i},r=function(){var t;return t=document.createEvent("Events"),t.initEvent("test",!0,!0),t.preventDefault(),t.defaultPrevented}(),Turbolinks.match=function(t,r){return e.call(t,r)},e=function(){var t,e,r,n;return t=document.documentElement,null!=(e=null!=(r=null!=(n=t.matchesSelector)?n:t.webkitMatchesSelector)?r:t.msMatchesSelector)?e:t.mozMatchesSelector}(),Turbolinks.uuid=function(){var t,e,r;for(r="",t=e=1;36>=e;t=++e)r+=9===t||14===t||19===t||24===t?"-":15===t?"4":20===t?(Math.floor(4*Math.random())+8).toString(16):Math.floor(15*Math.random()).toString(16);return r}}.call(this),function(){Turbolinks.Location=function(){function t(t){var e,r;null==t&&(t=""),r=document.createElement("a"),r.href=t.toString(),this.absoluteURL=r.href,e=r.hash.length,2>e?this.requestURL=this.absoluteURL:(this.requestURL=this.absoluteURL.slice(0,-e),this.anchor=r.hash.slice(1))}var e,r,n,o;return t.wrap=function(t){return t instanceof this?t:new this(t)},t.prototype.getOrigin=function(){return this.absoluteURL.split("/",3).join("/")},t.prototype.getPath=function(){var t,e;return null!=(t=null!=(e=this.requestURL.match(/\/\/[^\/]*(\/[^?;]*)/))?e[1]:void 0)?t:"/"},t.prototype.getPathComponents=function(){return this.getPath().split("/").slice(1)},t.prototype.getLastPathComponent=function(){return this.getPathComponents().slice(-1)[0]},t.prototype.getExtension=function(){var t,e;return null!=(t=null!=(e=this.getLastPathComponent().match(/\.[^.]*$/))?e[0]:void 0)?t:""},t.prototype.isHTML=function(){return this.getExtension().match(/^(?:|\.(?:htm|html|xhtml))$/)},t.prototype.isPrefixedBy=function(t){var e;return e=r(t),this.isEqualTo(t)||o(this.absoluteURL,e)},t.prototype.isEqualTo=function(t){return this.absoluteURL===(null!=t?t.absoluteURL:void 0)},t.prototype.toCacheKey=function(){return this.requestURL},t.prototype.toJSON=function(){return this.absoluteURL},t.prototype.toString=function(){return this.absoluteURL},t.prototype.valueOf=function(){return this.absoluteURL},r=function(t){return e(t.getOrigin()+t.getPath())},e=function(t){return n(t,"/")?t:t+"/"},o=function(t,e){return t.slice(0,e.length)===e},n=function(t,e){return t.slice(-e.length)===e},t}()}.call(this),function(){var t=function(t,e){return function(){return t.apply(e,arguments)}};Turbolinks.HttpRequest=function(){function e(e,r,n){this.delegate=e,this.requestCanceled=t(this.requestCanceled,this),this.requestTimedOut=t(this.requestTimedOut,this),this.requestFailed=t(this.requestFailed,this),this.requestLoaded=t(this.requestLoaded,this),this.requestProgressed=t(this.requestProgressed,this),this.url=Turbolinks.Location.wrap(r).requestURL,this.referrer=Turbolinks.Location.wrap(n).absoluteURL,this.createXHR()}return e.NETWORK_FAILURE=0,e.TIMEOUT_FAILURE=-1,e.timeout=60,e.prototype.send=function(){var t;return this.xhr&&!this.sent?(this.notifyApplicationBeforeRequestStart(),this.setProgress(0),this.xhr.send(),this.sent=!0,"function"==typeof(t=this.delegate).requestStarted?t.requestStarted():void 0):void 0},e.prototype.cancel=function(){return this.xhr&&this.sent?this.xhr.abort():void 0},e.prototype.requestProgressed=function(t){return t.lengthComputable?this.setProgress(t.loaded/t.total):void 0},e.prototype.requestLoaded=function(){return this.endRequest(function(t){return function(){var e;return 200<=(e=t.xhr.status)&&300>e?t.delegate.requestCompletedWithResponse(t.xhr.responseText,t.xhr.getResponseHeader("Turbolinks-Location")):(t.failed=!0,t.delegate.requestFailedWithStatusCode(t.xhr.status,t.xhr.responseText))}}(this))},e.prototype.requestFailed=function(){return this.endRequest(function(t){return function(){return t.failed=!0,t.delegate.requestFailedWithStatusCode(t.constructor.NETWORK_FAILURE)}}(this))},e.prototype.requestTimedOut=function(){return this.endRequest(function(t){return function(){return t.failed=!0,t.delegate.requestFailedWithStatusCode(t.constructor.TIMEOUT_FAILURE)}}(this))},e.prototype.requestCanceled=function(){return this.endRequest()},e.prototype.notifyApplicationBeforeRequestStart=function(){return Turbolinks.dispatch("turbolinks:request-start",{data:{url:this.url,xhr:this.xhr}})},e.prototype.notifyApplicationAfterRequestEnd=function(){return Turbolinks.dispatch("turbolinks:request-end",{data:{url:this.url,xhr:this.xhr}})},e.prototype.createXHR=function(){return this.xhr=new XMLHttpRequest,this.xhr.open("GET",this.url,!0),this.xhr.timeout=1e3*this.constructor.timeout,this.xhr.setRequestHeader("Accept","text/html, application/xhtml+xml"),this.xhr.setRequestHeader("Turbolinks-Referrer",this.referrer),this.xhr.onprogress=this.requestProgressed,this.xhr.onload=this.requestLoaded,this.xhr.onerror=this.requestFailed,this.xhr.ontimeout=this.requestTimedOut,this.xhr.onabort=this.requestCanceled},e.prototype.endRequest=function(t){return this.xhr?(this.notifyApplicationAfterRequestEnd(),null!=t&&t.call(this),this.destroy()):void 0},e.prototype.setProgress=function(t){var e;return this.progress=t,"function"==typeof(e=this.delegate).requestProgressed?e.requestProgressed(this.progress):void 0},e.prototype.destroy=function(){var t;return this.setProgress(1),"function"==typeof(t=this.delegate).requestFinished&&t.requestFinished(),this.delegate=null,this.xhr=null},e}()}.call(this),function(){var t=function(t,e){return function(){return t.apply(e,arguments)}};Turbolinks.ProgressBar=function(){function e(){this.trickle=t(this.trickle,this),this.stylesheetElement=this.createStylesheetElement(),this.progressElement=this.createProgressElement()}var r;return r=300,e.defaultCSS=".turbolinks-progress-bar {\n  position: fixed;\n  display: block;\n  top: 0;\n  left: 0;\n  height: 3px;\n  background: #0076ff;\n  z-index: 9999;\n  transition: width "+r+"ms ease-out, opacity "+r/2+"ms "+r/2+"ms ease-in;\n  transform: translate3d(0, 0, 0);\n}",e.prototype.show=function(){return this.visible?void 0:(this.visible=!0,this.installStylesheetElement(),this.installProgressElement(),this.startTrickling())},e.prototype.hide=function(){return this.visible&&!this.hiding?(this.hiding=!0,this.fadeProgressElement(function(t){return function(){return t.uninstallProgressElement(),t.stopTrickling(),t.visible=!1,t.hiding=!1}}(this))):void 0},e.prototype.setValue=function(t){return this.value=t,this.refresh()},e.prototype.installStylesheetElement=function(){return document.head.insertBefore(this.stylesheetElement,document.head.firstChild)},e.prototype.installProgressElement=function(){return this.progressElement.style.width=0,this.progressElement.style.opacity=1,document.documentElement.insertBefore(this.progressElement,document.body),this.refresh()},e.prototype.fadeProgressElement=function(t){return this.progressElement.style.opacity=0,setTimeout(t,1.5*r)},e.prototype.uninstallProgressElement=function(){return this.progressElement.parentNode?document.documentElement.removeChild(this.progressElement):void 0},e.prototype.startTrickling=function(){return null!=this.trickleInterval?this.trickleInterval:this.trickleInterval=setInterval(this.trickle,r)},e.prototype.stopTrickling=function(){return clearInterval(this.trickleInterval),this.trickleInterval=null},e.prototype.trickle=function(){return this.setValue(this.value+Math.random()/100)},e.prototype.refresh=function(){return requestAnimationFrame(function(t){return function(){return t.progressElement.style.width=10+90*t.value+"%"}}(this))},e.prototype.createStylesheetElement=function(){var t;return t=document.createElement("style"),t.type="text/css",t.textContent=this.constructor.defaultCSS,t},e.prototype.createProgressElement=function(){var t;return t=document.createElement("div"),t.className="turbolinks-progress-bar",t},e}()}.call(this),function(){var t=function(t,e){return function(){return t.apply(e,arguments)}};Turbolinks.BrowserAdapter=function(){function e(e){this.controller=e,this.showProgressBar=t(this.showProgressBar,this),this.progressBar=new Turbolinks.ProgressBar}var r,n,o;return o=Turbolinks.HttpRequest,r=o.NETWORK_FAILURE,n=o.TIMEOUT_FAILURE,e.prototype.visitProposedToLocationWithAction=function(t,e){return this.controller.startVisitToLocationWithAction(t,e)},e.prototype.visitStarted=function(t){return t.issueRequest(),t.changeHistory(),t.loadCachedSnapshot()},e.prototype.visitRequestStarted=function(t){return this.progressBar.setValue(0),t.hasCachedSnapshot()||"restore"!==t.action?this.showProgressBarAfterDelay():this.showProgressBar()},e.prototype.visitRequestProgressed=function(t){return this.progressBar.setValue(t.progress)},e.prototype.visitRequestCompleted=function(t){return t.loadResponse()},e.prototype.visitRequestFailedWithStatusCode=function(t,e){switch(e){case r:case n:return this.reload();default:return t.loadResponse()}},e.prototype.visitRequestFinished=function(t){return this.hideProgressBar()},e.prototype.visitCompleted=function(t){return t.followRedirect()},e.prototype.pageInvalidated=function(){return this.reload()},e.prototype.showProgressBarAfterDelay=function(){return this.progressBarTimeout=setTimeout(this.showProgressBar,this.controller.progressBarDelay)},e.prototype.showProgressBar=function(){return this.progressBar.show()},e.prototype.hideProgressBar=function(){return this.progressBar.hide(),clearTimeout(this.progressBarTimeout)},e.prototype.reload=function(){return window.location.reload()},e}()}.call(this),function(){var t=function(t,e){return function(){return t.apply(e,arguments)}};Turbolinks.History=function(){function e(e){this.delegate=e,this.onPageLoad=t(this.onPageLoad,this),this.onPopState=t(this.onPopState,this)}return e.prototype.start=function(){return this.started?void 0:(addEventListener("popstate",this.onPopState,!1),addEventListener("load",this.onPageLoad,!1),this.started=!0)},e.prototype.stop=function(){return this.started?(removeEventListener("popstate",this.onPopState,!1),removeEventListener("load",this.onPageLoad,!1),this.started=!1):void 0},e.prototype.push=function(t,e){return t=Turbolinks.Location.wrap(t),this.update("push",t,e)},e.prototype.replace=function(t,e){return t=Turbolinks.Location.wrap(t),this.update("replace",t,e)},e.prototype.onPopState=function(t){var e,r,n,o;return this.shouldHandlePopState()&&(o=null!=(r=t.state)?r.turbolinks:void 0)?(e=Turbolinks.Location.wrap(window.location),n=o.restorationIdentifier,this.delegate.historyPoppedToLocationWithRestorationIdentifier(e,n)):void 0},e.prototype.onPageLoad=function(t){return Turbolinks.defer(function(t){return function(){return t.pageLoaded=!0}}(this))},e.prototype.shouldHandlePopState=function(){return this.pageIsLoaded()},e.prototype.pageIsLoaded=function(){return this.pageLoaded||"complete"===document.readyState},e.prototype.update=function(t,e,r){var n;return n={turbolinks:{restorationIdentifier:r}},history[t+"State"](n,null,e)},e}()}.call(this),function(){Turbolinks.Snapshot=function(){function t(t){var e,r;r=t.head,e=t.body,this.head=null!=r?r:document.createElement("head"),this.body=null!=e?e:document.createElement("body")}return t.wrap=function(t){return t instanceof this?t:this.fromHTML(t)},t.fromHTML=function(t){var e;return e=document.createElement("html"),e.innerHTML=t,this.fromElement(e)},t.fromElement=function(t){return new this({head:t.querySelector("head"),body:t.querySelector("body")})},t.prototype.clone=function(){return new t({head:this.head.cloneNode(!0),body:this.body.cloneNode(!0)})},t.prototype.getRootLocation=function(){var t,e;return e=null!=(t=this.getSetting("root"))?t:"/",new Turbolinks.Location(e)},t.prototype.getCacheControlValue=function(){return this.getSetting("cache-control")},t.prototype.getElementForAnchor=function(t){try{return this.body.querySelector("[id='"+t+"'], a[name='"+t+"']")}catch(e){}},t.prototype.hasAnchor=function(t){return null!=this.getElementForAnchor(t)},t.prototype.isPreviewable=function(){return"no-preview"!==this.getCacheControlValue()},t.prototype.isCacheable=function(){return"no-cache"!==this.getCacheControlValue()},t.prototype.isVisitable=function(){return"reload"!==this.getSetting("visit-control")},t.prototype.getSetting=function(t){var e,r;return r=this.head.querySelectorAll("meta[name='turbolinks-"+t+"']"),e=r[r.length-1],null!=e?e.getAttribute("content"):void 0},t}()}.call(this),function(){var t=[].slice;Turbolinks.Renderer=function(){function e(){}var r;return e.render=function(){var e,r,n,o;return n=arguments[0],r=arguments[1],e=3<=arguments.length?t.call(arguments,2):[],o=function(t,e,r){r.prototype=t.prototype;var n=new r,o=t.apply(n,e);return Object(o)===o?o:n}(this,e,function(){}),o.delegate=n,o.render(r),o},e.prototype.renderView=function(t){return this.delegate.viewWillRender(this.newBody),t(),this.delegate.viewRendered(this.newBody)},e.prototype.invalidateView=function(){return this.delegate.viewInvalidated()},e.prototype.createScriptElement=function(t){var e;return"false"===t.getAttribute("data-turbolinks-eval")?t:(e=document.createElement("script"),e.textContent=t.textContent,e.async=!1,r(e,t),e)},r=function(t,e){var r,n,o,i,s,a,u;for(i=e.attributes,a=[],r=0,n=i.length;n>r;r++)s=i[r],o=s.name,u=s.value,a.push(t.setAttribute(o,u));return a},e}()}.call(this),function(){Turbolinks.HeadDetails=function(){function t(t){var e,r,i,s,a,u,l;for(this.element=t,this.elements={},l=this.element.childNodes,s=0,u=l.length;u>s;s++)i=l[s],i.nodeType===Node.ELEMENT_NODE&&(a=i.outerHTML,r=null!=(e=this.elements)[a]?e[a]:e[a]={type:o(i),tracked:n(i),elements:[]},r.elements.push(i))}var e,r,n,o;return t.prototype.hasElementWithKey=function(t){return t in this.elements},t.prototype.getTrackedElementSignature=function(){var t,e;return function(){var r,n;r=this.elements,n=[];for(t in r)e=r[t].tracked,e&&n.push(t);return n}.call(this).join("")},t.prototype.getScriptElementsNotInDetails=function(t){return this.getElementsMatchingTypeNotInDetails("script",t)},t.prototype.getStylesheetElementsNotInDetails=function(t){return this.getElementsMatchingTypeNotInDetails("stylesheet",t)},t.prototype.getElementsMatchingTypeNotInDetails=function(t,e){var r,n,o,i,s,a;o=this.elements,s=[];for(n in o)i=o[n],a=i.type,r=i.elements,a!==t||e.hasElementWithKey(n)||s.push(r[0]);return s},t.prototype.getProvisionalElements=function(){var t,e,r,n,o,i,s;r=[],n=this.elements;for(e in n)o=n[e],s=o.type,i=o.tracked,t=o.elements,null!=s||i?t.length>1&&r.push.apply(r,t.slice(1)):r.push.apply(r,t);return r},o=function(t){return e(t)?"script":r(t)?"stylesheet":void 0},n=function(t){return"reload"===t.getAttribute("data-turbolinks-track")},e=function(t){var e;return e=t.tagName.toLowerCase(),"script"===e},r=function(t){var e;return e=t.tagName.toLowerCase(),"style"===e||"link"===e&&"stylesheet"===t.getAttribute("rel")},t}()}.call(this),function(){var t=function(t,r){function n(){this.constructor=t}for(var o in r)e.call(r,o)&&(t[o]=r[o]);return n.prototype=r.prototype,t.prototype=new n,t.__super__=r.prototype,t},e={}.hasOwnProperty;Turbolinks.SnapshotRenderer=function(e){function r(t,e,r){this.currentSnapshot=t,this.newSnapshot=e,this.isPreview=r,this.currentHeadDetails=new Turbolinks.HeadDetails(this.currentSnapshot.head),this.newHeadDetails=new Turbolinks.HeadDetails(this.newSnapshot.head),this.newBody=this.newSnapshot.body}return t(r,e),r.prototype.render=function(t){return this.shouldRender()?(this.mergeHead(),this.renderView(function(e){return function(){return e.replaceBody(),e.isPreview||e.focusFirstAutofocusableElement(),t()}}(this))):this.invalidateView()},r.prototype.mergeHead=function(){return this.copyNewHeadStylesheetElements(),this.copyNewHeadScriptElements(),this.removeCurrentHeadProvisionalElements(),this.copyNewHeadProvisionalElements()},r.prototype.replaceBody=function(){return this.activateBodyScriptElements(),this.importBodyPermanentElements(),this.assignNewBody()},r.prototype.shouldRender=function(){return this.newSnapshot.isVisitable()&&this.trackedElementsAreIdentical()},r.prototype.trackedElementsAreIdentical=function(){return this.currentHeadDetails.getTrackedElementSignature()===this.newHeadDetails.getTrackedElementSignature()},r.prototype.copyNewHeadStylesheetElements=function(){var t,e,r,n,o;for(n=this.getNewHeadStylesheetElements(),o=[],e=0,r=n.length;r>e;e++)t=n[e],o.push(document.head.appendChild(t));return o},r.prototype.copyNewHeadScriptElements=function(){var t,e,r,n,o;for(n=this.getNewHeadScriptElements(),o=[],e=0,r=n.length;r>e;e++)t=n[e],o.push(document.head.appendChild(this.createScriptElement(t)));return o},r.prototype.removeCurrentHeadProvisionalElements=function(){var t,e,r,n,o;for(n=this.getCurrentHeadProvisionalElements(),o=[],e=0,r=n.length;r>e;e++)t=n[e],o.push(document.head.removeChild(t));return o},r.prototype.copyNewHeadProvisionalElements=function(){var t,e,r,n,o;for(n=this.getNewHeadProvisionalElements(),o=[],e=0,r=n.length;r>e;e++)t=n[e],o.push(document.head.appendChild(t));return o},r.prototype.importBodyPermanentElements=function(){var t,e,r,n,o,i;for(n=this.getNewBodyPermanentElements(),i=[],e=0,r=n.length;r>e;e++)o=n[e],(t=this.findCurrentBodyPermanentElement(o))?i.push(o.parentNode.replaceChild(t,o)):i.push(void 0);return i},r.prototype.activateBodyScriptElements=function(){var t,e,r,n,o,i;for(n=this.getNewBodyScriptElements(),i=[],e=0,r=n.length;r>e;e++)o=n[e],t=this.createScriptElement(o),i.push(o.parentNode.replaceChild(t,o));return i},r.prototype.assignNewBody=function(){return document.body=this.newBody},r.prototype.focusFirstAutofocusableElement=function(){var t;return null!=(t=this.findFirstAutofocusableElement())?t.focus():void 0},r.prototype.getNewHeadStylesheetElements=function(){return this.newHeadDetails.getStylesheetElementsNotInDetails(this.currentHeadDetails)},r.prototype.getNewHeadScriptElements=function(){return this.newHeadDetails.getScriptElementsNotInDetails(this.currentHeadDetails)},r.prototype.getCurrentHeadProvisionalElements=function(){return this.currentHeadDetails.getProvisionalElements()},r.prototype.getNewHeadProvisionalElements=function(){return this.newHeadDetails.getProvisionalElements()},r.prototype.getNewBodyPermanentElements=function(){return this.newBody.querySelectorAll("[id][data-turbolinks-permanent]")},r.prototype.findCurrentBodyPermanentElement=function(t){return document.body.querySelector("#"+t.id+"[data-turbolinks-permanent]")},r.prototype.getNewBodyScriptElements=function(){return this.newBody.querySelectorAll("script")},r.prototype.findFirstAutofocusableElement=function(){return document.body.querySelector("[autofocus]")},r}(Turbolinks.Renderer)}.call(this),function(){var t=function(t,r){function n(){this.constructor=t}for(var o in r)e.call(r,o)&&(t[o]=r[o]);return n.prototype=r.prototype,t.prototype=new n,t.__super__=r.prototype,t},e={}.hasOwnProperty;Turbolinks.ErrorRenderer=function(e){function r(t){this.html=t}return t(r,e),r.prototype.render=function(t){return this.renderView(function(e){return function(){return e.replaceDocumentHTML(),e.activateBodyScriptElements(),t()}}(this))},r.prototype.replaceDocumentHTML=function(){return document.documentElement.innerHTML=this.html},r.prototype.activateBodyScriptElements=function(){var t,e,r,n,o,i;for(n=this.getScriptElements(),i=[],e=0,r=n.length;r>e;e++)o=n[e],t=this.createScriptElement(o),i.push(o.parentNode.replaceChild(t,o));return i},r.prototype.getScriptElements=function(){return document.documentElement.querySelectorAll("script")},r}(Turbolinks.Renderer)}.call(this),function(){Turbolinks.View=function(){function t(t){this.delegate=t,this.element=document.documentElement}return t.prototype.getRootLocation=function(){return this.getSnapshot().getRootLocation()},t.prototype.getElementForAnchor=function(t){return this.getSnapshot().getElementForAnchor(t)},t.prototype.getSnapshot=function(){return Turbolinks.Snapshot.fromElement(this.element)},t.prototype.render=function(t,e){var r,n,o;return o=t.snapshot,r=t.error,n=t.isPreview,this.markAsPreview(n),null!=o?this.renderSnapshot(o,n,e):this.renderError(r,e)},t.prototype.markAsPreview=function(t){return t?this.element.setAttribute("data-turbolinks-preview",""):this.element.removeAttribute("data-turbolinks-preview")},t.prototype.renderSnapshot=function(t,e,r){return Turbolinks.SnapshotRenderer.render(this.delegate,r,this.getSnapshot(),Turbolinks.Snapshot.wrap(t),e)},t.prototype.renderError=function(t,e){return Turbolinks.ErrorRenderer.render(this.delegate,e,t)},t}()}.call(this),function(){var t=function(t,e){return function(){return t.apply(e,arguments)}};Turbolinks.ScrollManager=function(){function e(e){this.delegate=e,this.onScroll=t(this.onScroll,this),this.onScroll=Turbolinks.throttle(this.onScroll)}return e.prototype.start=function(){return this.started?void 0:(addEventListener("scroll",this.onScroll,!1),this.onScroll(),this.started=!0)},e.prototype.stop=function(){return this.started?(removeEventListener("scroll",this.onScroll,!1),this.started=!1):void 0},e.prototype.scrollToElement=function(t){return t.scrollIntoView()},e.prototype.scrollToPosition=function(t){var e,r;return e=t.x,r=t.y,window.scrollTo(e,r)},e.prototype.onScroll=function(t){return this.updatePosition({x:window.pageXOffset,y:window.pageYOffset})},e.prototype.updatePosition=function(t){var e;return this.position=t,null!=(e=this.delegate)?e.scrollPositionChanged(this.position):void 0},e}()}.call(this),function(){Turbolinks.SnapshotCache=function(){function t(t){this.size=t,this.keys=[],this.snapshots={}}var e;return t.prototype.has=function(t){var r;return r=e(t),r in this.snapshots},t.prototype.get=function(t){var e;if(this.has(t))return e=this.read(t),this.touch(t),e},t.prototype.put=function(t,e){return this.write(t,e),this.touch(t),e},t.prototype.read=function(t){var r;return r=e(t),this.snapshots[r]},t.prototype.write=function(t,r){var n;return n=e(t),this.snapshots[n]=r},t.prototype.touch=function(t){var r,n;return n=e(t),r=this.keys.indexOf(n),r>-1&&this.keys.splice(r,1),this.keys.unshift(n),this.trim()},t.prototype.trim=function(){var t,e,r,n,o;for(n=this.keys.splice(this.size),o=[],t=0,r=n.length;r>t;t++)e=n[t],o.push(delete this.snapshots[e]);return o},e=function(t){return Turbolinks.Location.wrap(t).toCacheKey()},t}()}.call(this),function(){var t=function(t,e){return function(){return t.apply(e,arguments)}};Turbolinks.Visit=function(){function e(e,r,n){this.controller=e,this.action=n,this.performScroll=t(this.performScroll,this),this.identifier=Turbolinks.uuid(),this.location=Turbolinks.Location.wrap(r),this.adapter=this.controller.adapter,this.state="initialized",this.timingMetrics={}}var r;return e.prototype.start=function(){return"initialized"===this.state?(this.recordTimingMetric("visitStart"),this.state="started",this.adapter.visitStarted(this)):void 0},e.prototype.cancel=function(){var t;return"started"===this.state?(null!=(t=this.request)&&t.cancel(),this.cancelRender(),this.state="canceled"):void 0},e.prototype.complete=function(){var t;return"started"===this.state?(this.recordTimingMetric("visitEnd"),this.state="completed","function"==typeof(t=this.adapter).visitCompleted&&t.visitCompleted(this),this.controller.visitCompleted(this)):void 0},e.prototype.fail=function(){var t;return"started"===this.state?(this.state="failed","function"==typeof(t=this.adapter).visitFailed?t.visitFailed(this):void 0):void 0},e.prototype.changeHistory=function(){var t,e;return this.historyChanged?void 0:(t=this.location.isEqualTo(this.referrer)?"replace":this.action,e=r(t),this.controller[e](this.location,this.restorationIdentifier),this.historyChanged=!0)},e.prototype.issueRequest=function(){return this.shouldIssueRequest()&&null==this.request?(this.progress=0,this.request=new Turbolinks.HttpRequest(this,this.location,this.referrer),this.request.send()):void 0},e.prototype.getCachedSnapshot=function(){var t;return!(t=this.controller.getCachedSnapshotForLocation(this.location))||null!=this.location.anchor&&!t.hasAnchor(this.location.anchor)||"restore"!==this.action&&!t.isPreviewable()?void 0:t},e.prototype.hasCachedSnapshot=function(){return null!=this.getCachedSnapshot()},e.prototype.loadCachedSnapshot=function(){var t,e;return(e=this.getCachedSnapshot())?(t=this.shouldIssueRequest(),this.render(function(){var r;return this.cacheSnapshot(),this.controller.render({snapshot:e,isPreview:t},this.performScroll),"function"==typeof(r=this.adapter).visitRendered&&r.visitRendered(this),t?void 0:this.complete()})):void 0},e.prototype.loadResponse=function(){return null!=this.response?this.render(function(){var t,e;return this.cacheSnapshot(),this.request.failed?(this.controller.render({error:this.response},this.performScroll),"function"==typeof(t=this.adapter).visitRendered&&t.visitRendered(this),this.fail()):(this.controller.render({snapshot:this.response},this.performScroll),"function"==typeof(e=this.adapter).visitRendered&&e.visitRendered(this),this.complete())}):void 0},e.prototype.followRedirect=function(){return this.redirectedToLocation&&!this.followedRedirect?(this.location=this.redirectedToLocation,this.controller.replaceHistoryWithLocationAndRestorationIdentifier(this.redirectedToLocation,this.restorationIdentifier),this.followedRedirect=!0):void 0},e.prototype.requestStarted=function(){var t;return this.recordTimingMetric("requestStart"),"function"==typeof(t=this.adapter).visitRequestStarted?t.visitRequestStarted(this):void 0},e.prototype.requestProgressed=function(t){var e;return this.progress=t,"function"==typeof(e=this.adapter).visitRequestProgressed?e.visitRequestProgressed(this):void 0},e.prototype.requestCompletedWithResponse=function(t,e){return this.response=t,null!=e&&(this.redirectedToLocation=Turbolinks.Location.wrap(e)),this.adapter.visitRequestCompleted(this)},e.prototype.requestFailedWithStatusCode=function(t,e){return this.response=e,this.adapter.visitRequestFailedWithStatusCode(this,t)},e.prototype.requestFinished=function(){var t;return this.recordTimingMetric("requestEnd"),"function"==typeof(t=this.adapter).visitRequestFinished?t.visitRequestFinished(this):void 0},e.prototype.performScroll=function(){return this.scrolled?void 0:("restore"===this.action?this.scrollToRestoredPosition()||this.scrollToTop():this.scrollToAnchor()||this.scrollToTop(),this.scrolled=!0)},e.prototype.scrollToRestoredPosition=function(){var t,e;return t=null!=(e=this.restorationData)?e.scrollPosition:void 0,null!=t?(this.controller.scrollToPosition(t),!0):void 0},e.prototype.scrollToAnchor=function(){return null!=this.location.anchor?(this.controller.scrollToAnchor(this.location.anchor),!0):void 0},e.prototype.scrollToTop=function(){return this.controller.scrollToPosition({x:0,y:0})},e.prototype.recordTimingMetric=function(t){var e;return null!=(e=this.timingMetrics)[t]?e[t]:e[t]=(new Date).getTime()},e.prototype.getTimingMetrics=function(){return Turbolinks.copyObject(this.timingMetrics)},r=function(t){switch(t){case"replace":return"replaceHistoryWithLocationAndRestorationIdentifier";case"advance":case"restore":return"pushHistoryWithLocationAndRestorationIdentifier"}},e.prototype.shouldIssueRequest=function(){return"restore"===this.action?!this.hasCachedSnapshot():!0},e.prototype.cacheSnapshot=function(){return this.snapshotCached?void 0:(this.controller.cacheSnapshot(),this.snapshotCached=!0)},e.prototype.render=function(t){return this.cancelRender(),this.frame=requestAnimationFrame(function(e){return function(){return e.frame=null,t.call(e)}}(this))},e.prototype.cancelRender=function(){return this.frame?cancelAnimationFrame(this.frame):void 0},e}()}.call(this),function(){var t=function(t,e){return function(){return t.apply(e,arguments)}};Turbolinks.Controller=function(){function e(){this.clickBubbled=t(this.clickBubbled,this),this.clickCaptured=t(this.clickCaptured,this),this.pageLoaded=t(this.pageLoaded,this),this.history=new Turbolinks.History(this),this.view=new Turbolinks.View(this),this.scrollManager=new Turbolinks.ScrollManager(this),this.restorationData={},this.clearCache(),this.setProgressBarDelay(500)}return e.prototype.start=function(){return Turbolinks.supported&&!this.started?(addEventListener("click",this.clickCaptured,!0),addEventListener("DOMContentLoaded",this.pageLoaded,!1),this.scrollManager.start(),this.startHistory(),this.started=!0,this.enabled=!0):void 0},e.prototype.disable=function(){return this.enabled=!1},e.prototype.stop=function(){return this.started?(removeEventListener("click",this.clickCaptured,!0),removeEventListener("DOMContentLoaded",this.pageLoaded,!1),this.scrollManager.stop(),this.stopHistory(),this.started=!1):void 0},e.prototype.clearCache=function(){return this.cache=new Turbolinks.SnapshotCache(10)},e.prototype.visit=function(t,e){var r,n;return null==e&&(e={}),t=Turbolinks.Location.wrap(t),this.applicationAllowsVisitingLocation(t)?this.locationIsVisitable(t)?(r=null!=(n=e.action)?n:"advance",this.adapter.visitProposedToLocationWithAction(t,r)):window.location=t:void 0},e.prototype.startVisitToLocationWithAction=function(t,e,r){var n;return Turbolinks.supported?(n=this.getRestorationDataForIdentifier(r),this.startVisit(t,e,{restorationData:n})):window.location=t},e.prototype.setProgressBarDelay=function(t){return this.progressBarDelay=t},e.prototype.startHistory=function(){return this.location=Turbolinks.Location.wrap(window.location),this.restorationIdentifier=Turbolinks.uuid(),this.history.start(),this.history.replace(this.location,this.restorationIdentifier)},e.prototype.stopHistory=function(){return this.history.stop()},e.prototype.pushHistoryWithLocationAndRestorationIdentifier=function(t,e){return this.restorationIdentifier=e,this.location=Turbolinks.Location.wrap(t),this.history.push(this.location,this.restorationIdentifier)},e.prototype.replaceHistoryWithLocationAndRestorationIdentifier=function(t,e){return this.restorationIdentifier=e,this.location=Turbolinks.Location.wrap(t),this.history.replace(this.location,this.restorationIdentifier)},e.prototype.historyPoppedToLocationWithRestorationIdentifier=function(t,e){var r;return this.restorationIdentifier=e,this.enabled?(r=this.getRestorationDataForIdentifier(this.restorationIdentifier),this.startVisit(t,"restore",{restorationIdentifier:this.restorationIdentifier,restorationData:r,historyChanged:!0}),this.location=Turbolinks.Location.wrap(t)):this.adapter.pageInvalidated()},e.prototype.getCachedSnapshotForLocation=function(t){var e;return e=this.cache.get(t),e?e.clone():void 0},e.prototype.shouldCacheSnapshot=function(){return this.view.getSnapshot().isCacheable()},e.prototype.cacheSnapshot=function(){var t;return this.shouldCacheSnapshot()?(this.notifyApplicationBeforeCachingSnapshot(),t=this.view.getSnapshot(),this.cache.put(this.lastRenderedLocation,t.clone())):void 0},e.prototype.scrollToAnchor=function(t){var e;return(e=this.view.getElementForAnchor(t))?this.scrollToElement(e):this.scrollToPosition({x:0,y:0})},e.prototype.scrollToElement=function(t){return this.scrollManager.scrollToElement(t)},e.prototype.scrollToPosition=function(t){return this.scrollManager.scrollToPosition(t)},e.prototype.scrollPositionChanged=function(t){var e;return e=this.getCurrentRestorationData(),e.scrollPosition=t},e.prototype.render=function(t,e){return this.view.render(t,e)},e.prototype.viewInvalidated=function(){return this.adapter.pageInvalidated()},e.prototype.viewWillRender=function(t){return this.notifyApplicationBeforeRender(t)},e.prototype.viewRendered=function(){return this.lastRenderedLocation=this.currentVisit.location,this.notifyApplicationAfterRender()},e.prototype.pageLoaded=function(){
+return this.lastRenderedLocation=this.location,this.notifyApplicationAfterPageLoad()},e.prototype.clickCaptured=function(){return removeEventListener("click",this.clickBubbled,!1),addEventListener("click",this.clickBubbled,!1)},e.prototype.clickBubbled=function(t){var e,r,n;return this.enabled&&this.clickEventIsSignificant(t)&&(r=this.getVisitableLinkForNode(t.target))&&(n=this.getVisitableLocationForLink(r))&&this.applicationAllowsFollowingLinkToLocation(r,n)?(t.preventDefault(),e=this.getActionForLink(r),this.visit(n,{action:e})):void 0},e.prototype.applicationAllowsFollowingLinkToLocation=function(t,e){var r;return r=this.notifyApplicationAfterClickingLinkToLocation(t,e),!r.defaultPrevented},e.prototype.applicationAllowsVisitingLocation=function(t){var e;return e=this.notifyApplicationBeforeVisitingLocation(t),!e.defaultPrevented},e.prototype.notifyApplicationAfterClickingLinkToLocation=function(t,e){return Turbolinks.dispatch("turbolinks:click",{target:t,data:{url:e.absoluteURL},cancelable:!0})},e.prototype.notifyApplicationBeforeVisitingLocation=function(t){return Turbolinks.dispatch("turbolinks:before-visit",{data:{url:t.absoluteURL},cancelable:!0})},e.prototype.notifyApplicationAfterVisitingLocation=function(t){return Turbolinks.dispatch("turbolinks:visit",{data:{url:t.absoluteURL}})},e.prototype.notifyApplicationBeforeCachingSnapshot=function(){return Turbolinks.dispatch("turbolinks:before-cache")},e.prototype.notifyApplicationBeforeRender=function(t){return Turbolinks.dispatch("turbolinks:before-render",{data:{newBody:t}})},e.prototype.notifyApplicationAfterRender=function(){return Turbolinks.dispatch("turbolinks:render")},e.prototype.notifyApplicationAfterPageLoad=function(t){return null==t&&(t={}),Turbolinks.dispatch("turbolinks:load",{data:{url:this.location.absoluteURL,timing:t}})},e.prototype.startVisit=function(t,e,r){var n;return null!=(n=this.currentVisit)&&n.cancel(),this.currentVisit=this.createVisit(t,e,r),this.currentVisit.start(),this.notifyApplicationAfterVisitingLocation(t)},e.prototype.createVisit=function(t,e,r){var n,o,i,s,a;return o=null!=r?r:{},s=o.restorationIdentifier,i=o.restorationData,n=o.historyChanged,a=new Turbolinks.Visit(this,t,e),a.restorationIdentifier=null!=s?s:Turbolinks.uuid(),a.restorationData=Turbolinks.copyObject(i),a.historyChanged=n,a.referrer=this.location,a},e.prototype.visitCompleted=function(t){return this.notifyApplicationAfterPageLoad(t.getTimingMetrics())},e.prototype.clickEventIsSignificant=function(t){return!(t.defaultPrevented||t.target.isContentEditable||t.which>1||t.altKey||t.ctrlKey||t.metaKey||t.shiftKey)},e.prototype.getVisitableLinkForNode=function(t){return this.nodeIsVisitable(t)?Turbolinks.closest(t,"a[href]:not([target]):not([download])"):void 0},e.prototype.getVisitableLocationForLink=function(t){var e;return e=new Turbolinks.Location(t.getAttribute("href")),this.locationIsVisitable(e)?e:void 0},e.prototype.getActionForLink=function(t){var e;return null!=(e=t.getAttribute("data-turbolinks-action"))?e:"advance"},e.prototype.nodeIsVisitable=function(t){var e;return(e=Turbolinks.closest(t,"[data-turbolinks]"))?"false"!==e.getAttribute("data-turbolinks"):!0},e.prototype.locationIsVisitable=function(t){return t.isPrefixedBy(this.view.getRootLocation())&&t.isHTML()},e.prototype.getCurrentRestorationData=function(){return this.getRestorationDataForIdentifier(this.restorationIdentifier)},e.prototype.getRestorationDataForIdentifier=function(t){var e;return null!=(e=this.restorationData)[t]?e[t]:e[t]={}},e}()}.call(this),function(){!function(){var t,e;if((t=e=document.currentScript)&&!e.hasAttribute("data-turbolinks-suppress-warning"))for(;t=t.parentNode;)if(t===document.body)return console.warn("You are loading Turbolinks from a <script> element inside the <body> element. This is probably not what you meant to do!\n\nLoad your application\u2019s JavaScript bundle inside the <head> element instead. <script> elements in <body> are evaluated with each page change.\n\nFor more information, see: https://github.com/turbolinks/turbolinks#working-with-script-elements\n\n\u2014\u2014\nSuppress this warning by adding a `data-turbolinks-suppress-warning` attribute to: %s",e.outerHTML)}()}.call(this),function(){var t,e,r;Turbolinks.start=function(){return e()?(null==Turbolinks.controller&&(Turbolinks.controller=t()),Turbolinks.controller.start()):void 0},e=function(){return null==window.Turbolinks&&(window.Turbolinks=Turbolinks),r()},t=function(){var t;return t=new Turbolinks.Controller,t.adapter=new Turbolinks.BrowserAdapter(t),t},r=function(){return window.Turbolinks===Turbolinks},r()&&Turbolinks.start()}.call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -14476,3 +13705,4 @@ return jQuery;
 
 
 
+;
