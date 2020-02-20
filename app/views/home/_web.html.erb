@@ -117,28 +117,42 @@
 </div>
 
 <div id="core-features" class="container-fluid features-web">
-		<div class="row background-image planning">
-			<div>
-				<h1 class="dark-blue">Master Planning</h1>
-				<p>Task lists are great, but integrating them with your calendar takes planning to a whole new level.<br/>Schedule everything you do, with Trevor's intuitive interface, to master the art of realistic, productive planning.</p>
-			</div>
-		</div>
 		<div class="row background-image progress">
 			<div>
-				<h1 class="dark-blue">Track Progress</h1>
-				<p>Trevor's purpose is to help you grow. Even the little things we do each day have a big impact on our lives.<br/>With Trevor you can gain powerful insights on how you spend your most valuable resource - time.</p>
+				<h1 class="dark-blue">Clear some head space</h1>
+				<p>Feeling overwhemled or directionless?<br/><u>Remembering</u> everything you have to do is not a game you were designed to win. Your Tasks belong in lists, where you can organize, prioritize and set goals, to regain control of your life.</p>
+				<p class="quote"><%= link_to "David Allen", "http://gettingthingsdone.com", target: "_blank" %> - "Your mind is for having ideas, not holding them"</p>
 			</div>
 		</div>
 		<div class="row background-image focus">
 			<div>
-				<h1 class="dark-blue">Improve Focus</h1>
-				<p>Scheduling your tasks provides the "When" to your "What", increasing completion rates, reducing stress and creating flow.<br/>Peaceful productivity is just a step away - <%= link_to "Sign In", "https://app.trevorai.com", target: "_blank" %>.</p>
+				<h1 class="dark-blue">Prime your mind for action</h1>
+				<p>Getting distracted costs you time, energy and money.<br/><u>Time blocking</u> focuses your mind on each task, for a set amount of time, thus completing the task with better results, in less time and fewer distractions.</p>
+				<p><%= link_to "Anthony Robbins", "https://www.tonyrobbins.com", target: "_blank" %> - "If you talk about it, it’s a dream, if you envision it, it’s possible, but if you schedule it, it’s real."<p/>
+				
+			</div>
+		</div>
+		<div class="row background-image planning">
+			<div>
+				<h1 class="dark-blue">Be mindful of your time</h1>
+				<p>How we invest our time influences the direction of our lives.<br/>Trevor's purpose is to help you grow. The little things we do each day have a big impact on our lives. Gain powerful insights on how you spend your most valuable resource.</p>
+				<p><%= link_to "Essentialism: The Disciplined Pursuit of Less", "http://gregmckeown.com/book/", target: "_blank" %> - "It's not about how to get more things done,<br/>it’s about how to get <u>the right things</u> done."<br/>
+				</p>
 			</div>
 		</div>
 		<div class="row background-image intuitive">
 			<div>
 				<h1 class="dark-blue">Stay on top of your day</h1>
-				<p>Live is dynamic. Quickly adapt to changes anytime, on any mobile or desktop device, via a single app - <a href="https://app.trevorai.com" target="_blank">app.trevorai.com</a> or our <%= link_to "Messenger Bot", "https://m.me/trevorlabs", target: "_blank" %>.</p>
+				<p>Live is dynamic. Quickly adapt to changes anytime, on any mobile or desktop device, via a single app - <a href="https://app.trevorai.com" target="_blank">app.trevorai.com</a>.</p>
+				<p><%= link_to "The Laws of Simplicity", "http://lawsofsimplicity.com", target: "_blank" %> - "Organization makes a system of many appear fewer."</p>
+			</div>
+		</div>
+		<div class="row background-image bot-demo">
+			<div>
+				<h1 class="dark-blue">Say hello to Trevor</h1>
+				<p>Reduce countless scheduling decisions, to just 2.</br>Name a task and Trevor will automagically suggest the best 2 available times, based on your schedule and preferences. Say "hello", in <%= link_to "Messenger", "https://m.me/trevorlabs", target: "_blank" %>.</p>
+				<p><%= link_to "The Organized Mind", "http://www.daniellevitin.com/theorganizedmind/", target: "_blank" %> - "The most fundamental principle of the organized mind....is to shift the burden of organizing from our brains to the external world."<br/>
+				</p>
 			</div>
 		</div>
 </div>
@@ -162,7 +176,7 @@
 		<div class="col-md-3"><p><i>Currently I schedule my tasks by creating events in my calender everyday, exactly what you automate. I do it to get a better feeling of what I'm spending my time on and to get in as many productive hours as possible, which can be hard without a fixed schedule.</i></p><h3 style="text-align: right;">- Maximilian Pohlman</h3></div>
 
 	</div>
-	<hr style="margin: 50px 0 0 0;"/>
+	
 </div>
 
 <% if false %>
@@ -234,7 +248,7 @@
 	<p><span>20%+ </span>higher completion rates for scheduled tasks, compared to some of the best to-do apps</p>
 	<p><span>1 min </span>to create a productive schedule for your day - <%= link_to "Make your schedule, now", "https://app.trevorai.com" %></p>
 </div>
-<% end %>
+
 
 <div class="container-fluid dark bluebg section">
 	<div class="row">
@@ -244,11 +258,12 @@
 </div>
 
 <%= render 'home/framework' %>
+<% end %>
 
 <div id="meettrevor" class="container-fluid section dark bluebg">
 	<div class="container">
 		<div class="row">
-			<%= link_to "GET STARTED FOR FREE", "https://app.trevorai.com", class: 'button sign-up-button' %>
+			<%= link_to "Get Started", "https://app.trevorai.com", class: 'button sign-up-button' %>
 			<% if false %>
 			<div class="col-md-4"></div>
 
