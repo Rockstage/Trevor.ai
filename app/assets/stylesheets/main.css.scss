@@ -607,13 +607,14 @@ hr.margin {
 		width: 415px;
 		margin: 0 auto;
 		@media (max-width: 992px) {
-			width: 100%;
-			top: 50px;
+			width: 100% !important;
 			max-width: 300px;
 		}
 
 		.placeholder {
 			position: relative;
+			width: 100%;
+			text-align: center;
 			// @media (max-width: 768px) {
 			// width: 500px;
 			// }
@@ -628,9 +629,12 @@ hr.margin {
 			.macbookMockup {
 				width: 630px;
 				margin: 0 auto;
-				// @media (max-width: 992px) {
-				// 	max-width: 90vw;
-				// }
+				@media (max-width: 992px) {
+					width: 630px;
+				}
+				@media (max-width: 650px) {
+					width: 340px;
+				}
 			}
 
 			.arrowRight {
@@ -651,13 +655,22 @@ hr.margin {
 			position: absolute;
 			top: 105px;
 			left: 50px;
+			text-align: center;
 			@media (max-width: 992px) {
 				top: 75px;
-				left: 35px;
+				left: 8,5%;
+				iframe {
+					width: 480px;
+				}
 			}
 			@media (max-width: 650px) {
+				// width: 300px;
+				// height: 214px;
+				left: 18.3%;
+				top: 9% !important;
 				iframe {
-					height: 200px;
+					width: 260px;
+					height: 160px;
 				}
 			}
 			&.web {
@@ -686,7 +699,6 @@ hr.margin {
 			height: auto;
 			@media (max-width: 992px) {
 				width: 630px;
-				top: 50px;
 				max-width: 100%;
 			}
 			.placeholder {
