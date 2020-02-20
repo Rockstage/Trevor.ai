@@ -628,9 +628,9 @@ hr.margin {
 			.macbookMockup {
 				width: 630px;
 				margin: 0 auto;
-				@media (max-width 992px) {
-					max-width: 90vw;
-				}
+				// @media (max-width: 992px) {
+				// 	max-width: 90vw;
+				// }
 			}
 
 			.arrowRight {
@@ -654,6 +654,11 @@ hr.margin {
 			@media (max-width: 992px) {
 				top: 75px;
 				left: 35px;
+			}
+			@media (max-width: 650px) {
+				iframe {
+					height: 200px;
+				}
 			}
 			&.web {
 				top: 35px;
@@ -793,6 +798,7 @@ hr.margin {
 		background-size: cover;
 		background-position: center;
 		height: 400px;
+
 	}
 	.connected {
 		background-image: image-url("connected.jpg");
