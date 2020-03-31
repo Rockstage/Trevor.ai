@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'app' => 'home#app'
   get 'list_demo' => 'home#list_demo'
   get 'schedule_demo' => 'home#schedule_demo'
+  get 'business' => 'home#business'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

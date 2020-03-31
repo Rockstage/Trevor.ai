@@ -28,5 +28,8 @@ class HomeController < ApplicationController
 
   def schedule_demo
   end
+
+  def business
+  end
   
 end
